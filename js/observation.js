@@ -17,6 +17,7 @@ var selectObservationEspece = false;
 var selectValide = [];
 var erreurs = $("#observationEspece .erreur");
 
+$("#dateObservation").datepicker();
 
 //Par défaut on cache toutes les div d'erreurs ainsi que le textarea d'informations de lieu.
 //On met aussi les radio à l'état disabled par defaut

@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-6 col-sm-12" id="infoLieu">
                 <div class="erreur">Veuillez remplir le champ ci-dessous.</div>
-                <textarea class="form-control" id="lieuAutre" type ="text"  name ="LieuAutre" size ="250" maxlength ="200" placeholder = "Veuillez entrer le nom du lieux, orientation longitude, orientation latitude" ></textarea>
+                <textarea class="form-control" id="lieuAutre" type="text"  name="LieuAutre" size="250" maxlength="200" placeholder="Veuillez entrer le nom du lieux, orientation longitude, orientation latitude"></textarea>
             </div>
         </div>
         <div class="erreur">Veuillez remplir les champs ci-dessous.</div>
