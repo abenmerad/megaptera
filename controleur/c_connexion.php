@@ -1,0 +1,72 @@
+<?php
+if(!isset($_REQUEST['action']))
+     $action = 'connexion';
+else
+	$action = $_REQUEST['action'];
+
+switch($action)
+{	
+	case 'connexion':
+	{
+		include("vue/v_connexion.php");
+		break;
+	}
+	
+    case 'valider' :
+	{
+        $login = $_REQUEST['login'];
+        $mdp = $_REQUEST['mdp'];
+		
+        $membre = $pdo->getInfosMembre($login,$mdp);
+
+        if(!is_array($membre)){
+			?><a id="Error"><?php echo "Login ou mot de passe incorrect";?><br></a><?php
+      
+            include("vue/v_connexion.php");
+        }
+        else 
+        {
+             if($membre['poste'] == "membre")
+			 {  
+				$_SESSION['poste']='membre';
+				$_SESSION['id']= $membre['id'];
+				include("vue/v_menuMembre.php");
+				
+			 }
+			else
+			{
+				if($membre['poste'] == "admin")
+				{   $_SESSION['poste']='admin';
+					include("vue/v_menuAdmin.php"); 	
+			    }
+			   else 
+			    {
+				   if ($membre['poste'] == "superAdmin")
+				   {$_SESSION['ID']='menuSuper';
+					include ("vue/v_menuSuperAdmin.php");
+				   }
+			 
+				   else
+				   {    
+		            	?><a id="Error"><?php echo "Vous n'etes pas autoris�";?><br></a><?php
+      
+						include("vue/v_connexion.php");
+					
+				   }
+			   }
+			}
+		}
+		break;
+    } 
+	
+    case 'deconnexion':
+	{   
+    	
+		session_destroy();
+        include("vue/v_connexion.php");
+		
+		break;
+	}
+
+}
+?>
