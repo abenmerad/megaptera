@@ -17,7 +17,6 @@ var selectObservationEspece = false;
 var selectValide = [];
 var erreurs = $("#observationEspece .erreur");
 
-$("#dateObservation").datepicker();
 
 //Par défaut on cache toutes les div d'erreurs ainsi que le textarea d'informations de lieu.
 //On met aussi les radio à l'état disabled par defaut
@@ -28,7 +27,6 @@ $("#dateObservation").datepicker();
             $(this).prop("checked", false);
             $(this).prop("disabled", true);
     });
-
     //Evenement lorsque l'on clique sur le bouton Valider
     $("#submitForm").click(function(){
         //On vérifie l'entrée du fichier image
@@ -96,18 +94,30 @@ $("#dateObservation").datepicker();
 
             var heureDebut = new Date("January 1, 2000 " + $("#heureDebut").val());
             var heureFin = new Date("January 1, 2000 " + $("#heureFin").val());
+            var dateActuelle = new Date($.now());
+            var dateObs = new Date($("#dateObservation").val() + " " + $("#heureFin").val());
 
-            //On vérifie que l'heure de début d'observation n'est pas supérieur à l'heure de fin d'observation
-            if(heureDebut > heureFin)
+
+            console.log("Date observation: " + dateObs);
+            console.log("Date actuelle: " + dateActuelle);
+            if(dateObs.getTime() > dateActuelle.getTime())
             {
-                $("#selectTime").prev().after("<div class=\"erreur\">L'heure de debut doit être inférieur à l'heure de fin.</div>");
+                $("#selectTime").prev().after("<div class=\"erreur\">La date d'observation ne peut être supérieur à la date actuelle</div>");
                 selectTimeValide = false;
             }
             else
             {
-                selectTimeValide = true;
+                //On vérifie que l'heure de début d'observation n'est pas supérieur à l'heure de fin d'observation
+                if(heureDebut > heureFin)
+                {
+                    $("#selectTime").prev().after("<div class=\"erreur\">L'heure de debut doit être inférieur à l'heure de fin.</div>");
+                    selectTimeValide = false;
+                }
+                else
+                {
+                    selectTimeValide = true;
+                }
             }
-            
         }
         else
         {

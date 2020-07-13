@@ -6,7 +6,8 @@
             <link href="style/bootstrap.css" rel="stylesheet">
             <link href="style/style.css" rel="stylesheet">
             <link rel="shortcut icon" type="image/x-icon" href="img/img-logo.jpg" /> 
-         </head>
+            <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        </head>
          <body>
              <div class="container" id="entete">
                  <div class="row">
