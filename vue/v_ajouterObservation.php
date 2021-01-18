@@ -1,5 +1,7 @@
-
-<form enctype="multipart/form-data" method="post" id="form_observation" action="index.php?uc=menuSuper&action=ValidationAjoutPhoto">
+<?php
+ $uc=$_SESSION['poste'];
+ ?>
+<form enctype="multipart/form-data" method="post" id="form_observation" action="index.php?uc=<?php echo $uc?>&action=confirmer">
     <fieldset id="form1" form="form_observation" class="container">
         <legend>Observation</legend>
         <div class="row form-group" id="ajoutImg">
@@ -13,9 +15,13 @@
                 <label for="Lieu">Lieu</label><div class="erreur">Veuillez choisir un lieu d'observation.</div>
                 <select name="Lieu" class="form-control form-control-sm">
                     <option value="NULL">Veuillez selectionner un lieu</option>
-                    <?php foreach($lesLieux as $unLieu){ ?>
+                    <?php foreach($lesLieux as $unLieu){ 
+					if ($unLieu['code'] !="AUT")
+					{
+					?>
+					
                     <option value="<?php echo $unLieu['code'];?>"><?php echo $unLieu['lieu'];?></option>
-                    <?php } ?>
+                    <?php }} ?>
                     <option value="Autre" id="autre">Autre</option>
                 </select>
             </div>
@@ -52,7 +58,7 @@
             <div id="coordonneesLat" class="row">
                 <div class="col-md-4 col-sm-6">
                     <label>Deg Lat.
-                        <input name="DegresLat" type="number" value="0" min ="0" max = "180">
+                        <input name="DegresLat" type="number" value="0" min ="0" max = "99">
                     </label>
                 </div>
                 <div class="col-md-4 col-sm-6">
@@ -62,24 +68,24 @@
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <label>Sec Lat.<br>
-                        <input name="SecondesLat" type="number" value="0" min ="0" max = "59">
+                        <input name="SecondesLat" type="number" value="0" min ="0" max = "999">
                     </label>
                 </div>
             </div>
             <div id="coordonneesLong" class="row">
                 <div class="col-md-4 col-sm-6">
                     <label>Deg Long.
-                        <input name="DegresLong" type="number" value="0" min ="0" max = "180">
+                        <input name="DegresLong" type="number" value="0" min ="0" max = "99">
                     </label>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <label>Min Long.
-                        <input name="MinutesLong" type="number" value="0" min ="0" max = "59">
+                        <input name="MinutesLong" type="number" value="0" min ="0" max = "99">
                     </label>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <label>Sec Long.
-                        <input name="SecondesLong" type="number" value="0" min ="0" max = "59">
+                        <input name="SecondesLong" type="number" value="0" min ="0" max = "999">
                     </label>
                 </div>
             </div>
@@ -143,6 +149,7 @@
                         <?php } ?>
                     </SELECT>
                 </div>
+			
                 <div>
                     <label for = "NombreIndividu">Nombre d'individus</label><div class="erreur">Veuillez remplir le champ ci-dessous.</div>
                     <SELECT class="form-control form-control-sm"  name="NombreIndividu" id ="lstNbrIndividu">
@@ -153,7 +160,7 @@
         </div>
         <div class="row form-group">
             <div class="col-md-6 col-sm-12">
-                <label for="Description">Description</label>
+                <label for="Description">Commentaire</label>
                 <textarea name="Description" class="form-control form-control-sm" id="description" ></textarea>
             </div>
 
@@ -162,9 +169,10 @@
                 <textarea name="Comportement" class="form-control form-control-sm" id="comportement" ></textarea>
             </div>
         </div>
-
+      
 		<div class="d-flex flex-md-row flex-sm-row flex-column justify-content-md-center justify-content-sm-center" id="Button">
-            <button type="button" class="btn btn-outline-primary col-md-4 col-sm-6 col-12" id="submitForm">Valider</button>
+          <!--  <button type="button" class="btn btn-outline-primary col-md-4 col-sm-6 col-12" id="submitForm">Valider</button>-->
+			<input type = "submit" value = "Valider" name = "valider">
 	    </div>
     </fieldset>
  </form>

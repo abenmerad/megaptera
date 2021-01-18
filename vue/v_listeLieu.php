@@ -1,6 +1,11 @@
-<div id="Lieu">
-     <h1> Liste des lieux</h1>
-		<table >
+
+<fieldset form="form_observation" class="container form-group" id="observationEspece">
+        <legend>Liste pour modification des lieux</legend>
+		<div class="row form-group" >
+  		
+
+		<table  align = "center" border = "2" cellpadding="15">
+
 				<tr>
 						<th>  CODE  </th>
 						<th>  LIEU  </th>
@@ -35,7 +40,10 @@
 		?>
 		</table>
 			
+
+</div>
 <ul>
-<li><a href="index.php?uc=menuSuper&action=ajouterLieu ">ajouter un lieu </a></li>
+  <a  href="index.php?uc=menuSuper&action=ajouterLieu "><h5><u>ajouter un lieu</u> </h5></a>
 </ul>
-</div		  
+
+</fieldset>	  

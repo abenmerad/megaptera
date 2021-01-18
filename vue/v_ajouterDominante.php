@@ -1,19 +1,21 @@
-	
-<FORM id="formulaire" method="post" action='index.php?uc=menuSuper&action=confirmerAjouterDominante'>
-	<fieldset>
-		<h1 id="hh">Ajouter une dominante</h1>
-		<div id="form1">
-			<P>
-				<label for = "libelle">Libellé  * </label>
-				<INPUT type="text" name='libelle' size = "50" maxlength = "100"placeholder = "Saisir le texte" required>
-			</p>
-			<p>
-				<center>	
-					<input type = "submit" value = "Valider" name = "valider">
-					<input type = "reset" value = "Annuler" name = "annuler">
-				</center>
-			</P>
+<form id="formulaire" method="post"  action="index.php?uc=menuSuper&action=confirmerAjouterDominante">
+       <fieldset form="form_observation" class="container form-group" id="observationEspece">
+        <legend>Ajouter une dominante</legend>
+		<div class="row form-group" >
+  
+		
+				<label for = "libelle">Libelle  * </label>
+				<INPUT type="text" name='libelle' size = "50" maxlength = "100" placeholder = "Saisir le texte" required>
+			
+		
 		</div>
-	</FIELDSET> 
+		<div class="d-flex flex-md-row flex-sm-row flex-column justify-content-md-center justify-content-sm-center" id="Button">
+      		<input type = "submit" value = "Valider" name = "valider">
+			<input type = "reset" value = "Annuler" name = "annuler"> 
+	    </div>
+			
+			
+		</fieldset>
+		
 </FORM>
 		

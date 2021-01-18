@@ -1,19 +1,10 @@
 <?php
- if($_SESSION['poste'] == 'menuSuper')
- {
-	 $uc = "menuSuper";
- }
- if($_SESSION['poste'] == 'admin')
- {
-	 $uc = "menuAdmin";
- }
- echo $_SESSION['poste'];
+ $uc = $_SESSION['poste'];
  ?>
 <form id="formulaire" method="post"  action="index.php?uc=<?php echo $uc ?>&action=confirmerModifierMembre&id=<?php echo $id ?>">
-    <fieldset>
-		
-        <h1 id="hh">Modifier un membre</h1>
-		<div id="form1">
+   <fieldset form="form_observation" class="container form-group" id="observationEspece">
+        <legend>Modification d'un membre</legend>
+		<div class="row form-group"> 
 			<P> 
 				<label for = "identifiant">Identifiant</label>
 				<input type = "text"  name = "id" value ='<?php echo $id ?>' size = "30" maxlength = "45"  readonly="true">
@@ -27,7 +18,7 @@
 				<input type = "text"  name = "nom" value ='<?php echo $nom ?>' size = "30" maxlength = "45" readonly="true">
              </p>
 			 <P>
-				<label for = "prenom">Prenom ></label>
+				<label for = "prenom">Prenom <em>*</em></label>
 				<input type = "text"  name = "prenom" value ='<?php echo $prenom ?>' size = "30" maxlength = "45" required>
 			</p>
 			<P>
@@ -44,15 +35,15 @@
 				<input name ="mail" type="mail" value ='<?php echo $mail ?>' size = "30" maxlength = "45"  placeholder="xxxxxxxx@xxxx.com" required="" pattern="[a-zA-Z]*@[a-zA-Z]*.[a-zA-Z]*"><br>
 			</p>
 			<p>
-				<label for = "number">Téléphone</label>
+				<label for = "number">Téléphone<em>*</em></label>
 				<input name="tel" type="tel"value ='<?php echo $tel ?>' size = "10" maxlength = "10" placeholder="06xxxxxxxx" pattern="06[0-9]{8}"><br>
 	        </p>
-		    <p>
-			<center>
-				<input type = "submit" value = "Valider" name = "valider"  onclick="validate()>
-				<input type = "reset" value = "Annuler" name = "annuler"> 
-			</center>
-			</p>
-		</div>
-	</fieldset>
+	
+			</div>
+	    	<div class="d-flex flex-md-row flex-sm-row flex-column justify-content-md-center justify-content-sm-center" id="Button">
+      		<input type = "submit" value = "Valider" name = "valider">
+			<input type = "reset" value = "Annuler" name = "annuler"> 
+	      </div>
+		</fieldset>
+	
 </form>

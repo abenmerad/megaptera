@@ -1,8 +1,8 @@
-	
-					
-<div id="Lieu">
-     <h1> Liste suppression des types groupe</h1>
-		<table >
+<fieldset form="form_observation" class="container form-group" id="observationEspece">
+        <legend>Liste suppression des membres</legend>
+		<div class="row form-group" >
+		<table  align = "center" border = "2" cellpadding="5">
+		
 				<tr>
 						<th>CODE  </th>
 						<th>NOM  </th>
@@ -38,10 +38,11 @@
 					onclick="return confirm('Voulez-vous vraiment supprimer ce membre ?');"> 
 					<img src="images/supprimer.gif" TITLE="Supprimer"> </center></a></td>
 					
-					</tr
+					</tr>
 		
 		<?php			
 			}
 		?>
 		</table>
-</div>		
+</div>	
+</fieldset>	

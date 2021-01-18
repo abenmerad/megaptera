@@ -28,21 +28,23 @@ switch($action)
         {
              if($membre['poste'] == "membre")
 			 {  
-				$_SESSION['poste']='membre';
+				$_SESSION['poste']='menuMembre';
 				$_SESSION['id']= $membre['id'];
 				include("vue/v_menuMembre.php");
 				
 			 }
 			else
 			{
-				if($membre['poste'] == "admin")
-				{   $_SESSION['poste']='admin';
+				if($membre['poste'] == "Admin")	
+				{   $_SESSION['poste']='menuAdmin';
+					$_SESSION['id'] = $membre['id'];
 					include("vue/v_menuAdmin.php"); 	
 			    }
 			   else 
 			    {
 				   if ($membre['poste'] == "superAdmin")
-				   {$_SESSION['ID']='menuSuper';
+				   {$_SESSION['poste']='menuSuper';
+					$_SESSION['id']= $membre['id'];
 					include ("vue/v_menuSuperAdmin.php");
 				   }
 			 

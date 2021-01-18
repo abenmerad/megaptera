@@ -1,9 +1,13 @@
-<div id="Lieu">
-     <h1> Liste des types de groupe</h1>
-		<table width=100%>
+<fieldset form="form_observation" class="container form-group" id="observationEspece">
+        <legend>Liste pour modification les groupes</legend>
+		<div class="row form-group" >
+  		
+
+		<table  align = "center" border = "2" cellpadding="15">
+
 				<tr>
 						<th>CODE  </th>
-						<th  width=40%>LIBELLE  </th>
+						<th >LIBELLE  </th>
 						<th>OPERATEUR</th>
 						<th>VALEUR</th> 
 					    <th>MODIFICATION</th>
@@ -30,7 +34,8 @@
 			}
 		?>
 		</table>	
+	</div>
 <ul>
-<li><a href="index.php?uc=menuSuper&action=ajouterGroupe">ajouter un type de groupe</a></li>
+  <a href="index.php?uc=menuSuper&action=ajouterGroupe"><h5><u>ajouter un type de groupe</u></h5></a>
 </ul>
-</div		  
+</fieldset>	  

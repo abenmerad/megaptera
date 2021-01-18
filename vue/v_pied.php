@@ -4,7 +4,7 @@
 <footer class="page-footer font-small blue pt-4">
 <center>
     <div class="contain">
-		<div class="prenom"> Ilhan Ankoue / Onildo Lopes / Ali Benmerad<br>© 2020 Tous droits réservés</div>
+	<!--	<div class="prenom"> Ilhan Ankoue / Onildo Lopes / Ali Benmerad<br>© 2020 Tous droits réservés</div>-->
     </div>
 </center>
 </footer>

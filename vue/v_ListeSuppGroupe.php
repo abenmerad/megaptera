@@ -1,8 +1,10 @@
+<fieldset form="form_observation" class="container form-group" id="observationEspece">
+        <legend>Liste suppression des types groupe</legend>
+		<div class="row form-group" >
+  		
+
+		<table  align = "center" border = "2" cellpadding="15">
 	
-					
-<div id="Lieu">
-     <h1> Liste suppression des types groupe</h1>
-		<table >
 				<tr>
 						<th>CODE  </th>
 						<th>LIBELLE  </th>
@@ -38,3 +40,4 @@
 		?>
 		</table>
 </div>		
+</fieldset>

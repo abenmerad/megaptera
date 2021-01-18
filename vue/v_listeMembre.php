@@ -1,17 +1,14 @@
-<div id="Lieu">
+
 <?php
-	if($_SESSION['poste'] == 'menuSuper')
-	 {
-		 $uc = 'menuSuper';
-	 }
-	 if($_SESSION['poste'] == 'admin')
-	 {
-		 $uc = 'menuAdmin';
-	 }
-	 echo "valeur liste $uc";
+	
+	$uc = $_SESSION['poste'];
+
  ?>
-     <h1> Liste des membres</h1>
-		<table >
+ <fieldset form="form_observation" class="container form-group" id="observationEspece">
+        <legend>Liste des membres</legend>
+		<div class="row form-group" >
+		<table  align = "center" border = "2" cellpadding="5">
+
 				<tr>
 						<th>CODE  </th>
 						<th>NOM  </th>
@@ -50,8 +47,9 @@
 		<?php			
 			}
 		?>
-		</table>	
+		</table>
+           </div>		
 <ul>       
-<li><a href="index.php?uc=<?php echo $uc ?>&action=ajouterMembre">ajouter un membre</a></li>
+ <a href="index.php?uc=<?php echo $uc ?>&action=ajouterMembre"><h5><u>ajouter un membre</u><h5></a>
 </ul>
-</div		  
+</fieldset>		  

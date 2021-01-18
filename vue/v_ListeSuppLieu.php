@@ -1,10 +1,13 @@
 	
-					
-<div id="Lieu">
-     <h1> Liste suppression des lieux</h1>
-		<table >
+	
+<fieldset form="form_observation" class="container form-group" id="observationEspece">
+        <legend>Liste suppression des lieux</legend>
+		<div class="row form-group" >
+  		
+
+		<table  align = "center" border = "2" cellpadding="15">
 				<tr>
-						<th>    CODE  </th>
+						<th>CODE  </th>
 						<th>      LIEU          </th>
 						<th>ORIENTATION LATITUDE</th>
 						<th>ORIENTATION LONGITUDE</th> 
@@ -42,3 +45,4 @@
 		?>
 		</table>
 </div>		
+</fieldset>

@@ -1,8 +1,9 @@
 <FORM id="formulaire" method="post" action='index.php?uc=menuSuper&action=confirmerAjouterLieu'>
+<fieldset form="form_observation" class="container form-group" id="observationEspece">
+        <legend>Ajouter un lieu</legend>
+		<div class="row form-group" >
+  
 
-	<FIELDSET>	
-		<h1 id="hh">Ajouter un lieu</h1>
-		<div id="form1">
 			<p>
 				<label for="code">Code   *:</label>
 				<INPUT type="text" id="code" name="code" size = "4" maxlength = "5" value='' required/><br>
@@ -26,11 +27,13 @@
 					</select>
 			</p>
 			<p>
-				<center>
-					<input type = "submit" value = "Valider" name = "valider">
-					<input type = "reset" value = "Annuler" name = "annuler"> 
-			     </center>
-		</div>
+			</div>
+		<div class="d-flex flex-md-row flex-sm-row flex-column justify-content-md-center justify-content-sm-center" id="Button">
+      		<input type = "submit" value = "Valider" name = "valider">
+			<input type = "reset" value = "Annuler" name = "annuler"> 
+	    </div>
+			
+		
 	</FIELDSET>
 	
 </FORM>

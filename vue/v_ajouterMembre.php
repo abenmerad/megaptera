@@ -1,19 +1,12 @@
 <?php
- if($_SESSION['poste'] == 'menuSuper')
- {
-	 $uc = "menuSuper";
- }
- if($_SESSION['poste'] == 'admin')
- {
-	 $uc = "menuAdmin";
- }
+$uc = $_SESSION['poste']; 
  ?>
+ 
 <form id="formulaire" method="post"  action="index.php?uc=<?php echo $uc ?>&action=confirmerAjouterMembre">
-     <fieldset>
-		
-        <h1 id="hh">Ajouter un membre</h1>
-
-		<div id="form1">
+       <fieldset form="form_observation" class="container form-group" id="observationEspece">
+        <legend>Ajouter un membre</legend>
+		<div class="row form-group"> 
+	
 			<P>
 				<label for = "poste">Poste</label>
 				<select name="poste" >
@@ -52,15 +45,12 @@
 				<label for = "number">Téléphone</label>
 				<input name="tel" type="tel" value ='' size = "10" maxlength = "10" placeholder="06xxxxxxxx" pattern="06[0-9]{8}">
 			 </p>
-			 <p>
-				<center>
-					<input type = "submit" value = "Valider" name = "valider"  onclick="validate()">
-					 <span id="msg"></span> 
-
-					<input type = "reset" value = "Annuler" name = "annuler"> 
-				</center>
-			</P>
+			
 		</div>
-	  
-	</fieldset>
+		<div class="d-flex flex-md-row flex-sm-row flex-column justify-content-md-center justify-content-sm-center" id="Button">
+      		<input type = "submit" value = "Valider" name = "valider">
+			<input type = "reset" value = "Annuler" name = "annuler"> 
+	    </div>
+		</fieldset>
+	
  </form>

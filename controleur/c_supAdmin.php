@@ -7,27 +7,197 @@ else
 
 switch($action)
 {
-	case 'ajouterObservation':
-	{	$lesLieux = $pdo->getLesLieux();
-		$lesDominantes = $pdo->getLesDominantes();
-		$lesGroupes = $pdo->getLesGroupes();
-		include("vue/v_ajouterObservation.php");
+	
+	case 'ajouter':
+	{
+			if(isset($_GET['codeLieu']))
+			{
+				$unLieu = $pdo -> getUnLieu($_GET['codeLieu']);
+				die($unLieu['orientationLat'] . $unLieu['orientationLong']);
+			}
+			if(isset($_GET['codeGrp']))
+			{
+				$unGroupe = $pdo -> getUnGroupe($_GET['codeGrp']);
+				die($unGroupe['operateur'] . $unGroupe['valeur']);
+			}
+			$lesLieux = $pdo -> getLesLieux();
+			$lesDominantes = $pdo -> getLesDominantes();
+			$lesGroupes = $pdo -> getLesGroupes();
+			require("vue/v_ajouterObservation.php");
+			break;
+	}
+	case 'confirmer':
+	{  
+	    $nomPhoto = $_FILES['nomImg']['name'];
+		
+		if ($_POST['Lieu']== "Autre")
+		{ 
+		    $lieuObservation = "AUT";
+		}
+		else
+		{
+	   	    $lieuObservation = $_POST['Lieu'];
+		}
+		
+		$lieuInfo = $_POST['LieuAutre'];
+		$dateObservation = $_POST['DateObservation'];
+		$heureDebut = $_POST['HeureDebut'];
+		$heureFin = $_POST['HeureFin'];
+		$couleurDominante = $_POST['Dominante'];
+		$typeCaudale = $_POST['Caudale'];
+		$aPapillon = $_POST['Papillon'];
+	
+		$nbIndividu = $_POST['NombreIndividu'];
+		$typeGroupe = $_POST['Groupe'];
+		$comportementObservation = $_POST['Comportement'];
+		$commentaireObservation = $_POST['Description'];
+		$dateEnregistrement=date("Y-m-d");
+		
+		$rechercheCode = $lieuObservation.substr($dateObservation,0,4);
+		
+		$nbCaracteres = strlen($rechercheCode);
+		
+		
+		$num = $pdo -> dernierCodeObs($rechercheCode);
+
+		
+	    if (!is_null($num[0]))
+		{  
+		    settype($num[0], "string");
+			$longueur = strlen($num[0]);	
+		    $numero = substr($num[0],$nbCaracteres ,3);
+			$numero = $numero +1 ;
+		}
+		else
+		{
+			$numero = 1 ;
+			
+		}	
+		
+		$codeObservation = $rechercheCode.$numero;
+		
+		
+		$longitude = $_POST['DegresLong'] . "°" .  $_POST['MinutesLong'] . "\'" .  $_POST['SecondesLong']. '\"';
+		$latitude =  $_POST['DegresLat'] . "°" .  $_POST['MinutesLat'] . "\'" .  $_POST['SecondesLat']. '\"' ;
+	
+		
+		$auteur = $_SESSION['id'];
+		
+		$nomPhoto = $codeObservation.'.'.explode("/", $_FILES['nomImg']['type'])[1];
+		
+		$pdo -> ajouterObservation($codeObservation, $nomPhoto,  $lieuObservation, $lieuInfo, $heureDebut, $heureFin, $dateObservation, $latitude, $longitude, $auteur,(int)$couleurDominante, $aPapillon, (int)$nbIndividu, (int)$typeCaudale, $typeGroupe, $commentaireObservation, $comportementObservation, $dateEnregistrement);
+
+		$repertoire = 'images/'.$codeObservation.'.'.explode("/", $_FILES['nomImg']['type'])[1];
+		
+		move_uploaded_file($_FILES['nomImg']['tmp_name'], $repertoire);
+
 		break;
-	} 
-	case 'confirmerAjouterObservation':
-	{      		
-	    echo $_REQUEST['code'];
-		echo $_REQUEST['lieu'];
-		echo $_REQUEST['latitude'];
-		echo $_REQUEST['longitude'];
-		$code = $_REQUEST['code'];
-		$lieu = $_REQUEST['lieu'];
-		$latitude = $_REQUEST['latitude'];
-		$longitude = $_REQUEST['longitude'];
-		$pdo -> ajouterLieu($code,$lieu,$latitude,$longitude);	
-		$lesLignes = $pdo->getLesLieux();
-	    include("vue/v_listeLieu.php");
-	     break;
+	}
+
+case 'filtre':
+	{  
+	    $lesLieux = $pdo -> getLesLieux();
+		$lesDominantes = $pdo -> getLesDominantes();
+		$lesGroupes = $pdo -> getLesGroupes();
+		$lesAnnees =$pdo -> getLesAnnees();
+		
+		$lieuxASelectionner ='';
+		$dominanteASelectionner = '';
+		$AnneeASelectionner = '';
+		$groupesASelectionner = '';
+		
+		require("vue/v_filtre.php");
+		break;
+	}
+    case 'rechercher':
+	{  
+	    $lesLieux = $pdo -> getLesLieux();
+		$lesDominantes = $pdo -> getLesDominantes();
+		$lesGroupes = $pdo -> getLesGroupes();
+		$lesAnnees =$pdo -> getLesAnnees();
+		
+		$lieu = $_POST['Lieu'];
+		$lieuxASelectionner = $lieu;
+		
+		$annee = $_POST['Annee'];
+		$anneeASelectionner = $annee;
+		
+		$dominante = $_POST['Dominante'];
+		$dominanteASelectionner = $dominante;
+		
+		
+		$typeGroupe = $_POST['Groupe'];
+		$groupeASelectionner = $typeGroupe;
+		include("vue/v_filtre.php");
+	
+		$lesObservations = $pdo-> getRechercheObservation($lieu,$annee,(int)$dominante, $typeGroupe);
+		
+		
+		include("vue/v_RechercheObservation.php");
+		break;
+	}
+	case 'validerObservation':
+	{  
+	    $lesObservations = $pdo-> getObservationNonValide();
+		require("vue/v_listeAValiderObservation.php");
+		break;
+	}
+	case 'validerUneObservation':
+	{   $codeObsevation = $_REQUEST['code'];
+	    $uneObservation = $pdo-> getUneObservationNonValide($code);
+		require("vue/v_validerObservation.php");
+		break;
+	}
+	case 'confirmerValiderUneObservation':
+	{   $codeObsevation = $_REQUEST['code'];
+	    
+	    $pdo-> validerUneObservation($codeObservation);
+		
+	    $lesObservations = $pdo-> getObservationNonValide();
+		require("vue/v_listeAValiderObservation.php");
+		break;
+	}
+	case 'supprimerObservation':
+	{  
+	    $lesObservations = $pdo-> getObservationNonValide();
+		require("vue/v_listeSuppObservation.php");
+		break;
+	}
+	case 'confirmerSupprimerObservation':
+	{      
+			$code = $_REQUEST['code'];
+			$pdo -> supprimerObservation($code);	
+			// supprimer également la photo ?
+			$lesObservations = $pdo->getObservationNonValide();
+	   	    include("vue/v_listeSuppObservation.php");
+	      break;
+	}
+	case 'listeObservation':
+	{
+		$lesObservations = $pdo->getLesObservations();
+		include("vue/v_listeObservations.php");
+       	break;
+	}
+	case 'modifierObservation':
+	{  
+		     $code = $_REQUEST['code'];
+			 $uneObservation = $pdo->getUneObservation($code);
+			
+			 include("vue/v_majObservation.php");
+			break;	 
+    }
+
+	case 'confirmerModifierObservation':
+	{
+			$code = $_REQUEST['code'];
+			$lieu = $_REQUEST['lieu'];
+			$latitude = $_REQUEST['latitude'];
+			$longitude = $_REQUEST['longitude'];
+			var_dump($lieu);
+			$pdo -> modifierObservation($code,$lieu,$latitude,$longitude);	
+			$lesLignes = $pdo->getLesLieux();
+		   include("vue/v_listeLieu.php");
+	      break;
 	}
 	
 	// gestion des lieux
@@ -45,10 +215,7 @@ switch($action)
 	}
     case 'confirmerAjouterLieu':
 	{      		
-	    echo $_REQUEST['code'];
-		echo $_REQUEST['lieu'];
-		echo $_REQUEST['latitude'];
-		echo $_REQUEST['longitude'];
+	   
 		$code = $_REQUEST['code'];
 		$lieu = $_REQUEST['lieu'];
 		$latitude = $_REQUEST['latitude'];
@@ -97,6 +264,7 @@ switch($action)
 	   	    include("vue/v_listeSuppLieu.php");
 	      break;
 	}
+	
 	/* gestion des dominante */
 		case 'ajouterDominante':
 	{
@@ -107,7 +275,7 @@ switch($action)
     case 'confirmerAjouterDominante':
 	{      		
 			$libelle = $_REQUEST['libelle'];	
-			$pdo -> ajouterDomin($libelle);
+			$pdo -> ajouterDominante($libelle);
 			 $lesDominantes = $pdo->getLesDominantes();
 			include("vue/v_listeDominante.php");
 		
@@ -123,7 +291,7 @@ switch($action)
 	{  
 		     $id = $_REQUEST['id'];
 			 $uneDominante = $pdo->getUneDominante($id);
-			 $libelle=$unMembre['libelle'];
+			 $libelle=$uneDominante['libelle'];
 			 include("vue/v_majDominante.php");
 			break;	 
     }
@@ -131,8 +299,8 @@ switch($action)
 	case 'confirmerModifierDominante':
 	{
 			$id = $_REQUEST['id'];
-			$login = $_REQUEST['login'];
-		    $pdo -> modificationDominante($id,$dominante);
+			$libelle = $_REQUEST['libelle'];
+		    $pdo -> modifierDominante($id,$libelle);
 			$lesDominantes = $pdo->getLesDominantes();
 		    include("vue/v_listeDominante.php");
 
@@ -155,7 +323,6 @@ switch($action)
 	}
 	
 	/* gestion des membre */
-	
 	
 	case 'ajouterMembre':
 	{
@@ -220,7 +387,7 @@ switch($action)
 			$tel = $_REQUEST['tel'];
 			$mdp = $_REQUEST['mdp'];
 			// recherche si observation effectué par ce membre ou valider par ce membre
-		    $pdo -> modificationMembre($id,$prenom,$login,$mdp,$tel,$mail);
+		    $pdo -> modifierMembre($id,$prenom,$login,$mdp,$tel,$mail);
 			$lesLignes = $pdo->getLesMembres();
 		   include("vue/v_listeMembre.php");
 
@@ -248,6 +415,17 @@ switch($action)
 		include("vue/v_ajouterGroupe.php");
 		break;
 	}
+	  case 'confirmerAjouterGroupe':
+	{    
+	         $code= $_POST['code'];
+			 $libelle=$_POST['libelle'];
+			 $operateur=$_POST['operateur'];
+			 $valeur=$_POST['valeur'];
+			$pdo -> ajouterGroupe($code,$libelle,$operateur,$valeur);	
+			$lesGroupes = $pdo->getLesGroupes();
+	        include("vue/v_listeGroupe.php");
+	     break;
+	}
 	case 'listeGroupe':
 	{   $lesGroupes = $pdo->getLesGroupes();
 		include("vue/v_listeGroupe.php");
@@ -258,6 +436,7 @@ switch($action)
 	{  
 		     $code= $_REQUEST['code'];
 			 $unGroupe = $pdo->getUnGroupe($code);
+			 $code = $unGroupe['code'];
 			 $libelle=$unGroupe['libelle'];
 			 $operateur=$unGroupe['operateur'];
 			 $valeur=$unGroupe['valeur'];
@@ -268,12 +447,14 @@ switch($action)
 	case 'confirmerModifierGroupe':
 	{
 			$code = $_REQUEST['code'];
-			$libelle = $_REQUEST['libelle'];
-			$operateur = $_REQUEST['operateur'];
-			$valeur = $_REQUEST['valeur'];
+			$libelle = $_POST['libelle'];
+			$operateur = $_POST['operateur'];
+			$valeur = $_POST['valeur'];
+		
 		
 			// recherche si observation effectué par ce membre ou valider par ce membre
-		    $pdo -> modificationGroupe($code,$libelle,$operateur,$valeur);
+		    $pdo -> modifierGroupe($code,$libelle,$operateur,$valeur);
+			
 			$lesGroupes = $pdo->getLesGroupes();
 		   include("vue/v_listeGroupe.php");
 		break;
