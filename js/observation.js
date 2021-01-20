@@ -20,7 +20,7 @@ var erreurs = $("#observationEspece .erreur");
 
 //Par défaut on cache toutes les div d'erreurs ainsi que le textarea d'informations de lieu.
 //On met aussi les radio à l'état disabled par defaut
-    $(".erreur").hide();
+    //$(".erreur").hide();
     $("#infoLieu").hide();
     $("input[type=radio]").each(function()
     { 

@@ -1,5 +1,17 @@
  
-	
+	.erreurs
+	{
+		border: 1px solid  #0025BB;
+		width: 50%;
+		margin: 0 auto;
+		border-radius: 10px;
+	}
+	.erreurs ul
+	{
+		margin: 0 auto;
+		color: red;
+		font-style: oblique;
+	}
 	body{
 
 		font: 13px 'trebuchet MS', Arial, Helvetica;
@@ -27,7 +39,7 @@
 		padding: 0;
 		list-style: none;
 	}
-	
+
 	.erreur
 	{
 		color: red;

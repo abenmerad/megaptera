@@ -1,5 +1,4 @@
 <?php
-
 class PdoMegaptera
 {
 	private static $serveur='mysql:host=localhost';
@@ -265,11 +264,11 @@ class PdoMegaptera
 		return $dernier;
 	}
 
-	public function ajouterObservation($code,$photo, $lieu, $autreLieu, $heureDeb, $heureFin, $dateObs, $latitude, $longitude, $auteurObs, $dominante,$papillon, $nbInd, $caudale, $groupe, $com, $comp,$dateEnreg)
+	public function ajouterObservation($code,$photo, $lieu, $autreLieu, $heureDeb, $heureFin, $dateObs, $latitude, $longitude, $auteurObs, $dominante,$papillon, $nbInd, $caudale, $groupe, $com, $comp)
 	{
 		try
 		{
-			$req = "INSERT INTO observation(codeObservation, nomPhoto, lieuObservation, autreLieu, heureDebutObservation, heureFinObservation, dateObservation, latitude, longitude, auteurObservation, dominante, papillon, nbIndividus, typeCaudale, TypeGroupeObserve, commentaire, comportement,dateEnregistrement) VALUES ('$code', '$photo', '$lieu','$autreLieu', '$heureDeb', '$heureFin', '$dateObs', '$latitude', '$longitude', $auteurObs, $dominante,'$papillon', $nbInd, $caudale, '$groupe','$com','$comp','$dateEnreg')";
+			$req = "INSERT INTO observation(codeObservation, nomPhoto, lieuObservation, autreLieu, heureDebutObservation, heureFinObservation, dateObservation, latitude, longitude, auteurObservation, dominante, papillon, nbIndividus, typeCaudale, TypeGroupeObserve, commentaire, comportement,dateEnregistrement) VALUES ('$code', '$photo', '$lieu','$autreLieu', '$heureDeb', '$heureFin', '$dateObs', '$latitude', '$longitude', $auteurObs, $dominante,'$papillon', $nbInd, $caudale, '$groupe','$com','$comp','NOW()')";
 			$res = PdoMegaptera::$monPdo->exec($req);
 		}
 		catch(Exception $e)
