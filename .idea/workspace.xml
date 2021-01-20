@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="760869f8-b085-47b4-a409-3409c5bef96e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/logotest.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/logotest2.jpg" afterDir="false" />
+    <list default="true" id="760869f8-b085-47b4-a409-3409c5bef96e" name="Default Changelist" comment="Modif">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
     </list>
@@ -46,8 +44,17 @@
       <option name="presentableId" value="Default" />
       <updated>1611144068705</updated>
       <workItem from="1611144071800" duration="678000" />
-      <workItem from="1611148207212" duration="3068000" />
+      <workItem from="1611148207212" duration="3568000" />
+      <workItem from="1611152084899" duration="578000" />
     </task>
+    <task id="LOCAL-00001" summary="Modif">
+      <created>1611151659336</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611151659336</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -64,5 +71,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modif" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modif" />
   </component>
 </project>
