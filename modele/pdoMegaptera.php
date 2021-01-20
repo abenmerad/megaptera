@@ -354,9 +354,24 @@ class PdoMegaptera
 	}
 	public function getUneObservation($code)
 	{
-		$req = "SELECT codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation where dateDeValidite is not null ";
-		$res = PdoMegaptera::$monPdo->query($req);
-		$uneLigne = $res->fetch();
+        $req = "SELECT codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation where dateDeValidite is not null ";
+        $res = PdoMegaptera::$monPdo->query($req);
+        $uneLigne = $res->fetch();
 		return $uneLigne;
 	}
+	public function getUneObservationNonValide()
+    {
+        $req = "SELECT codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong 
+                FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve 
+                inner join dominante on id = dominante 
+                inner join lieu on lieu.code = lieuObservation 
+                where etatObservation = 'TR' ";
+        $res = PdoMegaptera::$monPdo->query($req);
+        $lesLignes = $res->fetchAll();
+        return $lesLignes;
+    }
+    public function validerUneObservation($code)
+    {
+        $req = ""
+    }
 }

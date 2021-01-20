@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd85e4dd-b20e-492c-b66b-d9892d2b0317" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="cd85e4dd-b20e-492c-b66b-d9892d2b0317" name="Default Changelist" comment="sss">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modele/pdoMegaptera.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/pdoMegaptera.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_gestionAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_gestionAdmin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_menuAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuAdmin.php" afterDir="false" />
     </list>
@@ -31,6 +34,14 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="ProblemsViewState">
+    <hideBySeverity>
+      <option value="15" />
+      <option value="100" />
+      <option value="200" />
+      <option value="300" />
+    </hideBySeverity>
+  </component>
   <component name="ProjectId" id="1nFJPPyA0aLxOci9Ajald73AYg3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -41,8 +52,8 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -55,8 +66,19 @@
       <option name="presentableId" value="Default" />
       <updated>1610979883503</updated>
       <workItem from="1610979888372" duration="852000" />
-      <workItem from="1610980769995" duration="1300000" />
+      <workItem from="1610980769995" duration="2713000" />
+      <workItem from="1611054326159" duration="333000" />
+      <workItem from="1611141275142" duration="1132000" />
+      <workItem from="1611142592678" duration="2906000" />
     </task>
+    <task id="LOCAL-00001" summary="sss">
+      <created>1610982099164</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610982099164</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +132,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="sss" />
+    <option name="LAST_COMMIT_MESSAGE" value="sss" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

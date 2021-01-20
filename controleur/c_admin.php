@@ -104,5 +104,58 @@ switch($action)
 	      break;
 	}
 
+    case 'modifierObservation':
+    {
+        $code = $_REQUEST['code'];
+        $uneObservation = $pdo->getUneObservation($code);
+
+        include("vue/v_majObservation.php");
+        break;
+    }
+
+    case 'confirmerModifierObservation':
+    {
+        $code = $_REQUEST['code'];
+        $lieu = $_REQUEST['lieu'];
+        $latitude = $_REQUEST['latitude'];
+        $longitude = $_REQUEST['longitude'];
+        var_dump($lieu);
+        $pdo -> modifierObservation($code,$lieu,$latitude,$longitude);
+        $lesLignes = $pdo->getLesLieux();
+        include("vue/v_listeLieu.php");
+        break;
+    }
+
+    case 'validerObservation':
+    {
+        $lesObservations = $pdo-> getObservationNonValide();
+        require("vue/v_listeAValiderObservation.php");
+        break;
+    }
+    case 'confirmerValiderUneObservation':
+    {   $codeObsevation = $_REQUEST['code'];
+
+        $pdo-> validerUneObservation($codeObservation);
+
+        $lesObservations = $pdo-> getObservationNonValide();
+        require("vue/v_listeAValiderObservation.php");
+        break;
+    }
+    case 'supprimerObservation':
+    {
+        $lesObservations = $pdo-> getObservationNonValide();
+        require("vue/v_listeSuppObservation.php");
+        break;
+    }
+    case 'confirmerSupprimerObservation':
+    {
+        $code = $_REQUEST['code'];
+        $pdo -> supprimerObservation($code);
+        // supprimer également la photo ?
+        $lesObservations = $pdo->getObservationNonValide();
+        include("vue/v_listeSuppObservation.php");
+        break;
+    }
+
 }
 ?>

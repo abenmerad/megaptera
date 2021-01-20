@@ -36,7 +36,8 @@ switch($action)
 			else
 			{
 				if($membre['poste'] == "Admin")	
-				{   $_SESSION['poste']='menuAdmin';
+				{
+				    $_SESSION['poste']='menuAdmin';
 					$_SESSION['id'] = $membre['id'];
 					include("vue/v_menuAdmin.php"); 	
 			    }
@@ -50,7 +51,7 @@ switch($action)
 			 
 				   else
 				   {    
-		            	?><a id="Error"><?php echo "Vous n'etes pas autoris�";?><br></a><?php
+		            	?><a id="Error"><?php echo "Vous n'êtes pas autorisé";?><br></a><?php
       
 						include("vue/v_connexion.php");
 					

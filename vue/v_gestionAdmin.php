@@ -3,8 +3,8 @@ $action = $_REQUEST['action'];
 
 switch ($action)
 {
-    case '':
+    case 'validerObser':
     {
-
+        include('vues/v_ListeAValiderObservation.php');
     }
 }
