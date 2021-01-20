@@ -1,8 +1,12 @@
 <?php
 if(!isset($_REQUEST['action']))
+{
      $action = 'connexion';
+}
 else
+{
 	$action = $_REQUEST['action'];
+}
 
 switch($action)
 {	
@@ -15,7 +19,7 @@ switch($action)
     case 'valider' :
 	{
         $login = $_REQUEST['login'];
-        $mdp = $_REQUEST['mdp'];
+		$mdp = $_REQUEST['mdp'];
 		
         $membre = $pdo->getInfosMembre($login,$mdp);
 

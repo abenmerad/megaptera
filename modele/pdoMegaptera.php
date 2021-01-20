@@ -37,8 +37,16 @@ class PdoMegaptera
 	{
 		$req = "SELECT * FROM membre 
 		WHERE login = '$login' and mdp = '$mdp'";
-		$res = PdoMegaptera::$monPdo->query($req);
+
+		$stmt = PdoMegaptera::$monPdo->prepare($req);
+		$stmt->bindParam('login', $login); 
+		$stmt->bindParam('mdp', $mdp); 
+		$stmt->execute();
+		$laligne = $stmt->fetch();
+		
+        $res = PdoMegaptera::$monPdo->query($req);
 		$laLigne = $res->fetch();
+	
 		return $laLigne;
 	}
 	
