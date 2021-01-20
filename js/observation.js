@@ -265,7 +265,10 @@ var erreurs = $("#observationEspece .erreur");
                     var orientationLat = response.substr(response.length - 2, response.length - 1);
                     var orientationLat = orientationLat.substr(0, 1);
             		var orientationLong = response.substr(response.length - 1);
-					
+            		console.log(orientationLat);
+                    console.log(orientationLong);
+
+
                     $("input[name=latOrientation]").each(function(){
                         if($(this).val() == orientationLat)
                         {

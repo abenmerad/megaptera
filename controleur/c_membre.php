@@ -7,7 +7,6 @@ else
 
 switch($action)
 {
-	
 	case 'ajouter':
 	{
 			if(isset($_GET['codeLieu']))
@@ -27,8 +26,9 @@ switch($action)
 			break;
 	}
 	case 'confirmer':
-	{     $nomPhoto = $_FILES['nomImg']['name'];
-		
+	{
+	    $nomPhoto = $_FILES['nomImg']['name'];
+
 		if ($_POST['Lieu']== "Autre")
 		{ 
 		    $lieuObservation = "AUT";
@@ -50,7 +50,7 @@ switch($action)
 		$typeGroupe = $_POST['Groupe'];
 		$comportementObservation = $_POST['Comportement'];
 		$commentaireObservation = $_POST['Description'];
-		$dateEnregistrement=date("Y-m-d");
+		$dateEnregistrement = date("Y-m-d");
 		
 		$rechercheCode = $lieuObservation.substr($dateObservation,0,4);
 		

@@ -70,7 +70,6 @@
 	
 	#menu li {
 		float: left;
-		border-right: 1px solid #222;
 		-moz-box-shadow: 1px 0 0 #0025BB;
 		-webkit-box-shadow: 1px 0 0 #0025BB;
 		box-shadow: 1px 0 0 #0025BB;

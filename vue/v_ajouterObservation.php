@@ -15,13 +15,11 @@
                 <label for="Lieu">Lieu</label><div class="erreur">Veuillez choisir un lieu d'observation.</div>
                 <select name="Lieu" class="form-control form-control-sm">
                     <option value="NULL">Veuillez selectionner un lieu</option>
-                    <?php foreach($lesLieux as $unLieu){ 
-					if ($unLieu['code'] !="AUT")
-					{
-					?>
-					
-                    <option value="<?php echo $unLieu['code'];?>"><?php echo $unLieu['lieu'];?></option>
-                    <?php }} ?>
+                    <?php foreach($lesLieux as $unLieu): ?>
+                        <?php if ($unLieu['code'] !="AUT"): ?>
+                            <option value="<?= $unLieu['code'] ?>"><?= $unLieu['lieu'] ?></option>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                     <option value="Autre" id="autre">Autre</option>
                 </select>
             </div>
@@ -31,13 +29,13 @@
             </div>
         </div>
         <div class="erreur">Veuillez remplir les champs ci-dessous.</div>
-        <div class="d-flex row justify-content-md-around form-group" id="selectOrientation">
+        <div class="d-flex justify-content-around form-group" id="selectOrientation">
             <div class="p-3">
                 <label class="textB" for="latOrientation">Nord
                     <input type="radio" name="latOrientation" id="lat_dirN" value="N">
                 </label>
             </div>
-            <div class="p-3"> 
+            <div class="p-3">
                 <label class="textB" for="latOrientation">Sud
                     <input type="radio" name="latOrientation" id="lat_dirS" value="S"> 
                 </label>
