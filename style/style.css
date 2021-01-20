@@ -3,8 +3,12 @@
 	body{
 
 		font: 13px 'trebuchet MS', Arial, Helvetica;
+		color: white;
 	}
-	
+	legend{
+		color: #212529;
+		text-shadow: 1px 1px 3px white, 0 0 3em white, 0 0 0.3em white;
+	}
 	h1{
 		text-align: center;
 		color: black;
@@ -192,6 +196,7 @@ fieldset {
 	border-radius:8px;
 	box-shadow:0 0 10px #666;
 	margin-top: 20px;
+	background:url("../img/logotest2.jpg") no-repeat center;
 }
 fieldset select
 {
