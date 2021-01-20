@@ -15,7 +15,6 @@ switch($uc)
 {
 	case 'connexion':
 		{
-			
 		    include("controleur/c_connexion.php");
 		    break;
 		}
