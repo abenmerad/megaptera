@@ -15,12 +15,15 @@
 	body{
 
 		font: 13px 'trebuchet MS', Arial, Helvetica;
-		color: white;
+<<<<<<< Updated upstream
+=======
 	}
 	legend{
 		color: #212529;
 		text-shadow: 1px 1px 10px white, 0 0 10em white, 0 0 0.5em white;
+>>>>>>> Stashed changes
 	}
+	
 	h1{
 		text-align: center;
 		color: black;
@@ -202,12 +205,10 @@
 
 fieldset {
 	padding-top:10px;
-	padding-bottom:10px;
 	border:1px solid #666;
 	border-radius:8px;
 	box-shadow:0 0 10px #666;
 	margin-top: 20px;
-	background:url("../img/logotest2.jpg") no-repeat center;
 }
 fieldset select
 {
@@ -239,10 +240,11 @@ label {
 }
 
 
-input[type=submit] {
-  width: 100px;
-  padding: 6px;
-  margin-top : 30px;
+input[type=submit]
+{
+	width: 100px;
+	padding: 6px;
+	margin-top : 30px;
 }
 input[type=reset] {
   width: 100px;
@@ -313,7 +315,7 @@ input[type=email] {
 		border: 1px solid  #0025BB;
 		margin-top: 25px;
 		margin-bottom: 25px;
-
+		color: black;
 	}
 	.card > *
 	{

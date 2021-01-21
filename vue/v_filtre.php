@@ -84,18 +84,7 @@
 	
 				<div class="d-flex flex-md-row flex-sm-row flex-column justify-content-md-center justify-content-sm-center" id="Button">
           <!--  <button type="button" class="btn btn-outline-primary col-md-4 col-sm-6 col-12" id="submitForm">Valider</button>-->
-			<input  class="btn btn-primary" type = "submit" value = "Valider" name = "valider">
+			<input type = "submit" value = "Valider" name = "valider">
 	    </div>
 	 </fieldset>
-</form>
-<form action="">
-    <div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
 </form>
