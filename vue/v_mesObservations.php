@@ -6,7 +6,7 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title"><?= $uneObservation['codeObservation'] ?></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><?= $etat = ($uneObservation['codeObservation'] == 'TR') ? "En attente de validation" : "Validé" ?></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><?= $etat = ($uneObservation['etatObservation'] == 'TR') ? "En attente de validation" : "Validé" ?></h6>
                 <p class="card-text "><?= $uneObservation['commentaire'] ?></p>
             </div>
             <ul class="list-group list-group-flush">
