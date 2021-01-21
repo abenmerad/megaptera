@@ -15,17 +15,20 @@ switch($uc)
 {
 	case 'connexion':
 		{
+			
 		    include("controleur/c_connexion.php");
 		    break;
 		}
 	case 'menuSuper':
 		{
+		  
 			include("controleur/c_supAdmin.php");
 			break;
 		}
 		
 	case 'menuAdmin':
 		{
+		   
 			include("controleur/c_admin.php");
 			break;
 		}
@@ -36,3 +39,4 @@ switch($uc)
 		}
 }
 include("vue/v_pied.php") ;
+?>
