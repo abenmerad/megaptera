@@ -37,8 +37,7 @@ class PdoMegaptera
 		$req = "SELECT * FROM membre 
 		WHERE login = '$login' and mdp = '$mdp'";
 		$res = PdoMegaptera::$monPdo->query($req);
-		$laLigne = $res->fetch();
-		return $laLigne;
+        return $res->fetch();
 	}
 	
 	public function getLesMembres()
@@ -129,17 +128,17 @@ class PdoMegaptera
 	public function inscriptionMembre($nom,$prenom,$login,$mdp,$tel,$mail,$poste)
 	{
 		$req = "INSERT INTO membre (nom, prenom, login, mdp, tel, mail, poste) VALUES ('$nom', '$prenom', '$login', '$mdp', '$tel', '$mail', '$poste')";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}
 	public function modifierMembre($id,$prenom,$login,$mdp,$tel,$mail)
 	{
 		$req = "update membre set prenom = '$prenom', login='$login', mdp= '$mdp', tel= '$tel', mail = '$mail' where id=$id";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}
     public function SuppressionMembre($id)
 	{
 		$req = "delete from membre where id=$id";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}
 	
 	public function getObservationMembre()
@@ -178,39 +177,37 @@ class PdoMegaptera
 	public function supprimerObservation($code)
 	{
 		$req="delete from observation where code='$code'";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 		
 	}
 	public function ajouterLieu($code,$lieu,$latitude,$longitude)
 	{
 		$req = "INSERT INTO lieu VALUES ('$code','$lieu','$latitude','$longitude')";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}
 	public function modifierLieu($code,$lieu,$latitude,$longitude)
 	{
 		$req="update lieu set lieu = '$lieu' , orientationLat = '$latitude', orientationLong = '$longitude' where code='$code'";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}	
 	public function supprimerLieu($code)
 	{
 		$req="delete from Lieu where code='$code'";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}
 	public function getObservationLieu()
 	{
 		$req = "SELECT * FROM lieu where code not in(select lieu
 		                                               from observation)";
 		$res = PdoMegaptera::$monPdo->query($req);
-		$lesLignes = $res->fetchAll();
-		return $lesLignes;
+        return $res->fetchAll();
 	}
 	public function getObservationDominante()
 	{
 		$req = "SELECT * FROM dominante where id not in(select dominante
 		                                               from observation)";
 		$res = PdoMegaptera::$monPdo->query($req);
-		$lesDominantes = $res->fetchAll();
-		return $lesDominantes;
+        return $res->fetchAll();
 	}
 	public function ajouterDominante($libelle)
 	{   $req="select max(id) as code from dominante";
@@ -219,34 +216,34 @@ class PdoMegaptera
 		$id=$uneLigne['code'] + 1;
 		var_dump($id);
 		$req = "INSERT INTO dominante(id,libelle) VALUES($id,'$libelle')";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}
 	public function modifierDominante($id,$libelle)
 	{  
 		$req = "update dominante set libelle = '$libelle' where id = $id";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}
 
 	public function supprimerDominante($id)
 	{
 		$req="delete from dominante where id=$id";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}
     public function ajouterGroupe($code,$libelle,$operateur,$valeur)
 	{
 		$req = "INSERT INTO typegroupe VALUES ('$code','$libelle','$operateur',$valeur)";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}
     public function modifierGroupe($code,$libelle,$operateur,$valeur)
 	{
 		$req = "update typegroupe set libelle = '$libelle', operateur = '$operateur' , valeur = $valeur where code = '$code'";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}
 
 	public function supprimerGroupe($code)
 	{
 		$req="delete from typegroupe where code='$code'";
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}
 
 	public function dernierEnregistrementObs()
@@ -268,8 +265,8 @@ class PdoMegaptera
 	{
 		try
 		{
-			$req = "INSERT INTO observation(codeObservation, nomPhoto, lieuObservation, autreLieu, heureDebutObservation, heureFinObservation, dateObservation, latitude, longitude, auteurObservation, dominante, papillon, nbIndividus, typeCaudale, TypeGroupeObserve, commentaire, comportement,dateEnregistrement) VALUES ('$code', '$photo', '$lieu','$autreLieu', '$heureDeb', '$heureFin', '$dateObs', '$latitude', '$longitude', $auteurObs, $dominante,'$papillon', $nbInd, $caudale, '$groupe','$com','$comp','NOW()')";
-			$res = PdoMegaptera::$monPdo->exec($req);
+			$req = "INSERT INTO observation(codeObservation, nomPhoto, lieuObservation, autreLieu, heureDebutObservation, heureFinObservation, dateObservation, latitude, longitude, auteurObservation, dominante, papillon, nbIndividus, typeCaudale, TypeGroupeObserve, commentaire, comportement,dateEnregistrement, dateMAJ) VALUES ('$code', '$photo', '$lieu','$autreLieu', '$heureDeb', '$heureFin', '$dateObs', '$latitude', '$longitude', '$auteurObs', '$dominante','$papillon', $nbInd, $caudale, '$groupe','$com','$comp', NOW(), NOW())";
+			PdoMegaptera::$monPdo->exec($req);
 		}
 		catch(Exception $e)
 		{
@@ -280,7 +277,7 @@ class PdoMegaptera
 	public function MajObservation($repertoireDestination,$code,$lieu,$comme,$anne,$domi,$cauda,$papi,$ID,$heureDebut,$heureFin,$auteur,$TG,$NBi,$comp,$latitude,$longitude)
 	{
 		$req = "update  INTO photo(Photo_caudale, Code, Lieu, Commentaires, Année, Dominant, TypeCaudale, Papillon, ID, DateEnregistrement, HeureDebut, HeureFin, Auteur, TypeGroupe, NbrIndividu, Comportement, Latitude, Longitude) VALUES ('$repertoireDestination','$code','$lieu','$comme','$anne','$domi','$cauda','$papi','$ID',NOW(),'$heureDebut','$heureFin','$auteur','$TG','$NBi','$comp','$latitude','$longitude')";
-		$res = PdoMegaptera::$monPdo->query($req);
+		PdoMegaptera::$monPdo->query($req);
 	}
 	public function getLesAnnees()
 	{
@@ -341,7 +338,8 @@ class PdoMegaptera
 				$req .= " and";
 		}
 		else
-		{   $where = 1;
+		{
+		        $where = 1;
 		        $req .=  " where";    
 		}
 			
@@ -355,7 +353,13 @@ class PdoMegaptera
 	{
 		$req = "SELECT codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation where dateDeValidite is not null ";
 		$res = PdoMegaptera::$monPdo->query($req);
-		$uneLigne = $res->fetch();
-		return $uneLigne;
+        return $res->fetch();
 	}
+
+	public function getLesObservationsParMembre($idMembre)
+    {
+        $req = "SELECT etatObservation, lieuObservation, codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation WHERE auteurObservation = '$idMembre'";
+        $res = PdoMegaptera::$monPdo->query($req);
+        return $res->fetchAll();
+    }
 }

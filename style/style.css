@@ -192,7 +192,7 @@
 	
 	#form_observation .row
 	{
-			margin-top: 20px;
+		margin-top: 20px;
 	}
 
 
@@ -217,12 +217,12 @@ textarea
 	resize: none;
 }
 #connexion{
-background-color:#4682B4;
-padding:30px;
-width:450px;
-margin: 0 auto;
-color: black;
-text-align: left;
+	background-color:#4682B4;
+	padding:30px;
+	width:450px;
+	margin: 0 auto;
+	color: black;
+	text-align: left;
 }
 
 
@@ -300,4 +300,28 @@ input[type=email] {
 		{
 			width:100%;
 		}
+	}
+	/* CARTE OBBSERVATIONS */
+	.card
+	{
+		padding: 0;
+		border: 1px solid  #0025BB;
+		margin-top: 25px;
+		margin-bottom: 25px;
+
+	}
+	.card > *
+	{
+		background-color: beige;
+	}
+	.card .card-text
+	{
+		height: 75px;
+		width: 50%;
+	}
+	.card img
+	{
+		margin-top: 5px;
+		border: 1px solid black;
+		border-radius: 15p;
 	}

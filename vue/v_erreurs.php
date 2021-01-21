@@ -1,6 +1,6 @@
+
 <div class="erreurs">
-    <?php $errs = (empty($_SESSION['erreurs'])) ? [] : $_SESSION['erreurs'];
-    ?>
+    <?php $errs = (empty($_SESSION['erreurs'])) ? [] : $_SESSION['erreurs']; ?>
     <ul>
         <?php foreach($errs as $erreur): ?>
             <li><?= $erreur ?></li>

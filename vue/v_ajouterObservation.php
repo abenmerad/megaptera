@@ -3,8 +3,8 @@
         <legend>Observation</legend>
         <div class="row form-group" id="ajoutImg">
             <div class="col-md-6 col-sm-12"> 
-                <label  for = "nomImg">Transfère le fichier</label>
-                <input type="file" class="form-control-file" name="nomImg" accept="image/*">
+                <label  for="nomImg">Transfère le fichier</label>
+                <input type="file" class="form-control-file" name="nomImg" accept="image/*" size="1024" files>
             </div>
         </div>
         <div class="row form-group">
@@ -50,34 +50,34 @@
             <div id="coordonneesLat" class="row">
                 <div class="col-md-4 col-sm-6">
                     <label>Deg Lat.
-                        <input name="DegresLat" type="number" value="<?= $select = (!empty($donnees)) ? $donnees['DegresLat'] : "" ?>" min ="0" max = "99">
+                        <input name="DegresLat" type="number" value="<?= $select = (!empty($donnees)) ? $donnees['DegresLat'] : "0" ?>" min ="0" max = "99">
                     </label>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <label>Min Lat.<br>
-                        <input name="MinutesLat" type="number" value="<?= $select = (!empty($donnees)) ? $donnees['MinutesLat'] : "" ?>"  min ="0" max = "59">
+                        <input name="MinutesLat" type="number" value="<?= $select = (!empty($donnees)) ? $donnees['MinutesLat'] : "0" ?>"  min ="0" max = "59">
                     </label>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <label>Sec Lat.<br>
-                        <input name="SecondesLat" type="number" value="<?= $select = (!empty($donnees)) ? $donnees['SecondesLat'] : "" ?>" min ="0" max = "999">
+                        <input name="SecondesLat" type="number" value="<?= $select = (!empty($donnees)) ? $donnees['SecondesLat'] : "0" ?>" min ="0" max = "999">
                     </label>
                 </div>
             </div>
             <div id="coordonneesLong" class="row">
                 <div class="col-md-4 col-sm-6">
                     <label>Deg Long.
-                        <input name="DegresLong" type="number" value="<?= $select = (!empty($donnees)) ? $donnees['DegresLong'] : "" ?>" min ="0" max = "99">
+                        <input name="DegresLong" type="number" value="<?= $select = (!empty($donnees)) ? $donnees['DegresLong'] : "0" ?>" min ="0" max = "99">
                     </label>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <label>Min Long.
-                        <input name="MinutesLong" type="number" value="<?= $select = (!empty($donnees)) ? $donnees['MinutesLong'] : "" ?>" min ="0" max = "99">
+                        <input name="MinutesLong" type="number" value="<?= $select = (!empty($donnees)) ? $donnees['MinutesLong'] : "0" ?>" min ="0" max = "99">
                     </label>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <label>Sec Long.
-                        <input name="SecondesLong" type="number" value="<?= $select = (!empty($donnees)) ? $donnees['SecondesLong'] : "" ?>" min ="0" max = "999">
+                        <input name="SecondesLong" type="number" value="<?= $select = (!empty($donnees)) ? $donnees['SecondesLong'] : "0" ?>" min ="0" max = "999">
                     </label>
                 </div>
             </div>
