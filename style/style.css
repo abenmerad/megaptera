@@ -211,6 +211,12 @@ fieldset select
 	opacity: 75%;
 	margin-bottom: 15px;
 }
+	fieldset input{
+		opacity: 75%;
+	}
+	fieldset textarea{
+		opacity: 75%;
+	}
 fieldset label
 {
 	font-weight: bold;
