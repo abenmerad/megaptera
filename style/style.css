@@ -1,5 +1,17 @@
  
-	
+	.erreurs
+	{
+		border: 1px solid  #0025BB;
+		width: 50%;
+		margin: 0 auto;
+		border-radius: 10px;
+	}
+	.erreurs ul
+	{
+		margin: 0 auto;
+		color: red;
+		font-style: oblique;
+	}
 	body{
 
 		font: 13px 'trebuchet MS', Arial, Helvetica;
@@ -31,7 +43,7 @@
 		padding: 0;
 		list-style: none;
 	}
-	
+
 	.erreur
 	{
 		color: red;
@@ -74,7 +86,6 @@
 	
 	#menu li {
 		float: left;
-		border-right: 1px solid #222;
 		-moz-box-shadow: 1px 0 0 #0025BB;
 		-webkit-box-shadow: 1px 0 0 #0025BB;
 		box-shadow: 1px 0 0 #0025BB;
@@ -185,7 +196,7 @@
 	
 	#form_observation .row
 	{
-			margin-top: 20px;
+		margin-top: 20px;
 	}
 
 
@@ -211,12 +222,12 @@ textarea
 	resize: none;
 }
 #connexion{
-background-color:#4682B4;
-padding:30px;
-width:450px;
-margin: 0 auto;
-color: black;
-text-align: left;
+	background-color:#4682B4;
+	padding:30px;
+	width:450px;
+	margin: 0 auto;
+	color: black;
+	text-align: left;
 }
 
 
@@ -294,4 +305,28 @@ input[type=email] {
 		{
 			width:100%;
 		}
+	}
+	/* CARTE OBBSERVATIONS */
+	.card
+	{
+		padding: 0;
+		border: 1px solid  #0025BB;
+		margin-top: 25px;
+		margin-bottom: 25px;
+
+	}
+	.card > *
+	{
+		background-color: beige;
+	}
+	.card .card-text
+	{
+		height: 75px;
+		width: 50%;
+	}
+	.card img
+	{
+		margin-top: 5px;
+		border: 1px solid black;
+		border-radius: 15p;
 	}
