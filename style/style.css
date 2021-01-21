@@ -1,7 +1,11 @@
- 
-	
-	body{
 
+
+	html, body{
+		background: url("../img/fondtest.jpg") no-repeat center;
+		background-size: cover;
+		/*background-color: aqua;*/
+	}
+	body{
 		font: 13px 'trebuchet MS', Arial, Helvetica;
 		color: white;
 	}
@@ -196,11 +200,11 @@ fieldset {
 	border-radius:8px;
 	box-shadow:0 0 10px #666;
 	margin-top: 20px;
-	background:url("../img/logotest2.jpg") no-repeat center;
-	background-size: cover;
+
 }
 fieldset select
 {
+	opacity: 75%;
 	margin-bottom: 15px;
 }
 fieldset label

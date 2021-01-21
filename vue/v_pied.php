@@ -1,13 +1,7 @@
 
 
 </div>
-<footer class="page-footer font-small blue pt-4">
-<center>
-    <div class="contain">
-	<!--	<div class="prenom"> Ilhan Ankoue / Onildo Lopes / Ali Benmerad<br>© 2020 Tous droits réservés</div>-->
-    </div>
-</center>
-</footer>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -15,5 +9,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="js/observation.js"></script>
 </body>
-
 </html>
