@@ -1,22 +1,29 @@
-
-
-	html, body{
-		padding: 0;
-		margin: 0;
-		background-image: url("../img/fondtest.jpg");
-		background-position: top;
-		background-size: cover;
-		background-repeat: no-repeat;
-		/*background-color: aqua;*/
+ 
+	.erreurs
+	{
+		border: 1px solid  #0025BB;
+		width: 50%;
+		margin: 0 auto;
+		border-radius: 10px;
+	}
+	.erreurs ul
+	{
+		margin: 0 auto;
+		color: red;
+		font-style: oblique;
 	}
 	body{
+
 		font: 13px 'trebuchet MS', Arial, Helvetica;
-		color: white;
+<<<<<<< Updated upstream
+=======
 	}
 	legend{
 		color: #212529;
 		text-shadow: 1px 1px 10px white, 0 0 10em white, 0 0 0.5em white;
+>>>>>>> Stashed changes
 	}
+	
 	h1{
 		text-align: center;
 		color: black;
@@ -39,7 +46,7 @@
 		padding: 0;
 		list-style: none;
 	}
-	
+
 	.erreur
 	{
 		color: red;
@@ -82,7 +89,6 @@
 	
 	#menu li {
 		float: left;
-		border-right: 1px solid #222;
 		-moz-box-shadow: 1px 0 0 #0025BB;
 		-webkit-box-shadow: 1px 0 0 #0025BB;
 		box-shadow: 1px 0 0 #0025BB;
@@ -193,30 +199,21 @@
 	
 	#form_observation .row
 	{
-			margin-top: 20px;
+		margin-top: 20px;
 	}
 
 
 fieldset {
 	padding-top:10px;
-	padding-bottom:10px;
-	border:0px solid rgba(0, 0, 0, 0);
+	border:1px solid #666;
 	border-radius:8px;
 	box-shadow:0 0 10px #666;
 	margin-top: 20px;
-
 }
 fieldset select
 {
-	opacity: 75%;
 	margin-bottom: 15px;
 }
-	fieldset input{
-		opacity: 75%;
-	}
-	fieldset textarea{
-		opacity: 75%;
-	}
 fieldset label
 {
 	font-weight: bold;
@@ -225,37 +222,13 @@ textarea
 {
 	resize: none;
 }
-
-	.card
-	{
-		padding: 0;
-		border: 1px solid  #0025BB;
-		margin-top: 25px;
-		margin-bottom: 25px;
-		color: black;
-	}
-	.card > *
-	{
-		background-color: beige;
-	}
-	.card .card-text
-	{
-		height: 75px;
-		width: 50%;
-	}
-	.card img
-	{
-		margin-top: 5px;
-		border: 1px solid black;
-		border-radius: 15p;
-	}
 #connexion{
-background-color:#4682B4;
-padding:30px;
-width:450px;
-margin: 0 auto;
-color: black;
-text-align: left;
+	background-color:#4682B4;
+	padding:30px;
+	width:450px;
+	margin: 0 auto;
+	color: black;
+	text-align: left;
 }
 
 
@@ -267,10 +240,11 @@ label {
 }
 
 
-input[type=submit] {
-  width: 100px;
-  padding: 6px;
-  margin-top : 30px;
+input[type=submit]
+{
+	width: 100px;
+	padding: 6px;
+	margin-top : 30px;
 }
 input[type=reset] {
   width: 100px;
@@ -333,4 +307,28 @@ input[type=email] {
 		{
 			width:100%;
 		}
+	}
+	/* CARTE OBBSERVATIONS */
+	.card
+	{
+		padding: 0;
+		border: 1px solid  #0025BB;
+		margin-top: 25px;
+		margin-bottom: 25px;
+		color: black;
+	}
+	.card > *
+	{
+		background-color: beige;
+	}
+	.card .card-text
+	{
+		height: 75px;
+		width: 50%;
+	}
+	.card img
+	{
+		margin-top: 5px;
+		border: 1px solid black;
+		border-radius: 15p;
 	}
