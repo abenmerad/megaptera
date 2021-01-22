@@ -10,7 +10,7 @@
                 <p class="card-text "><?= $uneObservation['commentaire'] ?></p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><b>Observé le :</b> <?= $uneObservation['dateObservation'] . ' entre ' . $uneObservation['heureDebutObservation'] . ' et ' . $uneObservation['heureFinObservation']?></li>
+                <li class="list-group-item"><b>Observé le :</b> <?= date('d/m/Y', strtotime($uneObservation['dateObservation'])) . ' entre ' . $uneObservation['heureDebutObservation'] . ' et ' . $uneObservation['heureFinObservation']?></li>
                 <li class="list-group-item"><b>Lieu :</b> <?= $uneObservation['libLieu'] ?></li>
                 <li class="list-group-item"><b>Coordonnées :</b> <?= $uneObservation['latitude'] . ', ' . $uneObservation['longitude']?></li>
             </ul>
