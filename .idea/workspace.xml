@@ -1,71 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="760869f8-b085-47b4-a409-3409c5bef96e" name="Default Changelist" comment="Modif">
-      <change afterPath="$PROJECT_DIR$/js/jquery_ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INSERT.sql" beforeDir="false" afterPath="$PROJECT_DIR$/INSERT.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleur/c_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleur/c_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleur/c_membre.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_membre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleur/c_supAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_supAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/observation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/observation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/megaptera.sql" beforeDir="false" afterPath="$PROJECT_DIR$/megaptera.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modele/pdoMegaptera.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/pdoMegaptera.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowbox/CHANGES" beforeDir="false" afterPath="$PROJECT_DIR$/shadowbox/CHANGES" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowbox/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/shadowbox/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowbox/README" beforeDir="false" afterPath="$PROJECT_DIR$/shadowbox/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowbox/adapters/README" beforeDir="false" afterPath="$PROJECT_DIR$/shadowbox/adapters/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowbox/languages/README" beforeDir="false" afterPath="$PROJECT_DIR$/shadowbox/languages/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowbox/libraries/sizzle/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/shadowbox/libraries/sizzle/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowbox/libraries/sizzle/sizzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/shadowbox/libraries/sizzle/sizzle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowbox/libraries/swfobject/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/shadowbox/libraries/swfobject/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowbox/libraries/swfobject/swfobject.js" beforeDir="false" afterPath="$PROJECT_DIR$/shadowbox/libraries/swfobject/swfobject.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowbox/players/README" beforeDir="false" afterPath="$PROJECT_DIR$/shadowbox/players/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/Css.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/Css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/ajouterPhoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/ajouterPhoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/ajouterPhotoM.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/ajouterPhotoM.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/filtre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/filtre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/matching.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/matching.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/matching2.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/matching2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ListeSuppDominante.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeSuppDominante.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ListeSuppGroupe.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeSuppGroupe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ListeSuppLieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeSuppLieu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ListeSuppMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeSuppMembre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ListeSuppObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeSuppObservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_RechercheObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_RechercheObservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ajouterDominante.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterDominante.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ajouterGroupe.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterGroupe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ajouterLieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterLieu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ajouterMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterMembre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ajouterObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterObservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ajouterObservation_v1.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterObservation_v1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_deconnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_deconnexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_entete.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_entete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_filtre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_filtre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_listeDominante.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeDominante.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_listeGroupe.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeGroupe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_listeLieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeLieu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_listeMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeMembre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_majDominante.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majDominante.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_majGroupe.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majGroupe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_majLieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majLieu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_majMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majMembre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_menuAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_menuMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuMembre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_menuSuperAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuSuperAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_pied.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_pied.php" afterDir="false" />
-    </list>
+    <list default="true" id="760869f8-b085-47b4-a409-3409c5bef96e" name="Default Changelist" comment="Modif" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
