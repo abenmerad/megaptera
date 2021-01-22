@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     <list default="true" id="96b367ea-7876-4e83-9d5b-77fd4eae5453" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -27,6 +28,9 @@
       <change beforePath="$PROJECT_DIR$/vue/v_pied.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_pied.php" afterDir="false" />
 >>>>>>> Stashed changes
     </list>
+=======
+    <list default="true" id="760869f8-b085-47b4-a409-3409c5bef96e" name="Default Changelist" comment="Modif" />
+>>>>>>> parent of 92a85b2... Revert "Update workspace.xml"
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
