@@ -226,29 +226,29 @@ textarea
 	resize: none;
 }
 
-	.card
-	{
-		padding: 0;
-		border: 1px solid  #0025BB;
-		margin-top: 25px;
-		margin-bottom: 25px;
-		color: black;
-	}
-	.card > *
-	{
-		background-color: beige;
-	}
-	.card .card-text
-	{
-		height: 75px;
-		width: 50%;
-	}
-	.card img
-	{
-		margin-top: 5px;
-		border: 1px solid black;
-		border-radius: 15p;
-	}
+.card
+{
+	padding: 0;
+	border: 1px solid  #0025BB;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	color: black;
+}
+.card > *
+{
+	background-color: beige;
+}
+.card .card-text
+{
+	height: 75px;
+	width: 50%;
+}
+.card img
+{
+	margin-top: 5px;
+	border: 1px solid black;
+	border-radius: 15p;
+}
 #connexion{
 background-color:#4682B4;
 padding:30px;
