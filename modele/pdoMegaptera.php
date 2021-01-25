@@ -143,7 +143,7 @@ class PdoMegaptera
 		$res = PdoMegaptera::$monPdo->exec($req);
 	}
 	
-	public function getObservationMembre()
+	public function getObservationMembres()
 	{
 		$req = "SELECT * FROM membre where id not in(select auteurObservation
 		                                               from observation)
@@ -387,5 +387,20 @@ class PdoMegaptera
         return $lesLignes;
     }
 
-
+    public function getObservationMembre($id)
+    {
+	    $req = "SELECT count(codeObservation)
+	            FROM observation
+	            where '$id' = auteurObservation";
+	    $res = PdoMegaptera::$monPdo->query($req);
+	    $lesLignes = $res->fetch();
+	    return $lesLignes;
+    }
+    public function getLesMembresNonAdmin()
+    {
+        $req = "SELECT * FROM membre where poste ='membre'";
+        $res = PdoMegaptera::$monPdo->query($req);
+        $lesLignes = $res->fetchAll();
+        return $lesLignes;
+    }
 }

@@ -90,18 +90,29 @@ switch($action)
 		break;
 	}
 	case 'supprimerMembre':
-	{   
-    	$lesMembres = $pdo->getObservationMembreAdmin();
+    {
+    	$lesMembres = $pdo->getLesMembresNonAdmin();
 		include("vue/v_listeSuppMembre.php");
 		break;
 	}
 	case 'confirmerSupprimerMembre':
-	{      
-			$id = $_REQUEST['id'];
-			$pdo -> suppressionMembre($id);	
-			$lesMembres = $pdo->getObservationMembreAdmin();
-	   	    include("vue/v_listeSuppMembre.php");
-	      break;
+
+	{
+        $id = $_REQUEST['id'];
+        $nbObservation = $pdo->getObservationMembre($id);
+        $leMembre = $pdo->getUnMembre($id);
+        if ($nbObservation[0] == 0)
+        {
+            $pdo->suppressionMembre($id);
+
+        }
+        else
+        {
+            echo "Vous ne pouvez pas supprimer ce membre car il a des observations validées";
+        }
+        $lesMembres = $pdo->getLesMembresNonAdmin();
+        include("vue/v_listeSuppMembre.php");
+        break;
 	}
 
     case 'modifierObservation':

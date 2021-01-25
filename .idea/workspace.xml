@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/megaptera.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_01_2021_15_33_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_01_2021_15_33__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/v_majObservation.php" afterDir="false" />
+    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="configuration de la validation et suppresion d'une observation">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_01_2021_15_33_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_01_2021_15_33__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controleur/c_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/AttestationDroits.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_supAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_supAdmin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modele/pdoMegaptera.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/pdoMegaptera.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_menuAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ListeSuppMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeSuppMembre.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +47,17 @@
       <updated>1611233637317</updated>
       <workItem from="1611233648329" duration="2646000" />
       <workItem from="1611335790021" duration="82000" />
-      <workItem from="1611572172700" duration="1643000" />
+      <workItem from="1611572172700" duration="3430000" />
+      <workItem from="1611588104939" duration="2503000" />
     </task>
+    <task id="LOCAL-00001" summary="configuration de la validation et suppresion d'une observation">
+      <created>1611573905816</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611573905816</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -69,6 +74,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="configuration de la validation et suppresion d'une observation" />
+    <option name="LAST_COMMIT_MESSAGE" value="configuration de la validation et suppresion d'une observation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
