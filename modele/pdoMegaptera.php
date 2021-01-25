@@ -178,7 +178,8 @@ class PdoMegaptera
 	
 	public function supprimerObservation($code)
 	{
-		$req="delete from observation where code='$code'";
+		$req="delete from observation where codeObservation='$code'";
+		var_dump($req);
 		$res = PdoMegaptera::$monPdo->exec($req);
 		
 	}
@@ -372,6 +373,19 @@ class PdoMegaptera
     }
     public function validerUneObservation($code)
     {
-        $req = ""
+        $req = "UPDATE observation SET etatObservation = 'VA', dateDeValidite = CURRENT_DATE WHERE codeObservation = '$code'";
+        var_dump($req);
+        $res = PdoMegaptera::$monPdo->query($req);
     }
+
+    public function getLesObservations()
+    {
+        $req = "SELECT codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong 
+                FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve";
+        $res = PdoMegaptera::$monPdo->query($req);
+        $lesLignes = $res->fetchAll();
+        return $lesLignes;
+    }
+
+
 }

@@ -3,7 +3,7 @@
  
  ?>
  <fieldset form="form_observation" class="container form-group" id="observationEspece">
-        <legend>Liste des observations a validér</legend>
+        <legend>Liste des observations a valider</legend>
 		<div class="row form-group" >
   
 		<table  align = "center"  border = "2" cellpadding="15">

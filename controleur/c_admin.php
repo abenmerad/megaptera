@@ -133,12 +133,9 @@ switch($action)
         break;
     }
     case 'confirmerValiderUneObservation':
-    {   $codeObsevation = $_REQUEST['code'];
-
+    {   $codeObservation = $_REQUEST['code'];
         $pdo-> validerUneObservation($codeObservation);
-
-        $lesObservations = $pdo-> getObservationNonValide();
-        require("vue/v_listeAValiderObservation.php");
+        header('Location: index.php?uc=menuAdmin&action=validerObservation');
         break;
     }
     case 'supprimerObservation':
