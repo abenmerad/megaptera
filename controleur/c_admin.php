@@ -82,8 +82,10 @@ switch($action)
 			$mail = $_REQUEST['mail'];
 			$tel = $_REQUEST['tel'];
 			$mdp = $_REQUEST['mdp'];
+			$poste = $_REQUEST['poste'];
+            $nom=$_REQUEST['nom'];
 			// recherche si observation effectué par ce membre ou valider par ce membre
-		    $pdo -> modificationMembre($id,$prenom,$login,$mdp,$tel,$mail);
+		    $pdo -> modifMembre($id, $nom, $prenom, $tel, $mail, $login, $mdp, $poste);
 			$lesLignes = $pdo->getLesMembresAdmin();
 		   include("vue/v_listeMembre.php");
 

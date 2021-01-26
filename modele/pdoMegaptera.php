@@ -403,4 +403,13 @@ class PdoMegaptera
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
+
+    public function modifMembre($id, $nom, $prenom, $tel, $mail, $login, $mdp, $poste)
+    {
+        $req = "UPDATE membre
+                SET nom = '$nom', prenom = '$prenom', tel = '$tel', login = '$login', mdp = '$mdp', poste = '$poste'
+                WHERE id = '$id'";
+        var_dump($req);
+        $res = PdoMegaptera::$monPdo->query($req);
+    }
 }
