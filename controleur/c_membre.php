@@ -25,11 +25,41 @@ switch($action)
 			require("vue/v_ajouterObservation.php");
 			break;
 	}
+    case 'rechercheMesObservations':
+    {
+        $lesEtatsObservations = $pdo->getLesEtatsObservation();
+        $lesGroupes = $pdo -> getLesGroupes();
+        $lesLieux = $pdo -> getLesLieux();
+        include("vue/v_rechercheMesObservations.php");
+        break;
+    }
     case 'mesObservations':
     {
-        $lesObservations = $pdo->getLesObservationsParMembre($_SESSION['id']);
-        include("vue/v_mesObservations.php");
-        var_dump($lesObservations);
+        $err = [];
+        $annee = $_POST['anneeObs'];
+        $etat = $_POST['etatObs'];
+        $groupe = $_POST['groupeObs'];
+        $lieu = $_POST['lieuObs'];
+
+        $lesEtatsObservations = $pdo->getLesEtatsObservation();
+        $lesGroupes = $pdo -> getLesGroupes();
+        $lesLieux = $pdo -> getLesLieux();
+        $lesObservations = $pdo->getLesObservationsParFiltre($_SESSION['id'], $annee, $etat, $groupe, $lieu);
+
+        if(count($lesObservations) != 0)
+        {
+            $donnees = $_REQUEST;
+            include("vue/v_rechercheMesObservations.php");
+            include("vue/v_mesObservations.php");
+        }
+        else
+        {
+            $err[] = "Aucun resultat trouvé pour cette recherche";
+            $_SESSION['erreurs'] = $err;
+            include("vue/v_erreurs.php");
+            include("vue/v_rechercheMesObservations.php");
+        }
+
         break;
     }
 	case 'confirmer':

@@ -356,10 +356,31 @@ class PdoMegaptera
         return $res->fetch();
 	}
 
-	public function getLesObservationsParMembre($idMembre)
+	public function getLesObservationsParFiltre($idMembre, $annee, $etat, $groupe, $lieu)
     {
         $req = "SELECT etatObservation, lieuObservation, codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation WHERE auteurObservation = '$idMembre'";
+
+        if($annee != "NULL")
+            $req .= " AND dateObservation LIKE '$annee%'";
+
+        if($etat != "NULL")
+            $req .= " AND etatObservation = '$etat'";
+
+        if($groupe != "NULL")
+            $req .= " AND typeGroupeObserve = '$groupe'";
+
+        if($lieu != "NULL")
+            $req .= " AND lieuObservation = '$lieu'";
+
         $res = PdoMegaptera::$monPdo->query($req);
         return $res->fetchAll();
     }
+
+    public function getLesEtatsObservation()
+    {
+        $req = "SELECT * FROM etatobservation";
+        $res = PdoMegaptera::$monPdo->query($req);
+        return $res->fetchAll();
+    }
+
 }

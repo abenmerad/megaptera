@@ -201,23 +201,35 @@
 	{
 		margin-top: 20px;
 	}
+	#form_mesObservations a
+	{
+		border-radius: 50%;
+	}
+	#resultat
+	{
+		margin-top: 10px;
+	}
 
-
-fieldset {
+fieldset
+{
 	padding-top:10px;
+	padding-bottom:10px;
 	border:1px solid #666;
 	border-radius:8px;
 	box-shadow:0 0 10px #666;
 	margin-top: 20px;
 }
+
 fieldset select
 {
 	margin-bottom: 15px;
 }
+
 fieldset label
 {
 	font-weight: bold;
 }
+
 textarea
 {
 	resize: none;

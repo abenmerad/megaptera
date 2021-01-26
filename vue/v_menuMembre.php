@@ -16,7 +16,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="index.php?uc=menuMembre&action=ajouter">Ajouter une observation</a>
-                    <a class="dropdown-item" href="index.php?uc=menuMembre&action=mesObservations">Mes observations</a>
+                    <a class="dropdown-item" href="index.php?uc=menuMembre&action=rechercheMesObservations">Mes observations</a>
                     <a class="dropdown-item" href="index.php?uc=menuMembre&action=filtre">Recherche d'observations</a>
                 </div>
             </li>
