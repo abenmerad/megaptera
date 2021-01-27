@@ -2,14 +2,16 @@
 session_start();
 
 require_once("modele/pdoMegaptera.php");
+include ("modele/functions.php");
+$func = FonctionsMegaptera::GetFunct();
+$pdo = PdoMegaptera::getPdoMegaptera();
 include("vue/v_entete.php") ;            
 
 if(!isset($_REQUEST['uc']))
      $uc = 'connexion';
 else
 	$uc = $_REQUEST['uc'];
- 
-$pdo = PdoMegaptera::getPdoMegaptera();
+
 
 switch($uc)
 {

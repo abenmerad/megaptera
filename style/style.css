@@ -200,6 +200,7 @@
 	#form_observation .row
 	{
 		margin-top: 20px;
+
 	}
 	#form_mesObservations a
 	{
@@ -208,6 +209,7 @@
 	#resultat
 	{
 		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 
 fieldset

@@ -5,6 +5,7 @@ if(!isset($_REQUEST['action']))
 else
 	$action = $_REQUEST['action'];
 
+$_SESSION['erreurs'] = [];
 switch($action)
 {
 	case 'ajouter':
@@ -40,6 +41,7 @@ switch($action)
         $etat = $_POST['etatObs'];
         $groupe = $_POST['groupeObs'];
         $lieu = $_POST['lieuObs'];
+        $donnees = $_REQUEST;
 
         $lesEtatsObservations = $pdo->getLesEtatsObservation();
         $lesGroupes = $pdo -> getLesGroupes();
@@ -48,7 +50,6 @@ switch($action)
 
         if(count($lesObservations) != 0)
         {
-            $donnees = $_REQUEST;
             include("vue/v_rechercheMesObservations.php");
             include("vue/v_mesObservations.php");
         }
@@ -59,7 +60,25 @@ switch($action)
             include("vue/v_erreurs.php");
             include("vue/v_rechercheMesObservations.php");
         }
+        break;
+    }
 
+    case 'export':
+    {
+
+        $a = $pdo->getUneObservation();
+        $listeKey = [];
+        foreach ($a as $key => $val)
+        {
+            $listeKey[] = $key;
+        }
+        $annee = $_REQUEST['annee'];
+        $etat = $_REQUEST['etat'];
+        $groupe = $_REQUEST['groupe'];
+        $lieu = $_REQUEST['lieu'];
+
+        $lesObservations = $pdo->getLesObservationsAExporte($_SESSION['id'], $annee, $etat, $groupe, $lieu);
+        $func->creationCSV($lesObservations, $listeKey);
         break;
     }
 	case 'confirmer':

@@ -64,7 +64,7 @@ switch($action)
 	
     case 'deconnexion':
 	{
-        $pdo->_destruction();
+        $pdo->__destruction();
 		session_destroy();
         include("vue/v_connexion.php");
 		break;

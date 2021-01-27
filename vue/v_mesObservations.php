@@ -1,4 +1,6 @@
 <div class="text-center" id="resultat">Resultat de la recherche : <b><?= count($lesObservations) ?></b> observations trouvées</div>
+<div class="text-center"><a href="index.php?uc=<?=$_SESSION['poste'] ?>&action=export&annee=<?=$donnees['anneeObs']?>&etat=<?=$donnees['etatObs']?>&groupe=<?=$donnees['groupeObs']?>&lieu=<?=$donnees['lieuObs']?>"><button id="export" class="btn btn-outline-primary">Export CSV</button></a></div>
+<?= var_dump($_SESSION) ?>
 <div class="row justify-content-around">
     <?php foreach($lesObservations as $uneObservation): ?>
         <div class="card col-6 col-sm-3 col-md-2" style="width: 18rem;">

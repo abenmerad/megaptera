@@ -14,9 +14,11 @@ class PdoMegaptera
 		PdoMegaptera::$monPdo = new PDO(PdoMegaptera::$serveur.';'.PdoMegaptera::$bdd, PdoMegaptera::$user, PdoMegaptera::$mdp);
 		PdoMegaptera::$monPdo->query("SET CHARACTER SET utf8");
 		PdoMegaptera::$monPdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        PdoMegaptera::$monPdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
 	}
 
-	/* La fonction _destruction  */
+	/* La fonction __destruction  */
 	public function _destruction(){
 		PdoMegaptera::$monPdo = null;
 	}
@@ -349,13 +351,30 @@ class PdoMegaptera
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
 	}
-	public function getUneObservation($code)
+	public function getUneObservation()
 	{
-		$req = "SELECT codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation where dateDeValidite is not null ";
+		$req = "SELECT codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation";
 		$res = PdoMegaptera::$monPdo->query($req);
         return $res->fetch();
 	}
+    public function getLesObservationsAExporte($idMembre, $annee, $etat, $groupe, $lieu)
+    {
+        $req = "SELECT codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation WHERE auteurObservation = '$idMembre'";
+        if($annee != "NULL")
+            $req .= " AND dateObservation LIKE '$annee%'";
 
+        if($etat != "NULL")
+            $req .= " AND etatObservation = '$etat'";
+
+        if($groupe != "NULL")
+            $req .= " AND typeGroupeObserve = '$groupe'";
+
+        if($lieu != "NULL")
+            $req .= " AND lieuObservation = '$lieu'";
+
+        $res = PdoMegaptera::$monPdo->query($req);
+        return $res->fetchAll();
+    }
 	public function getLesObservationsParFiltre($idMembre, $annee, $etat, $groupe, $lieu)
     {
         $req = "SELECT etatObservation, lieuObservation, codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation WHERE auteurObservation = '$idMembre'";

@@ -197,6 +197,21 @@ $("#infoLieu").hide();
 //             alert("Au moins une erreur a été détéctée dans le formulaire.");
 //         }
 //     });
+
+    $("#export").click(function (){
+        $.ajax("index.php?action=export",
+            {
+                method: 'get',
+                data : $("#form_mesObservations").serialize()
+            })
+            .done(function(response, textStatus, jqXHR){
+                console.log(response);
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+            });
+    });
+
+
     //Evenement de changement du SELECT de type de groupe
     $(listGrp).change(function(){
         //On récupere la valeur du groupe actuellement selectionné
