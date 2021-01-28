@@ -259,9 +259,10 @@ textarea
 {
 	font-size: 50px;
 }
-#section_carousel img
+#section_carousel
 {
-	width: 100%;
+	width: 50%;
+	margin: 0 auto;
 	height: auto;
 }
 #section_carousel button
