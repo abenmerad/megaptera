@@ -180,10 +180,9 @@ case 'filtre':
        	break;
 	}
 	case 'modifierObservation':
-	{  
+	{
 		     $code = $_REQUEST['code'];
 			 $uneObservation = $pdo->getUneObservation($code);
-			
 			 include("vue/v_majObservation.php");
 			break;	 
     }

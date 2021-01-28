@@ -15,9 +15,9 @@
                     Observations
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="index.php?uc=menuMembre&action=ajouter">Ajouter une observation</a>
-                    <a class="dropdown-item" href="index.php?uc=menuMembre&action=rechercheMesObservations">Mes observations</a>
-                    <a class="dropdown-item" href="index.php?uc=menuMembre&action=filtre">Recherche d'observations</a>
+                    <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=ajouter">Ajouter une observation</a>
+                    <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=rechercheMesObservations">Mes observations</a>
+                    <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=filtre">Recherche d'observations</a>
                 </div>
             </li>
             <li class="nav-item">
