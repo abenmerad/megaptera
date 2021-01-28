@@ -354,44 +354,44 @@ class PdoMegaptera
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
 	}
-	public function getUneObservation()
+	public function getUneObservation($id)
 	{
-		$req = "SELECT codeObservation, typegroupe.libelle as Groupe,dominante.libelle as Dominante,lieu.lieu as Lieu, heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation";
+		$req = "SELECT codeObservation, nomPhoto, typegroupe.libelle as Groupe,dominante.libelle as Dominante,lieu.lieu as Lieu, lieu.code as CodeLieu, heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation";
 		$res = PdoMegaptera::$monPdo->query($req);
         return $res->fetch();
 	}
     public function getLesObservationsAExporte($idMembre, $annee, $etat, $groupe, $lieu)
     {
         $req = "SELECT codeObservation, typegroupe.libelle as Groupe,dominante.libelle as Dominante,lieu.lieu as Lieu, heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation WHERE auteurObservation = '$idMembre'";
-        if($annee != "NULL")
+        if(!empty($annee))
             $req .= " AND dateObservation LIKE '$annee%'";
 
-        if($etat != "NULL")
+        if(!empty($etat))
             $req .= " AND etatObservation = '$etat'";
 
-        if($groupe != "NULL")
+        if(!empty($groupe))
             $req .= " AND typeGroupeObserve = '$groupe'";
 
-        if($lieu != "NULL")
+        if(!empty($lieu))
             $req .= " AND lieuObservation = '$lieu'";
 
         $res = PdoMegaptera::$monPdo->query($req);
-        return $res->fetchAll();
+        return $res-fetchAll();
     }
 	public function getLesObservationsParFiltre($idMembre, $annee, $etat, $groupe, $lieu)
     {
         $req = "SELECT etatObservation, lieuObservation, codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation WHERE auteurObservation = '$idMembre'";
 
-        if($annee != "NULL")
+        if(!empty($annee))
             $req .= " AND dateObservation LIKE '$annee%'";
 
-        if($etat != "NULL")
+        if(!empty($etat))
             $req .= " AND etatObservation = '$etat'";
 
-        if($groupe != "NULL")
+        if(!empty($groupe))
             $req .= " AND typeGroupeObserve = '$groupe'";
 
-        if($lieu != "NULL")
+        if(!empty($lieu))
             $req .= " AND lieuObservation = '$lieu'";
 
         $res = PdoMegaptera::$monPdo->query($req);

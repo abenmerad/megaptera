@@ -12,7 +12,6 @@ if(!isset($_REQUEST['uc']))
 else
 	$uc = $_REQUEST['uc'];
 
-
 switch($uc)
 {
 	case 'connexion':

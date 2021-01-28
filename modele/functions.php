@@ -26,12 +26,8 @@ class FonctionsMegaptera
         header('Content-Disposition: attachment; filename=observation_export_' . date("dmYhis", time()) . '.csv');
         ob_end_clean();
         $export = fopen('php://output', 'w');
-        $keys = [];
 
-        foreach ($lesKeys as $k => $key) {
-            $keys[] = $k;
-        }
-        fputcsv($export, $keys, ";");
+        fputcsv($export, $lesKeys, ";");
 
         foreach($lesObs as $uneObservation)
         {

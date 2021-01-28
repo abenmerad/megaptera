@@ -1,4 +1,3 @@
-
 <div class="erreurs">
     <?php $errs = (empty($_SESSION['erreurs'])) ? [] : $_SESSION['erreurs']; ?>
     <ul>
