@@ -1,7 +1,7 @@
  <?php
  $uc=$_SESSION['poste'];
- 
  ?>
+
  <fieldset form="form_observation" class="container form-group" id="observationEspece">
         <legend>Liste des observations a valider</legend>
 		<div class="row form-group" >

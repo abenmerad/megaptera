@@ -143,13 +143,14 @@ case 'filtre':
 		break;
 	}
 	case 'validerUneObservation':
-	{   $codeObsevation = $_REQUEST['code'];
+	{   $codeObsevation = $_REQUEST['codeObservation'];
 	    $uneObservation = $pdo-> getUneObservationNonValide($code);
 		require("vue/v_validerObservation.php");
 		break;
 	}
 	case 'confirmerValiderUneObservation':
-	{   $codeObsevation = $_REQUEST['code'];
+	{
+	    $codeObservation = $_REQUEST['code'];
 	    
 	    $pdo-> validerUneObservation($codeObservation);
 		
