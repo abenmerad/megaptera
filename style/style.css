@@ -1,4 +1,12 @@
- 
+	html, body{
+		padding: 0;
+		margin: 0;
+		background-image: url("../img/fondtest.jpg");
+		background-position: top;
+		background-size: cover;
+		background-repeat: no-repeat;
+		/*background-color: aqua;*/
+	}
 	.erreurs
 	{
 		border: 1px solid  #0025BB;
