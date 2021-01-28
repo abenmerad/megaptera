@@ -44,9 +44,10 @@ switch($action)
 			   else 
 			    {
 				   if ($membre['poste'] == "superAdmin")
-				   {$_SESSION['poste']='menuSuper';
-					$_SESSION['id']= $membre['id'];
-					include ("vue/v_menuSuperAdmin.php");
+				   {
+				        $_SESSION['poste']='menuSuper';
+					    $_SESSION['id']= $membre['id'];
+					    include ("vue/v_menuSuperAdmin.php");
 				   }
 			 
 				   else
@@ -67,7 +68,6 @@ switch($action)
         $pdo->__destruction();
 		session_destroy();
         include("vue/v_connexion.php");
-		
 		break;
 	}
 
