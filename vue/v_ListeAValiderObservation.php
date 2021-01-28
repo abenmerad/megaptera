@@ -3,7 +3,7 @@
  
  ?>
  <fieldset form="form_observation" class="container form-group" id="observationEspece">
-        <legend>Liste des observations a validér</legend>
+        <legend>Liste des observations a valider</legend>
 		<div class="row form-group" >
   
 		<table  align = "center"  border = "2" cellpadding="15">
@@ -14,7 +14,7 @@
 						<th>VALIDER</th>
 				</tr>
 		<?php
-			foreach( $lesObservations as $uneObservation) 
+			foreach($lesObservations as $uneObservation)
 			{
 			    $nomPhoto = $uneObservation['nomPhoto'];
 		        $code = $uneObservation['codeObservation'];
@@ -73,7 +73,7 @@
 					  
 			       </td>
 		
-			 <td><center><a href="index.php?uc=<?php echo $uc ?>&action=validerUneObservation&code=<?php echo $code ?>"> 
+			 <td><center><a href="index.php?uc=<?php echo $uc ?>&action=confirmerValiderUneObservation&code=<?php echo $code ?>">
 			<img src="images/modifier.gif" TITLE="Valider"> </a></center></td>
 				</tr>		
 					</div>

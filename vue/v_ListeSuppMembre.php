@@ -31,12 +31,25 @@
 					<td><?php echo $prenom ?></td>
 					<td><center><?php echo $login ?></center></td>
 					<td><center><?php echo $mdp ?></center></td> 
-					<td><center><?php echo $poste ?></center></td> 
-                					
-	
-					<td><center><a href="index.php?uc=menuSuper&id=<?php echo $id ?>&action=confirmerSupprimerMembre" 
-					onclick="return confirm('Voulez-vous vraiment supprimer ce membre ?');"> 
+					<td><center><?php echo $poste ?></center></td>
+                    <?php
+                    if($_SESSION['poste'] == "supAdmin")
+                    {
+                    ?>
+                        <td><center><a href="index.php?uc=menuSuper&id=<?php echo $id ?>&action=confirmerSupprimerMembre"
+					onclick="return confirm('Voulez-vous vraiment supprimer ce membre ?');">
 					<img src="images/supprimer.gif" TITLE="Supprimer"> </center></a></td>
+                    <?php
+                    }
+                    else
+                    {?>
+                        <td><center><a href="index.php?uc=menuAdmin&id=<?php echo $id ?>&action=confirmerSupprimerMembre"
+                                       onclick="return confirm('Voulez-vous vraiment supprimer ce membre ?');">
+                                    <img src="images/supprimer.gif" TITLE="Supprimer"> </center></a></td>
+                    <?php
+                    }
+                    ?>
+
 					
 					</tr>
 		

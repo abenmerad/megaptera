@@ -143,7 +143,7 @@ class PdoMegaptera
 		PdoMegaptera::$monPdo->exec($req);
 	}
 	
-	public function getObservationMembre()
+	public function getObservationMembres()
 	{
 		$req = "SELECT * FROM membre where id not in(select auteurObservation
 		                                               from observation)
@@ -180,7 +180,9 @@ class PdoMegaptera
 	{
 		$req="delete from observation where code='$code'";
 		PdoMegaptera::$monPdo->exec($req);
-		
+		$req="delete from observation where codeObservation='$code'";
+		var_dump($req);
+		$res = PdoMegaptera::$monPdo->exec($req);
 	}
 	public function ajouterLieu($code,$lieu,$latitude,$longitude)
 	{
@@ -405,4 +407,56 @@ class PdoMegaptera
         return $res->fetchAll();
     }
 
+	public function getUneObservationNonValide()
+    {
+        $req = "SELECT codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong 
+                FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve 
+                inner join dominante on id = dominante 
+                inner join lieu on lieu.code = lieuObservation 
+                where etatObservation = 'TR' ";
+        $res = PdoMegaptera::$monPdo->query($req);
+        $lesLignes = $res->fetchAll();
+        return $lesLignes;
+    }
+    public function validerUneObservation($code)
+    {
+        $req = "UPDATE observation SET etatObservation = 'VA', dateDeValidite = CURRENT_DATE WHERE codeObservation = '$code'";
+        var_dump($req);
+        $res = PdoMegaptera::$monPdo->query($req);
+    }
+
+    public function getLesObservations()
+    {
+        $req = "SELECT codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong 
+                FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve";
+        $res = PdoMegaptera::$monPdo->query($req);
+        $lesLignes = $res->fetchAll();
+        return $lesLignes;
+    }
+
+    public function getObservationMembre($id)
+    {
+	    $req = "SELECT count(codeObservation)
+	            FROM observation
+	            where '$id' = auteurObservation";
+	    $res = PdoMegaptera::$monPdo->query($req);
+	    $lesLignes = $res->fetch();
+	    return $lesLignes;
+    }
+    public function getLesMembresNonAdmin()
+    {
+        $req = "SELECT * FROM membre where poste ='membre'";
+        $res = PdoMegaptera::$monPdo->query($req);
+        $lesLignes = $res->fetchAll();
+        return $lesLignes;
+    }
+
+    public function modifMembre($id, $nom, $prenom, $tel, $mail, $login, $mdp, $poste)
+    {
+        $req = "UPDATE membre
+                SET nom = '$nom', prenom = '$prenom', tel = '$tel', login = '$login', mdp = '$mdp', poste = '$poste'
+                WHERE id = '$id'";
+        var_dump($req);
+        $res = PdoMegaptera::$monPdo->query($req);
+    }
 }

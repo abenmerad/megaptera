@@ -39,7 +39,7 @@ $uc = $_SESSION['poste'];
 			</P>
 			 <P>
 				<label for="email">Email <em>*</em></label>
-				<input name ="mail" type="email" value ='' size = "30" maxlength = "45"  placeholder="xxxxxxxx@xxxx.com" required="" pattern="[a-zA-Z]*@[a-zA-Z]*.[a-zA-Z]*">
+				<input name ="mail" type="email" value ='' size = "30" maxlength = "45"  placeholder="xxxxxxxx@xxxx.com" required="" pattern="[a-zA-Z0-9.-]+@[a-zA-Z.-_]+.[a-zA-Z.]{2,15}">
 			 </P>
 			 <P>
 				<label for = "number">Téléphone</label>
