@@ -64,7 +64,7 @@
 <!--        </div>-->
         <div class="justify-content-md-around justify-content-center text-center" id="Button">
             <input class="btn btn-primary" type="submit" value="Valider">
-            <input class="btn btn-outline-danger" type="reset" value="Reset">
+<!--            <input class="btn btn-outline-danger" type="reset" value="Reset">-->
         </div>
     </fieldset>
 </form>

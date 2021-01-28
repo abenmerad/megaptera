@@ -1,20 +1,23 @@
+<?php if(!empty($_SESSION['erreurs'])): ?>
+    <?php include("vue/v_erreurs.php"); ?>
+<?php endif; ?>
 <form enctype="multipart/form-data" method="post" id="form_observation" action="index.php?uc=<?= $_SESSION['poste']?>&action=confirmer">
     <fieldset id="form1" form="form_observation" class="container">
         <legend>Observation</legend>
-        <div class="row form-group" id="ajoutImg">
-            <div class="col-md-6 col-sm-12"> 
-                <label  for="nomImg">Transfère le fichier</label>
-                <input type="file" class="form-control-file" name="nomImg" accept="image/*" size="1024" files>
+        <div class="form-group" id="ajoutImg">
+            <div class="row col-md-6 col-sm-12">
+                <label  for="nomImg[]">Transfère le fichier (Format accepté : JPG/JPEG, PNG)</label>
+                <input type="file" class="form-control-file" name="nomImg[]" accept="image/jpeg, image/png" multiple>
             </div>
         </div>
         <div class="row form-group">
-            <div class="col-md-6 col-sm-12" id="selectLieu">
+            <div class="col-md-6 col-12" id="selectLieu">
                 <label for="Lieu">Lieu</label>
                 <select name="Lieu" class="form-control form-control-sm">
-                    <option value="NULL">Veuillez selectionner un lieu</option>
+                    <option value="">Veuillez selectionner un lieu</option>
                     <?php foreach($lesLieux as $unLieu): ?>
                         <?php if ($unLieu['code'] !="AUT"): ?>
-                            <option value="<?= $unLieu['code'] ?>" <?= $select = (!empty($donnees) && $donnees['Lieu'] == $unLieu['code']) ? "selected=\"selected\"" : ""?>><?= $unLieu['lieu'] ?></option>
+                            <option value="<?= $unLieu['code'] ?>" <?= $select = (!empty($donnees) && $donnees['Lieu'] == $unLieu['code']) ? "selected=\"selected\"" : ""?>><?= $unLieu['lieu'] . ' (' . $unLieu['code'] . ')' ?></option>
                         <?php endif; ?>
                     <?php endforeach; ?>
                     <option value="Autre" id="autre">Autre</option>
@@ -24,28 +27,32 @@
                 <textarea class="form-control" id="lieuAutre" type="text"  name="LieuAutre" size="250" maxlength="100" placeholder="Si le lieu est autre, merci d'entrez les informations nécessaire : 100 caractères maximum"><?= $select = (!empty($donnees)) ? $donnees['LieuAutre'] : "" ?></textarea>
             </div>
         </div>
-<!--        <div class="d-flex justify-content-around form-group" id="selectOrientation">-->
-<!--            <div class="p-3">-->
-<!--                <label class="textB" for="latOrientation">Nord-->
-<!--                    <input type="radio" name="latOrientation" id="lat_dirN" value="N">-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <div class="p-3">-->
-<!--                <label class="textB" for="latOrientation">Sud-->
-<!--                    <input type="radio" name="latOrientation" id="lat_dirS" value="S"> -->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <div class="p-3">-->
-<!--                <label class="textB" for="longOrientation">Est-->
-<!--                    <input type="radio" name="longOrientation" id="long_dirE" value="E">-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <div class="p-3">-->
-<!--                <label class="textB" for="longOrientation">Ouest-->
-<!--                    <input type="radio" name="longOrientation" id="long_dirO" value="O">    -->
-<!--                </label>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="row justify-content-around form-group" id="selectOrientation">
+            <div class="row col col-md-6 col-sm-12 text-left text-sm-center">
+                <div class="col col-md-6 col-6">
+                    <label class="textB" for="latOrientation">Nord
+                        <input type="radio" name="latOrientation" id="lat_dirN" value="N" <?= $radio = (isset($donnees['latOrientation']) && $donnees['latOrientation'] == 'N') ? 'checked' : '' ?> <?= $radio = (isset($donnees['latOrientation']) && $donnees['latOrientation'] == 'N') ? '' : 'disabled' ?>>
+                    </label>
+                </div>
+                <div class="col col-md-6 col-6">
+                    <label class="textB" for="latOrientation">Sud
+                        <input type="radio" name="latOrientation" id="lat_dirS" value="S" <?= $radio = (isset($donnees['latOrientation']) && $donnees['latOrientation'] == 'S') ? 'checked' : '' ?> <?= $radio = (isset($donnees['latOrientation']) && $donnees['latOrientation'] == 'S') ? '' : 'disabled' ?>>
+                    </label>
+                </div>
+            </div>
+            <div class="row col col-md-6 col-sm-12 text-left text-sm-center">
+                <div class="col col-md-6 col-6">
+                    <label class="textB" for="longOrientation">Est
+                        <input type="radio" name="longOrientation" id="long_dirE" value="E" <?= $radio = (isset($donnees['longOrientation']) && $donnees['longOrientation'] == 'E') ? 'checked' : '' ?> <?= $radio = (isset($donnees['latOrientation']) && $donnees['longOrientation'] == 'E') ? '' : 'disabled' ?>>
+                    </label>
+                </div>
+                <div class="col col-md-6 col-6">
+                    <label class="textB" for="longOrientation">Ouest
+                        <input type="radio" name="longOrientation" id="long_dirO" value="O" <?= $radio = (isset($donnees['longOrientation']) && $donnees['longOrientation'] == 'O') ? 'checked' : '' ?> <?= $radio = (isset($donnees['latOrientation']) && $donnees['longOrientation'] == 'N') ? '' : 'disabled' ?>>
+                    </label>
+                </div>
+            </div>
+        </div>
         <div class="d-flex justify-content-md-around form-group" id="selectCoordonnees">
             <div id="coordonneesLat" class="row">
                 <div class="col-md-4 col-sm-6">
@@ -83,15 +90,15 @@
             </div>
         </div>
         <div class="row form-group" id="selectTime">
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 text-center">
                 <label for="HeureDebut">heure de debut d'observation</label>
                 <input type="time" id="heureDebut" name="HeureDebut" value="<?= $select = (!empty($donnees)) ? $donnees['HeureDebut'] : "" ?>">
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 text-center">
                 <label for="HeureFin" >heure de fin d'observation</label>
                 <input type="time" id="heureFin" name="HeureFin" value="<?= $select = (!empty($donnees)) ? $donnees['HeureFin'] : "" ?>">
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 text-center">
                 <label for="DateObservation">Date Observation</label>
                 <input type="date" id="dateObservation" name="DateObservation" value="<?= $select = (!empty($donnees)) ? $donnees['DateObservation'] : "" ?>">
             </div>
@@ -104,7 +111,7 @@
                 <div>
                     <label for = "Dominante">Dominante</label><div class="erreur" hidden>Veuillez remplir le champ ci-dessous.</div>
                     <select class="form-control form-control-sm" name="Dominante" id="selectDominante">
-                        <option value="NULL">Veuillez selectionner la dominante</option>
+                        <option value="">Veuillez selectionner la dominante</option>
                         <?php foreach($lesDominantes as $uneDominante): ?>
                             <option value="<?= $uneDominante['id'] ?>" <?= $select = (!empty($donnees) && $donnees['Dominante'] == $uneDominante['id']) ? "selected=\"selected\"" : ""?>><?= $uneDominante['libelle'] ?></option>
                         <?php endforeach; ?>
@@ -113,7 +120,7 @@
                 <div>
                     <label for = "Papillon">Papillon</label>
                     <select class="form-control form-control-sm"  name="Papillon" id="#selectPapillon">
-                        <option value="NULL">Veuillez selectionner le papillon</option>
+                        <option value="">Veuillez selectionner le papillon</option>
                         <option value="Oui" <?= $select = (!empty($donnees) && $donnees['Papillon'] == "Oui") ? "selected=\"selected\"" : ""?>>Oui</option>
                         <option value="Non" <?= $select = (!empty($donnees) && $donnees['Papillon'] == "Non") ? "selected=\"selected\"" : ""?>>Non</option>
                     </select>
@@ -122,7 +129,7 @@
                 <div>
                     <label for = "Caudale">Type de Caudale</label>
                     <SELECT class="form-control form-control-sm"  name="Caudale" id="selectCaudale">
-                        <option value="NULL">Veuillez selectionner le Type de Caudale</option>
+                        <option value="">Veuillez selectionner le Type de Caudale</option>
                         <?php for ($i=1; $i < 6 ; $i++) { ?>
                             <option id = "<?= "typeCaudale" . $i ?>" <?= $select = (!empty($donnees) && intval($donnees['Caudale']) == $i) ? "selected=\"selected\"" : ""?>> <?= $i ?> </option>
                         <?php } ?>
@@ -133,7 +140,7 @@
                 <div>
                     <label for = "Groupe">Type de Groupe</label>
                     <SELECT class="form-control form-control-sm"  name="Groupe" id ="lstGrp">
-                        <option value="NULL">Veuillez selectionner le groupe</option>
+                        <option value="">Veuillez selectionner le groupe</option>
                         <?php foreach($lesGroupes as $unGroupe){ ?>
                             <option value="<?php echo $unGroupe['code'];?>" <?= $select = (!empty($donnees) && $donnees['Groupe'] == $unGroupe['code']) ? "selected=\"selected\"" : ""?>><?php echo $unGroupe['libelle'];?></option>
                         <?php } ?>
@@ -143,7 +150,7 @@
                 <div>
                     <label for = "NombreIndividu">Nombre d'individus</label>
                     <SELECT class="form-control form-control-sm"  name="NombreIndividu" id ="lstNbrIndividu">
-                        <option value="NULL">Veuillez selectionner le nombre d'individus</option>
+                        <option value="">Veuillez selectionner le nombre d'individus</option>
                         <?php for($i = 1; $i <= 15; $i++): ?>
                         <option value="<?=$i?>" <?= $select = (!empty($donnees) && intval($donnees['NombreIndividu']) == $i) ? "selected=\"selected\"" : ""?>><?=$i?></option>
                         <?php endfor; ?>
@@ -163,7 +170,7 @@
             </div>
         </div>
       
-		<div class="d-flex flex-md-row flex-sm-row flex-column justify-content-md-center justify-content-sm-center" id="Button">
+		<div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
           <!--  <button type="button" class="btn btn-outline-primary col-md-4 col-sm-6 col-12" id="submitForm">Valider</button>-->
 			<input class="btn btn-primary" type="submit" value="Valider" name="valider">
 	    </div>

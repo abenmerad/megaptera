@@ -198,18 +198,18 @@ $("#infoLieu").hide();
 //         }
 //     });
 
-    $("#export").click(function (){
-        $.ajax("index.php?action=export",
-            {
-                method: 'get',
-                data : $("#form_mesObservations").serialize()
-            })
-            .done(function(response, textStatus, jqXHR){
-                console.log(response);
-            })
-            .fail(function(jqXHR, textStatus, errorThrown) {
-            });
-    });
+    // $("#export").click(function (){
+    //     $.ajax("index.php?action=export",
+    //         {
+    //             method: 'get',
+    //             data : $("#form_mesObservations").serialize()
+    //         })
+    //         .done(function(response, textStatus, jqXHR){
+    //             console.log(response);
+    //         })
+    //         .fail(function(jqXHR, textStatus, errorThrown) {
+    //         });
+    // });
 
 
     //Evenement de changement du SELECT de type de groupe
@@ -227,32 +227,34 @@ $("#infoLieu").hide();
                 var opr = response.substr(response.length - 2, response.length - 1);
                 opr = opr.substr(0,1);
                 var val = response.substr(response.length - 1);
+                console.log(val);
                 
                 //On rempli le SELECT du nbIndividu en fonction de l'opérateur et de la valeur
-                $("#lstNbrIndividu").children("option[value!=NULL]").each(function()
+                $("#lstNbrIndividu").children("option[value!='']").each(function()
                 { 
                     $(this).remove();
                 });
                 switch(opr)
                 {
                     case '>':
-                        for (let index = maxIndividu; index > val ; index--) {
-                            $("#lstNbrIndividu").children("option[value=NULL]").after("<option id=" + index +">"+index+"</option>");
+                        for (let index = maxIndividu; index > val ; index--)
+                        {
+                            $("#lstNbrIndividu").children("option[value='']").after("<option id=" + index +">"+index+"</option>");
                         }
                         break;
                     
                     case '%':
-                        for (let index = val; index <= maxIndividu ; index++) {
-                            
+                        for (let index = val; index <= maxIndividu ; index++)
+                        {
                             if((index % val) == 0)
                             {
-                                $("#lstNbrIndividu").children("option[value=NULL]").after("<option id=" + index +">"+index+"</option>");
+                                $("#lstNbrIndividu").children("option[value='']").after("<option id=" + index +">"+index+"</option>");
                             }          
                         }
                         break;
                     
                     case '=':
-                        $("#lstNbrIndividu").children("option[value=NULL]").after("<option id=" + val +">"+val+"</option>");
+                        $("#lstNbrIndividu").children("option[value='']").after("<option id=" + val +">"+val+"</option>");
                         break;
                 }
             }); 
@@ -283,9 +285,6 @@ $("#infoLieu").hide();
                     var orientationLat = response.substr(response.length - 2, response.length - 1);
                     var orientationLat = orientationLat.substr(0, 1);
             		var orientationLong = response.substr(response.length - 1);
-            		console.log(orientationLat);
-                    console.log(orientationLong);
-
 
                     $("input[name=latOrientation]").each(function(){
                         if($(this).val() == orientationLat)
@@ -335,7 +334,7 @@ $("#infoLieu").hide();
             $("input[type=radio]").each(function()
             { 
                     $(this).prop("checked", false);
-                    $(this).prop("disabled", true);
+                    $(this).prop("disabled", false);
             });
             latitude = undefined;
             longitude = undefined;

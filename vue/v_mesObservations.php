@@ -1,11 +1,10 @@
 <div class="text-center" id="resultat">Resultat de la recherche : <b><?= count($lesObservations) ?></b> observations trouvées</div>
-<div class="text-center"><a href="index.php?uc=<?=$_SESSION['poste'] ?>&action=export&annee=<?=$donnees['anneeObs']?>&etat=<?=$donnees['etatObs']?>&groupe=<?=$donnees['groupeObs']?>&lieu=<?=$donnees['lieuObs']?>"><button id="export" class="btn btn-outline-primary">Export CSV</button></a></div>
-<?= var_dump($_SESSION) ?>
+<div class="text-center"><a title="Seules les observations validées seront exportées." href="index.php?uc=<?=$_SESSION['poste'] ?>&action=export&annee=<?=$donnees['anneeObs']?>&etat=<?=$donnees['etatObs']?>&groupe=<?=$donnees['groupeObs']?>&lieu=<?=$donnees['lieuObs']?>"><button id="export" class="btn btn-outline-primary">Export CSV</button></a></div>
 <div class="row justify-content-around">
     <?php foreach($lesObservations as $uneObservation): ?>
         <div class="card col-6 col-sm-3 col-md-2" style="width: 18rem;">
             <div class="card-img">
-                <img width="100" height="200" class="card-img-top" src="images/<?= $uneObservation['lieuObservation'] ?>/<?= $uneObservation['nomPhoto'] ?>" alt="<?= $uneObservation['codeObservation'] ?>">
+                <img width="100" height="200" class="card-img-top" src="images/<?= $uneObservation['lieuObservation'] . '/' . $uneObservation['codeObservation'] . '/' . explode(";", $uneObservation['nomPhoto'])[0] ?>" alt="<?= $uneObservation['codeObservation'] ?>">
             </div>
             <div class="card-body">
                 <h5 class="card-title"><?= $uneObservation['codeObservation'] ?></h5>

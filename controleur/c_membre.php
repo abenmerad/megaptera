@@ -47,7 +47,6 @@ switch($action)
         $lesGroupes = $pdo -> getLesGroupes();
         $lesLieux = $pdo -> getLesLieux();
         $lesObservations = $pdo->getLesObservationsParFiltre($_SESSION['id'], $annee, $etat, $groupe, $lieu);
-
         if(count($lesObservations) != 0)
         {
             include("vue/v_rechercheMesObservations.php");
@@ -55,7 +54,7 @@ switch($action)
         }
         else
         {
-            $err[] = "Aucun resultat trouvé pour cette recherche";
+            $err[] = "Aucun resultat trouvé pour cette recherche.";
             $_SESSION['erreurs'] = $err;
             include("vue/v_erreurs.php");
             include("vue/v_rechercheMesObservations.php");
@@ -65,13 +64,6 @@ switch($action)
 
     case 'export':
     {
-
-        $a = $pdo->getUneObservation();
-        $listeKey = [];
-        foreach ($a as $key => $val)
-        {
-            $listeKey[] = $key;
-        }
         $annee = $_REQUEST['annee'];
         $etat = $_REQUEST['etat'];
         $groupe = $_REQUEST['groupe'];
@@ -85,150 +77,132 @@ switch($action)
     {
         $comportementObservation = $_POST['Comportement'];
         $commentaireObservation = $_POST['Description'];
-        $lieuInfo = "";
-        $monLieu = [];
-        $heureDebut = "";
-        $heureFin = "";
-        $couleurDominante = "";
-        $nbIndividu = "";
-        $typeCaudale = "";
-        $typeGroupe = "";
-        $aPapillon = "";
-        $lieuObservation = "";
-        $dateObservation = "";
-
+        $lieuInfo = $_POST['LieuAutre'];
+        $lieuObservation = $_POST['Lieu'];
+        $heureDebut = date($_POST['HeureDebut']);
+        $heureFin = date($_POST['HeureFin']);
+        $couleurDominante = $_POST['Dominante'];
+        $nbIndividu = $_POST['NombreIndividu'];
+        $typeCaudale = $_POST['Caudale'];
+        $typeGroupe = $_POST['Groupe'];
+        $aPapillon = $_POST['Papillon'];
+        $dateObservation = $_POST['DateObservation'];
+        $donnees = $_REQUEST;
+        $monLieu = $pdo->getUnLieu($_POST['Lieu']);
         $today = date('Y-m-d', time());
         $err = [];
-        $donnees = $_REQUEST;
         $_SESSION['erreurs'] = $err;
-        $message = "";
-        switch ($_FILES['nomImg']['error']) {
-            case 0:
-            {
-                $nomPhoto = $_FILES['nomImg']['name'];
-                break;
-            }
-            case 1:
-            {
-                $message = "L'image est trop lourde pour être téléchargée.";
-                $err[] = $message;
-                break;
-            }
-            case 4:
-            {
-                $message = "Aucune image n'a été téléchargé.";
-                $err[] = $message;
-                break;
-            }
-            default:
-            {
-                $message = "Une erreur est survenue lors du téléchargement. Ressayez.";
-                $err[] = $message;
-                break;
-            }
+        $img_upload = [];
+        $repertoire = "";
+
+        if(!isset($_POST['latOrientation']) || !isset($_POST['longOrientation']))
+        {
+            $err[] = "Aucune position n'a été indiqué.";
         }
-        if ($_POST['Lieu'] != "NULL") {
-            if ($_POST['Lieu'] == "Autre") {
-                if (empty($_POST['LieuAutre'])) {
-                    $message = "Les informations du lieu ne sont pas remplis.";
-                    $err[] = $message;
-                } else {
-                    $lieuInfo = $_POST['LieuAutre'];
-                    $lieuObservation = "AUT";
+        else
+        {
+            $latOrientation = $_POST['latOrientation'];
+            $longOrientation = $_POST['longOrientation'];
+        }
+        foreach($_FILES['nomImg']['error'] as $k => $error)
+        {
+            switch ($error)
+            {
+                case 0:
+                {
+                    $img_upload[] = ['name' => $_FILES['nomImg']['name'][$k], 'tmp_name' => $_FILES['nomImg']['tmp_name'][$k], 'type' => $_FILES['nomImg']['type'][$k]];
+                    break;
                 }
-            } else {
-                $lieuObservation = $_POST['Lieu'];
-                $monLieu = $pdo->getUnLieu($_POST['Lieu']);
+                case 1:
+                {
+                    $err[] = $_FILES['nomImg']['name'][$k] . " : L'image est trop lourde pour être téléchargée.";
+                    break;
+                }
+                case 4:
+                {
+                    $err[] = "Aucune image n'a été ajouté.";
+                    break;
+                }
+                default:
+                {
+                    $err[] = $_FILES['nomImg']['name'][$k] . " : Une erreur est survenue lors du téléchargement. Ressayez.";
+                    break;
+                }
             }
-        } else {
-            $message = "Veuillez choisir un lieu d'observation.";
-            $err[] = $message;
         }
-        if (empty($_POST['HeureDebut']) || empty($_POST['HeureFin'])) {
-            $message = "Veuillez entrer une heure de début et de fin.";
-            $err[] = $message;
-        } else if (date($_POST['HeureDebut']) > date($_POST['HeureFin'])) {
-            $message = "L'heure du début d'observation ne peut être supérieure à l'heure de fin.";
-            $err[] = $message;
-        } else {
-            $heureDebut = date($_POST['HeureDebut']);
-            $heureFin = date($_POST['HeureFin']);
+        if (!empty($lieuObservation))
+        {
+            if ($lieuObservation == "Autre" && empty($lieuInfo))
+                $err[] = "Les informations du lieu ne sont pas remplis.";
+        }
+        else
+        {
+            $err[] = "Veuillez choisir un lieu d'observation.";
         }
 
-        if (empty($_POST['DateObservation'])) {
-            $message = "Aucune date d'observation n'a été entrée.";
-            $err[] = $message;
-        } else if ($_POST['DateObservation'] > $today) {
-            $message = "La date d'observation ne peut être supérieure à la date du jour.";
-            $err[] = $message;
-        } else {
-            $dateObservation = $_POST['DateObservation'];
-        }
+        if (empty($heureDebut) || empty($heureFin))
+            $err[] = "Veuillez entrer une heure de début et de fin.";
+        else if ($heureDebut > $heureFin)
+            $err[] = "L'heure du début d'observation ne peut être supérieure à l'heure de fin.";
 
-        if ($_POST['Dominante'] == "NULL") {
-            $message = "Veuillez selectionner une dominante.";
-            $err[] = $message;
-        } else {
-            $couleurDominante = $_POST['Dominante'];
-        }
-        if ($_POST['Caudale'] == "NULL") {
-            $message = "Veuillez selectionner un type de caudale.";
-            $err[] = $message;
-        } else {
-            $typeCaudale = $_POST['Caudale'];
-        }
+        if (empty($dateObservation))
+            $err[] = "Aucune date d'observation n'a été entrée.";
+        else if ($dateObservation > $today)
+            $err[] = "La date d'observation ne peut être supérieure à la date du jour.";
 
-        if ($_POST['Papillon'] == "NULL") {
-            $message = "Veuillez selectionner un papillon.";
-            $err[] = $message;
-        } else {
-            $aPapillon = $_POST['Papillon'];
-        }
-        if ($_POST['Groupe'] == "NULL") {
-            $message = "Veuillez selectionner un type de groupe.";
-            $err[] = $message;
-        } else {
-            $typeGroupe = $_POST['Groupe'];
-        }
-        if ($_POST['NombreIndividu'] == "NULL") {
-            $message = "Le nombre d'individus ne peut être nul.";
-            $err[] = $message;
-        } else {
-            $nbIndividu = $_POST['NombreIndividu'];
-        }
+        if (empty($couleurDominante))
+            $err[] = "Veuillez selectionner une dominante.";
 
-        if (!empty($err)) {
+        if (empty($typeCaudale))
+            $err[] = "Veuillez selectionner un type de caudale.";
+
+        if (empty($aPapillon))
+            $err[] = "Veuillez selectionner un papillon.";
+
+        if (empty($typeGroupe))
+            $err[] = "Veuillez selectionner un type de groupe.";
+
+        if (empty($nbIndividu))
+            $err[] = "Le nombre d'individus ne peut être nul.";
+
+        if (!empty($err))
+        {
             $lesLieux = $pdo->getLesLieux();
             $lesDominantes = $pdo->getLesDominantes();
             $lesGroupes = $pdo->getLesGroupes();
             $_SESSION['erreurs'] = $err;
-            include("vue/v_erreurs.php");
             include("vue/v_ajouterObservation.php");
         } else {
+            $_SESSION['erreurs'] = [];
+
+            $rechercheCode = $lieuObservation . substr($dateObservation, 0, 4);
+            $nbCaracteres = strlen($rechercheCode);
+            $num = $pdo->dernierCodeObs($rechercheCode);
+            if (!is_null($num['Max'])) {
+                settype($num['Max'], "string");
+                $numero = substr($num['Max'], $nbCaracteres, 3);
+                $numero = $numero + 1;
+            } else {
+                $numero = 1;
+            }
+
+            $codeObservation = $rechercheCode . $numero;
+            $longitude =  $latOrientation . " " . $_POST['DegresLong'] . "°" . $_POST['MinutesLong'] . "'" . $_POST['SecondesLong'] . '"';
+            $latitude = $longOrientation . " " . $_POST['DegresLat'] . "°" . $_POST['MinutesLat'] . "'" . $_POST['SecondesLat'] . '"';
+            $auteur = $_SESSION['id'];
+            $chemin = 'images/' . $lieuObservation . '/' . $codeObservation;
+            if(mkdir($chemin, 0700))
             {
-                $_SESSION['erreurs'] = [];
-                $rechercheCode = $lieuObservation . substr($dateObservation, 0, 4);
-                $nbCaracteres = strlen($rechercheCode);
-                $num = $pdo->dernierCodeObs($rechercheCode);
-
-                if (!is_null($num[0])) {
-                    settype($num[0], "string");
-                    $longueur = strlen($num[0]);
-                    $numero = substr($num[0], $nbCaracteres, 3);
-                    $numero = $numero + 1;
-                } else {
-                    $numero = 1;
+                foreach($img_upload as $k => $img)
+                {
+                    $nomPhoto = $codeObservation . '_' . $k . '.' . explode("/", $img['type'])[1];
+                    if($k != 0)
+                        $repertoire .= ";" . $nomPhoto;
+                    else
+                        $repertoire .= $nomPhoto;
+                    move_uploaded_file($img['tmp_name'], $chemin . '/' . $nomPhoto);
                 }
-
-                $codeObservation = $rechercheCode . $numero;
-                $longitude =  $monLieu['orientationLat'] . " " . $_POST['DegresLong'] . "°" . $_POST['MinutesLong'] . "'" . $_POST['SecondesLong'] . '"';
-                $latitude = $monLieu['orientationLong'] . " " . $_POST['DegresLat'] . "°" . $_POST['MinutesLat'] . "'" . $_POST['SecondesLat'] . '"';
-                $auteur = $_SESSION['id'];
-                $nomPhoto = $codeObservation . '.' . explode("/", $_FILES['nomImg']['type'])[1];
-                $pdo->ajouterObservation($codeObservation, $nomPhoto, $lieuObservation, $lieuInfo, $heureDebut, $heureFin, $dateObservation, addslashes($latitude), addslashes($longitude), $auteur, (int)$couleurDominante, $aPapillon, (int)$nbIndividu, (int)$typeCaudale, $typeGroupe, $commentaireObservation, $comportementObservation);
-                $repertoire = 'images/' . $lieuObservation . '/' . $codeObservation . '.' . explode("/", $_FILES['nomImg']['type'])[1];
-
-                move_uploaded_file($_FILES['nomImg']['tmp_name'], $repertoire);
+                $ajout = $pdo->ajouterObservation($codeObservation, $repertoire, $lieuObservation, $lieuInfo, $heureDebut, $heureFin, $dateObservation, addslashes($latitude), addslashes($longitude), $auteur, (int)$couleurDominante, $aPapillon, (int)$nbIndividu, (int)$typeCaudale, $typeGroupe, $commentaireObservation, $comportementObservation);
             }
         }
         break;
@@ -252,25 +226,25 @@ switch($action)
 	}
 
     case 'rechercher':
-	{  
+	{
 	    $lesLieux = $pdo -> getLesLieux();
 		$lesDominantes = $pdo -> getLesDominantes();
 		$lesGroupes = $pdo -> getLesGroupes();
 		$lesAnnees =$pdo -> getLesAnnees();
-		
+
 		$lieu = $_POST['Lieu'];
 		$lieuxASelectionner = $lieu;
-		
+
 		$annee = $_POST['Annee'];
 		$anneeASelectionner = $annee;
-		
+
 		$dominante = $_POST['Dominante'];
 		$dominanteASelectionner = $dominante;
 
 		$typeGroupe = $_POST['Groupe'];
 		$groupeASelectionner = $typeGroupe;
 		include("vue/v_filtre.php");
-	
+
 		$lesObservations = $pdo-> getRechercheObservation($lieu,$annee,(int)$dominante, $typeGroupe);
 
 		include("vue/v_RechercheObservation.php");
