@@ -8,6 +8,7 @@ else
 $_SESSION['erreurs'] = [];
 switch($action)
 {
+	
 	case 'ajouter':
 	{
 			if(isset($_GET['codeLieu']))
@@ -210,7 +211,7 @@ switch($action)
     }
 
 
-    case 'filtre':
+case 'filtre':
 	{  
 	    $lesLieux = $pdo -> getLesLieux();
 		$lesDominantes = $pdo -> getLesDominantes();
@@ -225,7 +226,6 @@ switch($action)
 		require("vue/v_filtre.php");
 		break;
 	}
-
     case 'rechercher':
 	{
 	    $lesLieux = $pdo -> getLesLieux();
@@ -241,14 +241,18 @@ switch($action)
 
 		$dominante = $_POST['Dominante'];
 		$dominanteASelectionner = $dominante;
-
+		
+		
 		$typeGroupe = $_POST['Groupe'];
 		$groupeASelectionner = $typeGroupe;
 		include("vue/v_filtre.php");
 
 		$lesObservations = $pdo-> getRechercheObservation($lieu,$annee,(int)$dominante, $typeGroupe);
-
+		
+		
 		include("vue/v_RechercheObservation.php");
 		break;
 	}
+	
 }
+?>
