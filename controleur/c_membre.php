@@ -70,7 +70,7 @@ switch($action)
         $lieu = $_REQUEST['lieu'];
 
         $lesObservations = $pdo->getLesObservationsAExporte($_SESSION['id'], $annee, $etat, $groupe, $lieu);
-        $func->creationCSV($lesObservations, $listeKey);
+        $func->creationCSV($lesObservations, $pdo->getUneObservation());
         break;
     }
 	case 'confirmer':
@@ -203,6 +203,7 @@ switch($action)
                     move_uploaded_file($img['tmp_name'], $chemin . '/' . $nomPhoto);
                 }
                 $ajout = $pdo->ajouterObservation($codeObservation, $repertoire, $lieuObservation, $lieuInfo, $heureDebut, $heureFin, $dateObservation, addslashes($latitude), addslashes($longitude), $auteur, (int)$couleurDominante, $aPapillon, (int)$nbIndividu, (int)$typeCaudale, $typeGroupe, $commentaireObservation, $comportementObservation);
+                header("Location: index.php?uc=" . $_SESSION['poste'] . "&action=rechercheMesObservations");
             }
         }
         break;
