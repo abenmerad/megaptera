@@ -42,7 +42,6 @@ switch($action)
         $groupe = $_POST['groupeObs'];
         $lieu = $_POST['lieuObs'];
         $donnees = $_REQUEST;
-
         $lesEtatsObservations = $pdo->getLesEtatsObservation();
         $lesGroupes = $pdo -> getLesGroupes();
         $lesLieux = $pdo -> getLesLieux();
@@ -62,15 +61,27 @@ switch($action)
         break;
     }
 
+    case 'consultation':
+    {
+        $monObservation = $pdo->getUneObservation($_REQUEST['id']);
+        $img_obs = explode(";", $monObservation['nomPhoto']);
+        include("vue/v_consultation.php");
+        break;
+    }
     case 'export':
     {
         $annee = $_REQUEST['annee'];
         $etat = $_REQUEST['etat'];
         $groupe = $_REQUEST['groupe'];
         $lieu = $_REQUEST['lieu'];
+        $keys = [];
 
         $lesObservations = $pdo->getLesObservationsAExporte($_SESSION['id'], $annee, $etat, $groupe, $lieu);
-        $func->creationCSV($lesObservations, $pdo->getUneObservation());
+        foreach($lesObservations[0] as $k => $obs)
+        {
+            $keys[] = $k;
+        }
+        $func->creationCSV($lesObservations, $keys);
         break;
     }
 	case 'confirmer':
@@ -175,7 +186,7 @@ switch($action)
         } else {
             $_SESSION['erreurs'] = [];
 
-            $rechercheCode = $lieuObservation . substr($dateObservation, 0, 4);
+            $rechercheCode = $lieuObservation . date("Y", strtotime($dateObservation));
             $nbCaracteres = strlen($rechercheCode);
             $num = $pdo->dernierCodeObs($rechercheCode);
             if (!is_null($num['Max'])) {
@@ -208,7 +219,6 @@ switch($action)
         }
         break;
     }
-
 
     case 'filtre':
 	{  
