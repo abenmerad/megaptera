@@ -25,16 +25,7 @@
          <div class="container" id="entete">
              <div class="row">
                 <div class="col-md-3 col-sm-3">
-                    <img src = "img/logo1.jpg" alt = "bienvenue">
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <img src = "img/logo2.jpg" alt = "bienvenue">
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <img src = "img/logo3.jpg" alt = "bienvenue">
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <img src = "img/logo4.jpg" alt = "bienvenue">
+                    <img src = "img/img-logo.png" alt = "bienvenue">
                 </div>
              </div>
          </div>
