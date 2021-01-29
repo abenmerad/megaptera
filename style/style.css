@@ -5,7 +5,11 @@
 		background-position: top;
 		background-size: cover;
 		background-repeat: no-repeat;
-		/*background-color: aqua;*/
+		background-attachment: fixed;
+	}
+	select, option, input, textarea
+	{
+		opacity: 0.75;
 	}
 	.erreurs
 	{
