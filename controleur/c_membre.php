@@ -1,6 +1,4 @@
 <?php
-
-
 if(!isset($_REQUEST['action']))
     $action = 'rechercheMesObservations';
 else

@@ -1,5 +1,4 @@
 <?php
-include("vue/v_menuAdmin.php"); 
 if(!isset($_REQUEST['action']))
      $action = 'filtre';
 else
