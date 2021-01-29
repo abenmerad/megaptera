@@ -9,21 +9,33 @@
 	}
 	select, option, input, textarea
 	{
-		opacity: 0.75;
+		opacity: 0.7;
 	}
-	.erreurs
+	#erreurs
 	{
 		border: 1px solid  #0025BB;
 		width: 50%;
 		margin: 0 auto;
 		border-radius: 10px;
 	}
-	.erreurs ul
+	#erreurs ul
 	{
 		margin: 0 auto;
 		color: red;
 		font-style: oblique;
 	}
+	#reussite
+	{
+		border: 1px solid  #32CD32;
+		width: 50%;
+		margin: 0 auto;
+		border-radius: 10px;
+	}
+	#reussite p
+	{
+		color: #32CD32;
+	}
+
 	body{
 
 		font: 13px 'trebuchet MS', Arial, Helvetica;
@@ -220,6 +232,11 @@
 		margin-top: 10px;
 		margin-bottom: 10px;
 	}
+	#form_connexion
+	{
+		width: 50%;
+		margin: 0 auto;
+	}
 
 fieldset
 {
@@ -346,15 +363,22 @@ input[type=submit]
 		{
 			width:100%;
 		}
+		#form_connexion
+		{
+			width: 100%;
+			margin: 0 auto;
+		}
 	}
 	/* CARTE OBBSERVATIONS */
 	.card
 	{
 		padding: 0;
 		border: 1px solid  #0025BB;
+		border-radius: 5px;
 		margin-top: 25px;
 		margin-bottom: 25px;
 		color: black;
+		opacity: 0.7;
 	}
 	.card > *
 	{
@@ -369,5 +393,5 @@ input[type=submit]
 	{
 		margin-top: 5px;
 		border-bottom: 1px solid #0025BB;
-		border-radius: 15p;
+		border-radius: 15px;
 	}

@@ -4,9 +4,15 @@
     <?php foreach($lesObservations as $uneObservation): ?>
         <div class="card bg-info mb-3 col-6 col-sm-3 col-md-2" style="width: 18rem;">
             <div class="card-img">
-                <figure>
-                    <img width="100" height="200" class="card-img-top" src="images/<?= $uneObservation['lieuObservation'] . '/' . $uneObservation['codeObservation'] . '/' . explode(";", $uneObservation['nomPhoto'])[0] ?>" alt="<?= $uneObservation['codeObservation'] ?>">
-                </figure>
+                <div id="carousel_card" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <?php foreach(explode(";", $uneObservation['nomPhoto']) as $k => $img): ?>
+                            <div class="carousel-item <?= ($k == 0) ? "active" : ""?>">
+                                <img class="card-img-top d-block w-100" src="images/<?= $uneObservation['lieuObservation'] . '/' . $uneObservation['codeObservation'] . '/' . $img ?>">
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <h5 class="card-title"><?= $uneObservation['codeObservation'] ?></h5>

@@ -12,6 +12,17 @@ if(!isset($_REQUEST['uc']))
 else
 	$uc = $_REQUEST['uc'];
 
+if(isset($_SESSION['erreurs']) && !empty($_SESSION['erreurs']))
+    include("vue/v_erreurs.php");
+
+if(isset($_SESSION['reussite']) && !empty($_SESSION['reussite']))
+    include("vue/v_reussite.php");
+
+$_SESSION['erreurs'] = [];
+$_SESSION['reussite'] = "";
+
+if(!empty($_SESSION['poste']))
+    include("vue/v_" . $_SESSION['poste'] . ".php");
 switch($uc)
 {
 	case 'connexion':

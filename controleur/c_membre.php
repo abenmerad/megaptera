@@ -1,11 +1,11 @@
 <?php
-include("vue/v_menuMembre.php"); 
+
+
 if(!isset($_REQUEST['action']))
-    $action = 'filtre';
+    $action = 'rechercheMesObservations';
 else
 	$action = $_REQUEST['action'];
 
-$_SESSION['erreurs'] = [];
 switch($action)
 {
 	case 'ajouter':
@@ -53,8 +53,8 @@ switch($action)
         }
         else
         {
-            $err[] = "Aucun resultat trouvé pour cette recherche.";
-            $_SESSION['erreurs'] = $err;
+            $_SESSION['erreurs'][] = "Aucun resultat trouvé pour cette recherche.";
+            $_SESSION['erreurs'][] = $err;
             include("vue/v_erreurs.php");
             include("vue/v_rechercheMesObservations.php");
         }
@@ -101,14 +101,12 @@ switch($action)
         $donnees = $_REQUEST;
         $monLieu = $pdo->getUnLieu($_POST['Lieu']);
         $today = date('Y-m-d', time());
-        $err = [];
-        $_SESSION['erreurs'] = $err;
         $img_upload = [];
         $repertoire = "";
 
         if(!isset($_POST['latOrientation']) || !isset($_POST['longOrientation']))
         {
-            $err[] = "Aucune position n'a été indiqué.";
+            $_SESSION['erreurs'][] = "Aucune position n'a été indiqué.";
         }
         else
         {
@@ -126,17 +124,17 @@ switch($action)
                 }
                 case 1:
                 {
-                    $err[] = $_FILES['nomImg']['name'][$k] . " : L'image est trop lourde pour être téléchargée.";
+                    $_SESSION['erreurs'][] = $_FILES['nomImg']['name'][$k] . " : L'image est trop lourde pour être téléchargée.";
                     break;
                 }
                 case 4:
                 {
-                    $err[] = "Aucune image n'a été ajouté.";
+                    $_SESSION['erreurs'][] = "Aucune image n'a été ajouté.";
                     break;
                 }
                 default:
                 {
-                    $err[] = $_FILES['nomImg']['name'][$k] . " : Une erreur est survenue lors du téléchargement. Ressayez.";
+                    $_SESSION['erreurs'][] = $_FILES['nomImg']['name'][$k] . " : Une erreur est survenue lors du téléchargement. Ressayez.";
                     break;
                 }
             }
@@ -144,48 +142,46 @@ switch($action)
         if (!empty($lieuObservation))
         {
             if ($lieuObservation == "Autre" && empty($lieuInfo))
-                $err[] = "Les informations du lieu ne sont pas remplis.";
+                $_SESSION['erreurs'][] = "Les informations du lieu ne sont pas remplis.";
         }
         else
         {
-            $err[] = "Veuillez choisir un lieu d'observation.";
+            $_SESSION['erreurs'][] = "Veuillez choisir un lieu d'observation.";
         }
 
         if (empty($heureDebut) || empty($heureFin))
-            $err[] = "Veuillez entrer une heure de début et de fin.";
+            $_SESSION['erreurs'][] = "Veuillez entrer une heure de début et de fin.";
         else if ($heureDebut > $heureFin)
-            $err[] = "L'heure du début d'observation ne peut être supérieure à l'heure de fin.";
+            $_SESSION['erreurs'][] = "L'heure du début d'observation ne peut être supérieure à l'heure de fin.";
 
         if (empty($dateObservation))
-            $err[] = "Aucune date d'observation n'a été entrée.";
+            $_SESSION['erreurs'][] = "Aucune date d'observation n'a été entrée.";
         else if ($dateObservation > $today)
-            $err[] = "La date d'observation ne peut être supérieure à la date du jour.";
+            $_SESSION['erreurs'][] = "La date d'observation ne peut être supérieure à la date du jour.";
 
         if (empty($couleurDominante))
-            $err[] = "Veuillez selectionner une dominante.";
+            $_SESSION['erreurs'][] = "Veuillez selectionner une dominante.";
 
         if (empty($typeCaudale))
-            $err[] = "Veuillez selectionner un type de caudale.";
+            $_SESSION['erreurs'][] = "Veuillez selectionner un type de caudale.";
 
         if (empty($aPapillon))
-            $err[] = "Veuillez selectionner un papillon.";
+            $_SESSION['erreurs'][] = "Veuillez selectionner un papillon.";
 
         if (empty($typeGroupe))
-            $err[] = "Veuillez selectionner un type de groupe.";
+            $_SESSION['erreurs'][] = "Veuillez selectionner un type de groupe.";
 
         if (empty($nbIndividu))
-            $err[] = "Le nombre d'individus ne peut être nul.";
+            $_SESSION['erreurs'][] = "Le nombre d'individus ne peut être nul.";
 
-        if (!empty($err))
+        if (!empty($_SESSION['erreurs']))
         {
             $lesLieux = $pdo->getLesLieux();
             $lesDominantes = $pdo->getLesDominantes();
             $lesGroupes = $pdo->getLesGroupes();
-            $_SESSION['erreurs'] = $err;
-            include("vue/v_ajouterObservation.php");
+            header("Location: index.php?uc=" . $_SESSION['poste'] . "&action=ajouter");
         } else {
-            $_SESSION['erreurs'] = [];
-
+            $_SESSION['erreurs'][] = [];
             $rechercheCode = $lieuObservation . date("Y", strtotime($dateObservation));
             $nbCaracteres = strlen($rechercheCode);
             $num = $pdo->dernierCodeObs($rechercheCode);

@@ -36,17 +36,14 @@ class PdoMegaptera
 	// rechercher si membre
 	public function getInfosMembre($login,$mdp)
 	{
-		$req = "SELECT * FROM membre 
-		WHERE login = ':login' and mdp = ':mdp'";
-
+		$req = "SELECT id, nom, prenom, login, poste 
+                FROM membre 
+		        WHERE login = :login and mdp = :mdp";
 		$stmt = PdoMegaptera::$monPdo->prepare($req);
 		$stmt->bindParam(':login', $login); 
 		$stmt->bindParam(':mdp', $mdp); 
 		$stmt->execute();
-		$laligne = $stmt->fetch();
-		
-        $res = PdoMegaptera::$monPdo->query($req);
-		return $res->fetch();
+		return $stmt->fetch();
 	}
 	
 	public function getLesMembres()

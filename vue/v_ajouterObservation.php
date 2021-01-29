@@ -1,6 +1,3 @@
-<?php if(!empty($_SESSION['erreurs'])): ?>
-    <?php include("vue/v_erreurs.php"); ?>
-<?php endif; ?>
 <form enctype="multipart/form-data" method="post" id="form_observation" action="index.php?uc=<?= $_SESSION['poste']?>&action=confirmer">
     <fieldset id="form1" form="form_observation" class="container">
         <legend>Observation</legend>
