@@ -288,6 +288,11 @@ label {
   padding-left: 10px;
 }
 
+#login, #mdp
+{
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
 
 input[type=submit]
 {
@@ -295,24 +300,9 @@ input[type=submit]
 	padding: 6px;
 	margin-top : 30px;
 }
-input[type=reset] {
-  width: 100px;
-  padding: 6px;
-  margin-top : 30px;
-}
-input[type=text] {
-  width: 249px;
-}
-input[type=tel] {
-  width: 249px;
-}
-input[type=mdp] {
-  width: 249px;
-}
-input[type=email] {
-  width: 249px;
-}
-/*css footer*/
+
+
+/*!*css footer*!*/
 
 
 .contain{

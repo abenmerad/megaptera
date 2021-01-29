@@ -171,8 +171,7 @@
         </div>
       
 		<div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
-          <!--  <button type="button" class="btn btn-outline-primary col-md-4 col-sm-6 col-12" id="submitForm">Valider</button>-->
-			<input class="btn btn-primary" type="submit" value="Valider" name="valider">
+			<input class="btn btn-primary" type="submit" value="Valider">
 	    </div>
     </fieldset>
  </form>
