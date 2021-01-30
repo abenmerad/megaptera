@@ -1,16 +1,21 @@
 <?php
 session_start();
-
+var_dump($_SERVER);
 require_once("modele/pdoMegaptera.php");
 include ("modele/functions.php");
 $func = FonctionsMegaptera::GetFunct();
 $pdo = PdoMegaptera::getPdoMegaptera();
+
 include("vue/v_entete.php") ;            
 
 if(!isset($_REQUEST['uc']))
      $uc = 'connexion';
 else
 	$uc = $_REQUEST['uc'];
+
+
+if(!empty($_SESSION['poste']))
+    include("vue/v_" . $_SESSION['poste'] . ".php");
 
 if(isset($_SESSION['erreurs']) && !empty($_SESSION['erreurs']))
     include("vue/v_erreurs.php");
@@ -20,9 +25,6 @@ if(isset($_SESSION['reussite']) && !empty($_SESSION['reussite']))
 
 $_SESSION['erreurs'] = [];
 $_SESSION['reussite'] = "";
-
-if(!empty($_SESSION['poste']))
-    include("vue/v_" . $_SESSION['poste'] . ".php");
 switch($uc)
 {
 	case 'connexion':
