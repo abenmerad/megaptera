@@ -1,12 +1,10 @@
 <?php
 session_start();
-ob_start();
 require_once("modele/pdoMegaptera.php");
 include("modele/functions.php");
 $func = FonctionsMegaptera::GetFunct();
 $pdo = PdoMegaptera::getPdoMegaptera();
 require("vue/v_entete.php");
-
 if(!isset($_REQUEST['uc']))
      $uc = 'connexion';
 else
@@ -48,4 +46,4 @@ switch($uc)
 		}
 }
 include("vue/v_pied.php");
-ob_end_flush();
+

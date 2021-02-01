@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    setTimeout(function() {
+        $('#reussite').fadeOut('slow');
+    }, 3000);
 //Déclaration des variables necessaires à la vérification du formulaire
 
 var listGrp = "select[name=Groupe]";
@@ -7,6 +10,7 @@ var listLieu = "select[name=Lieu]";
 var maxIndividu = 20;
 
 $("#infoLieu").hide();
+
 
 //
 // var formulaireValide = false;

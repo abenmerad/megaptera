@@ -69,9 +69,9 @@ switch($action)
 	
     case 'deconnexion':
 	{
+        header("Location:index.php");
         $pdo->__destruction();
-		if(session_destroy())
-            header("Location: index.php?uc=connexion");
+		session_destroy();
 		break;
 	}
 }

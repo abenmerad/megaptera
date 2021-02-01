@@ -21,7 +21,7 @@ switch($action)
 			$lesLieux = $pdo -> getLesLieux();
 			$lesDominantes = $pdo -> getLesDominantes();
 			$lesGroupes = $pdo -> getLesGroupes();
-			require("vue/v_ajouterObservation.php");
+			include("vue/v_ajouterObservation.php");
 			break;
 	}
     case 'rechercheMesObservations':
@@ -58,7 +58,6 @@ switch($action)
         }
         break;
     }
-
     case 'consultation':
     {
         $monObservation = $pdo->getUneObservation($_REQUEST['id']);
@@ -101,7 +100,6 @@ switch($action)
         $today = date('Y-m-d', time());
         $img_upload = [];
         $repertoire = "";
-
         if(!isset($_POST['latOrientation']) || !isset($_POST['longOrientation']))
         {
             $_SESSION['erreurs'][] = "Aucune position n'a été indiqué.";
@@ -177,6 +175,7 @@ switch($action)
             $lesLieux = $pdo->getLesLieux();
             $lesDominantes = $pdo->getLesDominantes();
             $lesGroupes = $pdo->getLesGroupes();
+            $_SESSION['data'] = $_REQUEST;
             header("Location: index.php?uc=" . $_SESSION['poste'] . "&action=ajouter");
         } else {
             $_SESSION['erreurs'][] = [];
@@ -219,12 +218,10 @@ switch($action)
 		$lesDominantes = $pdo -> getLesDominantes();
 		$lesGroupes = $pdo -> getLesGroupes();
 		$lesAnnees =$pdo -> getLesAnnees();
-		
 		$lieuxASelectionner ='';
 		$dominanteASelectionner = '';
 		$AnneeASelectionner = '';
 		$groupesASelectionner = '';
-		
 		require("vue/v_filtre.php");
 		break;
 	}
