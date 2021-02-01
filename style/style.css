@@ -75,6 +75,7 @@
 	}
 	
 	#menu {
+		text-align: center;
 		width: 100%;
 		margin: 0 auto;
 		border: 1px solid  #0025BB;
@@ -195,7 +196,6 @@
 	}
 	
 	#menu ul a:hover {
-		background-color: #0186ba;
 		background-image: -moz-linear-gradient(#04acec,  #0186ba);	
 		background-image: -webkit-gradient(linear, left top, left bottom, from(#04acec), to(#0186ba));
 		background-image: -webkit-linear-gradient(#04acec, #0186ba);
@@ -207,6 +207,9 @@
 	{
 		color: black;
 		background-color: #0186ba;
+	}
+	.dropdown-item:hover{
+		background-color: #0025BB;
 	}
 	#page {
 		
