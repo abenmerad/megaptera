@@ -1,6 +1,5 @@
 <?php
 session_start();
-var_dump($_SERVER);
 require_once("modele/pdoMegaptera.php");
 include ("modele/functions.php");
 $func = FonctionsMegaptera::GetFunct();
