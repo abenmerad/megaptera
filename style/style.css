@@ -117,7 +117,7 @@
 	}
 	
 	#menu a {
-		color: #999;
+		color: white;
 		text-transform: uppercase;
 		font: bold 12px Arial, Helvetica;
 		text-decoration: none;
@@ -125,11 +125,11 @@
 	}
 	
 	#menu li:hover > a {
-		color: #fafafa;
+		color: rgb(175, 175, 175);
 	}
 	
 	*html #menu li a:hover { /* IE6 only */
-		color: #fafafa;
+		color: rgb(175, 175, 175);
 	}
 	
 	#menu ul {
