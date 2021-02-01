@@ -172,9 +172,7 @@ class PdoMegaptera
 	public function getObservationNonValide()
 	{   $req = "SELECT codeObservation,lieuObservation,autreLieu, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu,orientationLat,orientationLong,nom 
 	            FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation inner join membre on membre.id=auteurObservation 
-				where dateDeValidite is null";
-
-		
+				where etatObservation = 'TR'";
 		$res = PdoMegaptera::$monPdo->query($req);
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
@@ -182,11 +180,8 @@ class PdoMegaptera
 	
 	public function supprimerObservation($code)
 	{
-		$req="delete from observation where code='$code'";
-		PdoMegaptera::$monPdo->exec($req);
 		$req="delete from observation where codeObservation='$code'";
-		var_dump($req);
-		$res = PdoMegaptera::$monPdo->exec($req);
+		PdoMegaptera::$monPdo->exec($req);
 	}
 	public function ajouterLieu($code,$lieu,$latitude,$longitude)
 	{
