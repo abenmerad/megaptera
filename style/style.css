@@ -30,10 +30,12 @@
 		width: 50%;
 		margin: 0 auto;
 		border-radius: 10px;
+		background-color: #32CD32;
 	}
 	#reussite p
 	{
-		color: #32CD32;
+		margin: 10px;
+		color: white;
 	}
 
 	body{
