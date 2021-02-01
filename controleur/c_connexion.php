@@ -10,11 +10,10 @@ switch($action)
 	{
 	    if(!isset($_SESSION['poste']))
 		    include("vue/v_connexion.php");
-	    else if(isset($_SESSION['poste']) && !empty($_SESSION['poste']))
+	    else
 	        header("Location: index.php?uc=" . $_SESSION['poste']);
 		break;
 	}
-	
     case 'valider' :
 	{
         $login = $_REQUEST['login'];
@@ -70,11 +69,9 @@ switch($action)
 	
     case 'deconnexion':
 	{
-        header("Location: index.php?uc=connexion");
         $pdo->__destruction();
-		session_destroy();
+		if(session_destroy())
+            header("Location: index.php?uc=connexion");
 		break;
 	}
-
 }
-?>

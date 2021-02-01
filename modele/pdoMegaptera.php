@@ -382,7 +382,7 @@ class PdoMegaptera
             $req .= " AND lieuObservation = '$lieu'";
 
         $res = PdoMegaptera::$monPdo->query($req);
-        return $res-fetchAll();
+        return $res->fetchAll();
     }
 	public function getLesObservationsParFiltre($idMembre, $annee, $etat, $groupe, $lieu)
     {

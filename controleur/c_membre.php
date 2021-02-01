@@ -213,7 +213,6 @@ switch($action)
         }
         break;
     }
-
     case 'filtre':
 	{  
 	    $lesLieux = $pdo -> getLesLieux();
@@ -229,7 +228,6 @@ switch($action)
 		require("vue/v_filtre.php");
 		break;
 	}
-
     case 'rechercher':
 	{
 	    $lesLieux = $pdo -> getLesLieux();
