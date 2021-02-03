@@ -1,5 +1,5 @@
 <?php
-include("vue/v_menuSuperAdmin.php");
+include("vue/v_menuSuper.php");
 if(!isset($_REQUEST['action']))
      $action = 'filtre';
 else
@@ -181,12 +181,6 @@ case 'filtre':
 	}
 	case 'modifierObservation':
 	{
-<<<<<<< Updated upstream
-		     $code = $_REQUEST['code'];
-			 $uneObservation = $pdo->getUneObservation($code);
-			 include("vue/v_majObservation.php");
-			break;	 
-=======
         if(isset($_GET['codeLieu']))
         {
             $unLieu = $pdo -> getUnLieu($_GET['codeLieu']);
@@ -202,22 +196,11 @@ case 'filtre':
         $uneObservation = $pdo->getUneObservation($code);
         include("vue/v_majObservation.php");
         break;
->>>>>>> Stashed changes
     }
 
 	case 'confirmerModifierObservation':
 	{
-<<<<<<< Updated upstream
-			$code = $_REQUEST['code'];
-			$lieu = $_REQUEST['lieu'];
-			$latitude = $_REQUEST['latitude'];
-			$longitude = $_REQUEST['longitude'];
-			var_dump($lieu);
-			$pdo -> modifierObservation($code,$lieu,$latitude,$longitude);	
-			$lesLignes = $pdo->getLesLieux();
-		   include("vue/v_listeLieu.php");
-	      break;
-=======
+
         $code = $_REQUEST['code'];
         $lieu = $_REQUEST['Lieu'];
 
@@ -228,23 +211,11 @@ case 'filtre':
         $pdo -> modifierObservation($code,$lieu, addslashes($latitude), addslashes($longitude));
 
 
-        if(isset($_GET['codeLieu']))
-        {
-            $unLieu = $pdo -> getUnLieu($_GET['codeLieu']);
-            die($unLieu['orientationLat'] . $unLieu['orientationLong']);
-        }
-        if(isset($_GET['codeGrp']))
-        {
-            $unGroupe = $pdo -> getUnGroupe($_GET['codeGrp']);
-            die($unGroupe['operateur'] . $unGroupe['valeur']);
-        }
-        $lesLieux = $pdo -> getLesLieux();
-        $code = $_REQUEST['code'];
-        $uneObservation = $pdo->getUneObservation($code);
+
+        $lesObservations = $pdo-> getObservationNonValide();
         include("vue/v_majObservation.php");
 
         break;
->>>>>>> Stashed changes
 	}
 	
 	// gestion des lieux

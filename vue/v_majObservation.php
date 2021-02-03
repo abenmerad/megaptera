@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-<?php
-=======
 <form enctype="multipart/form-data" method="post" id="form_observation" action="index.php?uc=<?= $_SESSION['poste']?>&action=confirmerModifierObservation&code=<?= $code ?>">
     <fieldset id="form1" form="form_observation" class="container">
         <legend>Mise à jour de l'observation</legend>
@@ -84,4 +81,3 @@
         <input class="btn btn-primary" type="submit" value="Valider">
     </div>
 </form>
->>>>>>> Stashed changes

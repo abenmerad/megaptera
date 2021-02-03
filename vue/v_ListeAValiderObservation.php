@@ -72,11 +72,6 @@
 						Heure Debut =<?php echo $heureDebut ?> &nbsp&nbsp&nbsp&nbsp  Heure Fin =<?php echo $heureFin ?><br> 
 					  
 			       </td>
-<<<<<<< Updated upstream
-		
-			 <td><center><a href="index.php?uc=<?php echo $uc ?>&action=confirmerValiderUneObservation&code=<?php echo $code ?>">
-			<img src="images/modifier.gif" TITLE="Valider"> </a></center></td>
-=======
 		    <?php
                 if($uneObservation['lieuObservation'] == 'AUT')
                 {
@@ -96,7 +91,6 @@
                 }
             ?>
 
->>>>>>> Stashed changes
 				</tr>		
 					</div>
 				</tr>				

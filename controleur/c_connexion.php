@@ -47,7 +47,7 @@ switch($action)
 				   {
 				        $_SESSION['poste']='menuSuper';
 					    $_SESSION['id']= $membre['id'];
-					    include ("vue/v_menuSuperAdmin.php");
+					    include("vue/v_menuSuper.php");
 				   }
 			 
 				   else

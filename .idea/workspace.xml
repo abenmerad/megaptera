@@ -1,44 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    <list default="true" id="96b367ea-7876-4e83-9d5b-77fd4eae5453" name="Default Changelist" comment="">
+    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="modification d'un membre">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2021_12_20__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2021_12_20__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-=======
-    <list default="true" id="096275d0-c600-4bd7-8c21-db6528fae352" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/megaptera.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jquery-ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/jquery-ui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleur/c_membre.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_membre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery_ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/observation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/observation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ajouterObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterObservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_entete.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_entete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_menuMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuMembre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_pied.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_pied.php" afterDir="false" />
->>>>>>> Stashed changes
-=======
+      <change beforePath="$PROJECT_DIR$/controleur/c_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_connexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controleur/c_supAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_supAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modele/pdoMegaptera.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/pdoMegaptera.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_listeLieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeLieu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_connexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_majObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majObservation.php" afterDir="false" />
->>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/vue/v_menuAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_menuSuperAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuSuper.php" afterDir="false" />
     </list>
-=======
-    <list default="true" id="760869f8-b085-47b4-a409-3409c5bef96e" name="Default Changelist" comment="Modif" />
->>>>>>> parent of 92a85b2... Revert "Update workspace.xml"
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,29 +20,18 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-<<<<<<< Updated upstream
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1nKRLdj1xIezTgG8mVnDOrxVo43" />
-=======
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="gestion_administrateur" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectId" id="1nFKXMmdu16VXqCB7GyDa54wMsx" />
->>>>>>> Stashed changes
+  <component name="ProjectId" id="1nNbib6Tzq4dpP926v2uxuBKXBH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -78,41 +40,22 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-<<<<<<< Updated upstream
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-=======
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
->>>>>>> Stashed changes
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="proofread" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\masha\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< Updated upstream
-      <changelist id="96b367ea-7876-4e83-9d5b-77fd4eae5453" name="Default Changelist" comment="" />
-      <created>1611136805846</created>
+      <changelist id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="" />
+      <created>1611233637317</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-<<<<<<< Updated upstream
-      <updated>1611136805846</updated>
-      <workItem from="1611136825274" duration="663000" />
-=======
-      <changelist id="096275d0-c600-4bd7-8c21-db6528fae352" name="Default Changelist" comment="" />
-      <created>1610980443174</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1610980443174</updated>
-      <workItem from="1610980454379" duration="10073000" />
-      <workItem from="1611063016303" duration="3871000" />
->>>>>>> Stashed changes
-=======
       <updated>1611233637317</updated>
       <workItem from="1611233648329" duration="2646000" />
       <workItem from="1611335790021" duration="82000" />
@@ -146,8 +89,8 @@
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
       <updated>1611673626047</updated>
->>>>>>> Stashed changes
     </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,36 +101,14 @@
       <map>
         <entry key="MAIN">
           <value>
-<<<<<<< Updated upstream
             <State />
-=======
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="gestion_membre" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
->>>>>>> Stashed changes
           </value>
         </entry>
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-<<<<<<< Updated upstream
-=======
   </component>
   <component name="VcsManagerConfiguration">
-<<<<<<< Updated upstream
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
->>>>>>> Stashed changes
-=======
     <MESSAGE value="configuration de la validation et suppresion d'une observation" />
     <MESSAGE value="modification d'un membre" />
     <option name="LAST_COMMIT_MESSAGE" value="modification d'un membre" />
@@ -195,11 +116,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/vue/v_menuAdmin.php</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/script.js</url>
           <line>15</line>
@@ -211,6 +127,5 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
->>>>>>> Stashed changes
   </component>
 </project>
