@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="modification d'un membre">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2021_12_20__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2021_12_20__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleur/c_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleur/c_supAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_supAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_majObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majObservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_menuAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_menuSuperAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuSuper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ajouterMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterMembre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_majMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majMembre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_menuSuper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuSuper.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

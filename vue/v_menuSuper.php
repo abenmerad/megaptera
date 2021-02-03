@@ -10,6 +10,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=validerObservation">Observation à valider</a>
                     <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=filtre">Rechercher</a>
+                    <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=listeObservation">Liste des Observations</a>
                 </div>
             </li>
             <li class="nav-item active"><a class="nav-link" href="index.php?uc=<?=$_SESSION['poste']?>&action=listeMembre">Membre</a></li>
