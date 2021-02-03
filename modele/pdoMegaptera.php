@@ -459,4 +459,14 @@ class PdoMegaptera
         var_dump($req);
         $res = PdoMegaptera::$monPdo->query($req);
     }
+    public function modifierObservation($code, $lieu, $latitude, $longitude)
+    {
+        $req = "UPDATE observation
+                SET lieuObservation = '$lieu', latitude = '$latitude', longitude = '$longitude'
+                WHERE codeObservation = '$code'";
+        var_dump($req);
+
+        $res = PdoMegaptera::$monPdo->query($req);
+
+    }
 }

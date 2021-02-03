@@ -8,9 +8,9 @@
   
 		<table  align = "center"  border = "2" cellpadding="15">
 				<tr>
-						<th >PHOTO </th>
+						<th>PHOTO</th>
 						<th>OBSERVATION</th>
-					    
+					    <th>MODIFIER</th>
 						<th>VALIDER</th>
 				</tr>
 		<?php
@@ -68,13 +68,35 @@
 						Date Enregistrement = <br>
 						Lieu : <?php echo $lieu ?> &nbsp&nbsp&nbsp&nbsp<?php echo $autreLieu ?><br>
 						Latitude =<?php echo $latitude ?> &nbsp&nbsp&nbsp&nbsp<?php echo $degLat ?>&nbsp&nbsp&nbsp&nbspLongitude =<?php echo $longitude ?> &nbsp&nbsp&nbsp&nbsp<?php echo $degLong ?>&nbsp&nbsp&nbsp&nbsp<br>
-					    Date Observation =<?php echo $dateObservation[2] ?>-<?php echo $dateObservation[1] ?>-<?php echo $dateObservation[0] ?><br>
+					    Date Observation = <?php echo $dateObservation[2] ?>-<?php echo $dateObservation[1] ?>-<?php echo $dateObservation[0] ?><br>
 						Heure Debut =<?php echo $heureDebut ?> &nbsp&nbsp&nbsp&nbsp  Heure Fin =<?php echo $heureFin ?><br> 
 					  
 			       </td>
+<<<<<<< Updated upstream
 		
 			 <td><center><a href="index.php?uc=<?php echo $uc ?>&action=confirmerValiderUneObservation&code=<?php echo $code ?>">
 			<img src="images/modifier.gif" TITLE="Valider"> </a></center></td>
+=======
+		    <?php
+                if($uneObservation['lieuObservation'] == 'AUT')
+                {
+            ?>
+                    <td><center><a href="index.php?uc=<?php echo $uc ?>&action=modifierObservation&code=<?php echo $code ?>">
+                                <img src="images/modifier.gif" TITLE="Modifier"> </a></center></td>
+            <?php
+                }
+                else
+                {?>
+                    <td><center><a href="index.php?uc=<?php echo $uc ?>&action=modifierObservation&code=<?php echo $code ?>">
+                                <img src="images/modifier.gif" TITLE="Modifier"> </a></center></td>
+
+                    <td><center><a href="index.php?uc=<?php echo $uc ?>&action=confirmerValiderUneObservation&code=<?php echo $code ?>">
+                                <img src="images/modifier.gif" TITLE="Valider"> </a></center></td>
+                    <?php
+                }
+            ?>
+
+>>>>>>> Stashed changes
 				</tr>		
 					</div>
 				</tr>				

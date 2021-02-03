@@ -5,6 +5,7 @@
 <<<<<<< Updated upstream
     <list default="true" id="96b367ea-7876-4e83-9d5b-77fd4eae5453" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
 =======
     <list default="true" id="096275d0-c600-4bd7-8c21-db6528fae352" name="Default Changelist" comment="">
@@ -26,6 +27,13 @@
       <change beforePath="$PROJECT_DIR$/vue/v_entete.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_entete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_menuMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuMembre.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_pied.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_pied.php" afterDir="false" />
+>>>>>>> Stashed changes
+=======
+      <change beforePath="$PROJECT_DIR$/controleur/c_supAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_supAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modele/pdoMegaptera.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/pdoMegaptera.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_listeLieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeLieu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_majObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majObservation.php" afterDir="false" />
 >>>>>>> Stashed changes
     </list>
 =======
@@ -92,6 +100,7 @@
       <created>1611136805846</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< Updated upstream
       <updated>1611136805846</updated>
       <workItem from="1611136825274" duration="663000" />
 =======
@@ -102,6 +111,41 @@
       <updated>1610980443174</updated>
       <workItem from="1610980454379" duration="10073000" />
       <workItem from="1611063016303" duration="3871000" />
+>>>>>>> Stashed changes
+=======
+      <updated>1611233637317</updated>
+      <workItem from="1611233648329" duration="2646000" />
+      <workItem from="1611335790021" duration="82000" />
+      <workItem from="1611572172700" duration="3430000" />
+      <workItem from="1611588104939" duration="4584000" />
+      <workItem from="1611655935494" duration="4608000" />
+      <workItem from="1611827933062" duration="99000" />
+      <workItem from="1611828061492" duration="4341000" />
+      <workItem from="1612172502291" duration="425000" />
+      <workItem from="1612203825372" duration="628000" />
+      <workItem from="1612263299166" duration="834000" />
+      <workItem from="1612335825146" duration="4644000" />
+    </task>
+    <task id="LOCAL-00001" summary="configuration de la validation et suppresion d'une observation">
+      <created>1611573905816</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611573905816</updated>
+    </task>
+    <task id="LOCAL-00002" summary="configuration de la validation et suppresion d'une observation">
+      <created>1611591346968</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1611591346968</updated>
+    </task>
+    <task id="LOCAL-00003" summary="modification d'un membre">
+      <created>1611673626047</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611673626047</updated>
 >>>>>>> Stashed changes
     </task>
     <servers />
@@ -140,7 +184,33 @@
 =======
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< Updated upstream
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+>>>>>>> Stashed changes
+=======
+    <MESSAGE value="configuration de la validation et suppresion d'une observation" />
+    <MESSAGE value="modification d'un membre" />
+    <option name="LAST_COMMIT_MESSAGE" value="modification d'un membre" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/vue/v_menuAdmin.php</url>
+          <line>14</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/script.js</url>
+          <line>15</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
 >>>>>>> Stashed changes
   </component>
 </project>

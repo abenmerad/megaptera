@@ -181,14 +181,33 @@ case 'filtre':
 	}
 	case 'modifierObservation':
 	{
+<<<<<<< Updated upstream
 		     $code = $_REQUEST['code'];
 			 $uneObservation = $pdo->getUneObservation($code);
 			 include("vue/v_majObservation.php");
 			break;	 
+=======
+        if(isset($_GET['codeLieu']))
+        {
+            $unLieu = $pdo -> getUnLieu($_GET['codeLieu']);
+            die($unLieu['orientationLat'] . $unLieu['orientationLong']);
+        }
+        if(isset($_GET['codeGrp']))
+        {
+            $unGroupe = $pdo -> getUnGroupe($_GET['codeGrp']);
+            die($unGroupe['operateur'] . $unGroupe['valeur']);
+        }
+        $lesLieux = $pdo -> getLesLieux();
+        $code = $_REQUEST['code'];
+        $uneObservation = $pdo->getUneObservation($code);
+        include("vue/v_majObservation.php");
+        break;
+>>>>>>> Stashed changes
     }
 
 	case 'confirmerModifierObservation':
 	{
+<<<<<<< Updated upstream
 			$code = $_REQUEST['code'];
 			$lieu = $_REQUEST['lieu'];
 			$latitude = $_REQUEST['latitude'];
@@ -198,6 +217,34 @@ case 'filtre':
 			$lesLignes = $pdo->getLesLieux();
 		   include("vue/v_listeLieu.php");
 	      break;
+=======
+        $code = $_REQUEST['code'];
+        $lieu = $_REQUEST['Lieu'];
+
+        $latOrientation = $_POST['latOrientation'];
+        $longOrientation = $_POST['longOrientation'];
+        $longitude =  $longOrientation . " " . $_POST['DegresLong'] . "°" . $_POST['MinutesLong'] . "'" . $_POST['SecondesLong'] . '"';
+        $latitude = $latOrientation . " " . $_POST['DegresLat'] . "°" . $_POST['MinutesLat'] . "'" . $_POST['SecondesLat'] . '"';
+        $pdo -> modifierObservation($code,$lieu, addslashes($latitude), addslashes($longitude));
+
+
+        if(isset($_GET['codeLieu']))
+        {
+            $unLieu = $pdo -> getUnLieu($_GET['codeLieu']);
+            die($unLieu['orientationLat'] . $unLieu['orientationLong']);
+        }
+        if(isset($_GET['codeGrp']))
+        {
+            $unGroupe = $pdo -> getUnGroupe($_GET['codeGrp']);
+            die($unGroupe['operateur'] . $unGroupe['valeur']);
+        }
+        $lesLieux = $pdo -> getLesLieux();
+        $code = $_REQUEST['code'];
+        $uneObservation = $pdo->getUneObservation($code);
+        include("vue/v_majObservation.php");
+
+        break;
+>>>>>>> Stashed changes
 	}
 	
 	// gestion des lieux
