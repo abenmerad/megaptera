@@ -203,15 +203,43 @@ case 'filtre':
 
         $code = $_REQUEST['code'];
         $lieu = $_REQUEST['Lieu'];
+        $uneObservation = $pdo->getUneObservation($code);
+
+
+
+        $rechercheCode = $lieu.substr($uneObservation['dateObservation'],0,4);
+
+        $nbCaracteres = strlen($rechercheCode);
+        $num = $pdo -> dernierCodeObs($rechercheCode);
+        var_dump($uneObservation);
+        if (!is_null($num['Max']))
+        {
+            settype($num['Max'], "string");
+            $longueur = strlen($num['Max']);
+            $numero = substr($num['Max'],$nbCaracteres ,3);
+            $numero = $numero + 1 ;
+        }
+        else
+        {
+            $numero = 1 ;
+
+        }
+
+        $nouvCode = $rechercheCode.$numero;
+        $ext = substr($uneObservation['nomPhoto'], 9);
+        $nouvNomPhoto = $nouvCode.$ext;
+
+        $extention = pathinfo("images/".substr($code,0,3).'/'.$code.".".$ext)['extension'];
+        chmod("images/".substr($code,0,3).'/'.$code.".".$extention, 777);
+        rename("images/".substr($code,0,3).'/'.$code.".".$extention, "images/".$lieu.'/'.$nouvCode.$ext);
 
         $latOrientation = $_POST['latOrientation'];
         $longOrientation = $_POST['longOrientation'];
+
         $longitude =  $longOrientation . " " . $_POST['DegresLong'] . "°" . $_POST['MinutesLong'] . "'" . $_POST['SecondesLong'] . '"';
         $latitude = $latOrientation . " " . $_POST['DegresLat'] . "°" . $_POST['MinutesLat'] . "'" . $_POST['SecondesLat'] . '"';
-        $pdo -> modifierObservation($code,$lieu, addslashes($latitude), addslashes($longitude));
-
-
-
+        $pdo -> modifierObservation($code,$lieu, addslashes($latitude), addslashes($longitude), $nouvCode, $nouvNomPhoto);
+        var_dump("/images/".substr($code,0,3).'/'.$code.".".$extention."|||". "/images/".$lieu.'/'.$nouvCode.$ext);
         $lesObservations = $pdo-> getObservationNonValide();
         include("vue/v_majObservation.php");
 

@@ -356,9 +356,9 @@ class PdoMegaptera
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
 	}
-	public function getUneObservation()
+	public function getUneObservation($code)
 	{
-		$req = "SELECT codeObservation, typegroupe.libelle as Groupe,dominante.libelle as Dominante,lieu.lieu as Lieu, heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation";
+		$req = "SELECT codeObservation, nomPhoto, typegroupe.libelle as Groupe,dominante.libelle as Dominante,lieu.lieu as Lieu, heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement FROM observation inner join typegroupe on typegroupe.code = typeGroupeObserve inner join dominante on id = dominante inner join lieu on lieu.code = lieuObservation WHERE codeObservation = '$code'";
 		$res = PdoMegaptera::$monPdo->query($req);
         return $res->fetch();
 	}
@@ -459,10 +459,10 @@ class PdoMegaptera
         var_dump($req);
         $res = PdoMegaptera::$monPdo->query($req);
     }
-    public function modifierObservation($code, $lieu, $latitude, $longitude)
+    public function modifierObservation($code, $lieu, $latitude, $longitude, $nouvCode, $nouvNomPhoto)
     {
         $req = "UPDATE observation
-                SET lieuObservation = '$lieu', latitude = '$latitude', longitude = '$longitude'
+                SET lieuObservation = '$lieu', latitude = '$latitude', longitude = '$longitude', codeObservation = '$nouvCode', nomPhoto = '$nouvNomPhoto'
                 WHERE codeObservation = '$code'";
         var_dump($req);
 
