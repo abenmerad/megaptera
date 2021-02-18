@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="modification d'un membre">
-      <change afterPath="$PROJECT_DIR$/controleur/c_gestion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2021_12_20_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2021_12_20__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_11_06_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_11_06__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="deplacement de l'image lorsqu'on modifie le lieu d'une observation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleur/c_supAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_supAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modele/pdoMegaptera.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/pdoMegaptera.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/REU20202.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_menuAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuAdmin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +70,9 @@
       <workItem from="1612660713623" duration="811000" />
       <workItem from="1612663255062" duration="653000" />
       <workItem from="1612665864507" duration="36000" />
-      <workItem from="1612860918438" duration="4479000" />
+      <workItem from="1612860918438" duration="5393000" />
+      <workItem from="1612965269681" duration="2425000" />
+      <workItem from="1612969713260" duration="10000" />
     </task>
     <task id="LOCAL-00001" summary="configuration de la validation et suppresion d'une observation">
       <created>1611573905816</created>
@@ -98,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611673626047</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="deplacement de l'image lorsqu'on modifie le lieu d'une observation">
+      <created>1612865820190</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1612865820190</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +123,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="configuration de la validation et suppresion d'une observation" />
     <MESSAGE value="modification d'un membre" />
-    <option name="LAST_COMMIT_MESSAGE" value="modification d'un membre" />
+    <MESSAGE value="deplacement de l'image lorsqu'on modifie le lieu d'une observation" />
+    <option name="LAST_COMMIT_MESSAGE" value="deplacement de l'image lorsqu'on modifie le lieu d'une observation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
