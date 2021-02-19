@@ -20,7 +20,7 @@
          <div class="container" id="entete">
              <div class="row">
                 <div class="col-md-3 col-sm-3">
-                    <img src = "img/img-logo.png" alt = "bienvenue">
+                    <a href="index.php"><img src = "img/img-logo.png" alt = "bienvenue"></a>
                 </div>
              </div>
          </div>

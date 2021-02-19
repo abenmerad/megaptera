@@ -133,4 +133,8 @@ switch($action)
         include("vue/v_listeSuppObservation.php");
         break;
     }
+    default:
+    {
+        header('Location:index.php');
+    }
 }

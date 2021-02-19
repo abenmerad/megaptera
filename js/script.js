@@ -277,7 +277,7 @@ $("#infoLieu").hide();
     $(listLieu).change(function(){
         //On recupere la valeur du Lieu (qui correspond à l'id du lieu dans la BD)
         var valLieu = $(this).children("option:selected").val();
-        if(valLieu != "Autre")
+        if(valLieu != "AUT")
         {
             $("#infoLieu").hide(1500);
             if(valLieu != "NULL")

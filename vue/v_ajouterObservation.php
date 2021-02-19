@@ -17,7 +17,7 @@
                             <option value="<?= $unLieu['code'] ?>" <?=$select = (isset($_SESSION['data']['Lieu']) && $_SESSION['data']['Lieu'] == $unLieu['code']) ? "selected=\"selected\"" : ""?>><?= $unLieu['lieu'] . ' (' . $unLieu['code'] . ')' ?></option>
                         <?php endif; ?>
                     <?php endforeach; ?>
-                    <option value="Autre" id="autre">Autre</option>
+                    <option value="AUT" id="autre">Autre</option>
                 </select>
             </div>
             <div class="col-md-6 col-sm-12" id="infoLieu">
@@ -45,7 +45,7 @@
                 </div>
                 <div class="col col-md-6 col-6">
                     <label class="textB" for="longOrientation">Ouest
-                        <input type="radio" name="longOrientation" id="long_dirO" value="O" <?=(isset($_SESSION['data']['longOrientation']) && $_SESSION['data']['longOrientation'] == 'O') ? 'checked' : '' ?> <?=(isset($_SESSION['data']['longOrientation']) && $_SESSION['data']['longOrientation'] == 'N') ? '' : 'disabled' ?>>
+                        <input type="radio" name="longOrientation" id="long_dirO" value="O" <?=(isset($_SESSION['data']['longOrientation']) && $_SESSION['data']['longOrientation'] == 'O') ? 'checked' : '' ?> <?=(isset($_SESSION['data']['longOrientation']) && $_SESSION['data']['longOrientation'] == 'O') ? '' : 'disabled' ?>>
                     </label>
                 </div>
             </div>
@@ -145,7 +145,7 @@
                 </div>
 
                 <div>
-                    <label for = "NombreIndividu">Nombre d'individus</label>
+                    <label for="NombreIndividu">Nombre d'individus</label>
                     <SELECT class="form-control form-control-sm"  name="NombreIndividu" id ="lstNbrIndividu">
                         <option value="">Veuillez selectionner le nombre d'individus</option>
                         <?php for($i = 1; $i <= 15; $i++): ?>

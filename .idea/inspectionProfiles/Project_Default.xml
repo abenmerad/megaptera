@@ -6,5 +6,11 @@
         <language minSize="77" name="PHP" />
       </Languages>
     </inspection_tool>
+    <inspection_tool class="PhpCSValidationInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false">
+      <option name="CODING_STANDARD" value="PHPCompatibility" />
+      <option name="USE_INSTALLED_PATHS" value="true" />
+      <option name="INSTALLED_PATHS" value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phpcompatibility/php-compatibility/PHPCompatibility" />
+      <option name="EXTENSIONS" value="php,js,css,inc" />
+    </inspection_tool>
   </profile>
 </component>

@@ -1,4 +1,5 @@
 <?php
+
 if(!isset($_REQUEST['action']))
      $action = 'connexion';
 else
@@ -16,8 +17,8 @@ switch($action)
 	}
     case 'valider' :
 	{
-        $login = $_REQUEST['login'];
-		$mdp = $_REQUEST['mdp'];
+        $login = htmlspecialchars($_REQUEST['login']);
+		$mdp = htmlspecialchars($_REQUEST['mdp']);
 
         $membre = $pdo->getInfosMembre($login,$mdp);
         if(!is_array($membre))
@@ -65,8 +66,7 @@ switch($action)
             }
 		}
 		break;
-    } 
-	
+    }
     case 'deconnexion':
 	{
         header("Location:index.php");
@@ -74,4 +74,50 @@ switch($action)
 		session_destroy();
 		break;
 	}
+    case 'mdp_oublie':
+    {
+        include("vue/v_mdpOublie.php");
+        break;
+    }
+    case 'mdp_envoi_email':
+    {
+        $from = $mail->Username;
+        $to = $_REQUEST['mail'];
+        $membre = $pdo->getUnMembreParMail($to);
+        $server = $_SERVER['HTTP_ORIGIN'];
+        $route = $_SERVER['SCRIPT_NAME'];
+        if(count($membre) != 0)
+        {
+            try {
+                $mail->setFrom($from, 'Megaptera');
+                $mail->addAddress($to);     // Add a recipient
+
+                $mail->isHTML(true);
+                $mail->Subject = 'Mot de passe perdu';
+                $mail->Body    = "Bonjour,\n" . "Merci de bien vouloir suivre le lien ci-dessous afin de rédefinir votre mot de passe:\n" . "<a href=" . "$server" . "/" . "$route" . '?uc=connexion&action=redifinir_mdp' . ">Lien</a>";
+                $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+                $mail->send();
+                $_SESSION['reussite']  = "Un mail contenant votre mot de passe vous a été envoyé. Cela peut prendre quelques minutes";
+                header("Location:index.php");
+            } catch (Exception $e) {
+                header("Location:index.php?action=mdp_oublie");
+                $_SESSION['erreurs'][]  = "Une erreur est survenue lors du traitement la requête. Veuillez ressayez.";
+            }
+        }
+        else
+        {
+            header("Location:index.php?action=mdp_oublie");
+            $_SESSION['erreurs'][] = "Cette adresse mail ne correspond à aucun compte.";
+        }
+        break;
+    }
+    case 'redefinir_mdp':
+    {
+        break;
+    }
+    default:
+    {
+        header('Location:index.php?action=connexion');
+    }
 }

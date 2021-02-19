@@ -1,12 +1,13 @@
 	html, body{
 		padding: 0;
 		margin: 0;
-		background-image: url("../img/fondtest.jpg");
-		background-position: top;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
+        background-image: url("../img/background_sm.jpg");
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
 	}
+
 	select, option, input, textarea
 	{
 		opacity: 0.7;
@@ -57,7 +58,6 @@
 		color: black;
 		text-shadow: 0 1px 0 #fff;	
 	}
-	
 	a {
 		color: #2A679F;
 		
@@ -211,24 +211,22 @@
 	.dropdown-item:hover{
 		background-color: #0025BB;
 	}
-	#page {
-		
-		  margin : auto ;
-		  padding : 0.1em;
-		
-		  margin :0px auto;
-		
-		
+	#page
+	{
+		width: 80%;
+		margin : auto ;
+		padding : 0.1em;
+		margin :0px auto;
 	}
 	
 	#form_observation .row
 	{
 		margin-top: 20px;
-
 	}
 	#form_mesObservations a
 	{
-		border-radius: 50%;
+		opacity: 0.8;
+		border-radius: 180px;
 	}
 	#resultat
 	{
@@ -236,6 +234,11 @@
 		margin-bottom: 10px;
 	}
 	#form_connexion
+	{
+		width: 50%;
+		margin: 0 auto;
+	}
+	#form_mdp_oublie
 	{
 		width: 50%;
 		margin: 0 auto;
@@ -280,6 +283,7 @@ textarea
 	border-radius: 15px;
 	margin: 0 auto;
 	width: 80%;
+	box-shadow:0 0 10px #666;
 }
 .info_consultation
 {
@@ -321,6 +325,10 @@ input[type=submit]
 	margin-top : 30px;
 }
 
+.fa-clipboard, .fa-list
+{
+	font-size: 20px;
+}
 
 /*!*css footer*!*/
 
@@ -348,14 +356,24 @@ input[type=submit]
 	}
 	
 	@media screen and (max-width: 767px) {
+        html, body
+        {
+            background-image: url("../img/background_xm.jpg");
+            background-position: top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
 		body {
 			width: 700px;
+
 		  }
 	}
 	
 	@media screen and (max-width: 479px) {
 		body {
-			width: 225px;
+			width: 300px;
+			font-size: 20px;
 		  }
 		#entete
 		{
@@ -370,6 +388,10 @@ input[type=submit]
 		{
 			width: 100%;
 			margin: 0 auto;
+		}
+		#form_mdp_oublie
+		{
+			width: 100%;
 		}
 	}
 	/* CARTE OBBSERVATIONS */
@@ -397,4 +419,15 @@ input[type=submit]
 		margin-top: 5px;
 		border-bottom: 1px solid #0025BB;
 		border-radius: 15px;
+		max-width: 100%;
+		height: auto;
+	}
+	.VA
+	{
+		color: forestgreen;
+	}
+
+	#plus_filtre i
+	{
+		font-size: 15px;
 	}

@@ -1,16 +1,27 @@
- <?php
- $uc=$_SESSION['poste'];
- ?>
-
- <fieldset form="form_observation" class="container form-group" id="observationEspece">
-        <legend>Liste des observations a valider</legend>
-		<div class="row form-group" >
-  
-		<table  align = "center"  border = "2" cellpadding="15">
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Observation</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($lesObservations as $key => $uneObservation): ?>
+    <tr>
+        <th scope="row"><?= $key ?>/th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+		<table align="center" border="2" cellpadding="15">
 				<tr>
-						<th >PHOTO </th>
+						<th>PHOTO</th>
 						<th>OBSERVATION</th>
-					    
 						<th>VALIDER</th>
 				</tr>
 		<?php

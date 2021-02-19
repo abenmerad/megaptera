@@ -1,17 +1,11 @@
-
-<?php
-	
-	$uc = $_SESSION['poste'];
-
- ?>
- <fieldset form="form_observation" class="container form-group" id="observationEspece">
+<fieldset form="form_observation" class="container form-group" id="observationEspece">
         <legend>Liste des membres</legend>
-		<div class="row form-group" >
+		<div class="row form-group text-center" >
 		<table  align = "center" border = "2" cellpadding="5">
 
 				<tr>
-						<th>CODE  </th>
-						<th>NOM  </th>
+						<th>CODE</th>
+						<th>NOM</th>
 						<th>PRENOM</th>
 						<th>LOGIN</th> 
 						<th>MDP</th>

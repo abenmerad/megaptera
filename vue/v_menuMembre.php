@@ -8,7 +8,7 @@
                 <a class="nav-link" href="#">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Mes Informations</a>
+                <a class="nav-link" href="#">Profil</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -16,8 +16,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=ajouter">Ajouter une observation</a>
-                    <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=rechercheMesObservations">Mes observations</a>
-                    <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=filtre">Recherche d'observations</a>
+                    <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=rechercheObservations">Rechercher les observations</a>
                 </div>
             </li>
             <li class="nav-item">

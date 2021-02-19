@@ -449,4 +449,8 @@ case 'filtre':
         include("vue/v_listeSuppGroupe.php");
         break;
 	}
+    default:
+    {
+        header('Location:index.php');
+    }
 }

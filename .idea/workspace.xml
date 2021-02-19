@@ -2,15 +2,113 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="modification d'un membre">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.phar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/AUT/AUT20211/AUT20211_0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/COM2005 (2) - Copie.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/COM2005 (3) - Copie.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/GRC/GRC20216/GRC20216_0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MAY/MAY20212/MAY20212_0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MAY/MAY20212/MAY20212_1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MAY/MAY20212/MAY20212_2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20213/MOH20213_0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20213/MOH20213_1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20213/MOH20213_2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20213/MOH20213_3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20214/MOH20214_0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20214/MOH20214_1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20214/MOH20214_2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20214/MOH20214_3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/REU/REU20211/REU20211_0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/REU/REU20211/REU20211_1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/REU/REU20211/REU20211_2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/REU/REU20211/REU20211_3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20212/SM20212_0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20212/SM20212_1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20212/SM20212_2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_10.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_11.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_12.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_13.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_14.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_15.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_16.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_17.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_18.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_19.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_6.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_7.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_9.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/background_sm.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/background_xm.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/php-parse" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/php-parse.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/phpcbf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/phpcbf.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/phpcs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/phpcs.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/phpunit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/phpunit.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modele/Token.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/v_lesObservations.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/v_mdpOublie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/v_profil.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/v_rechercheObservations.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/v_redefinirMdp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/519fb605-76b4-448c-87f7-ef1add5024f3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/519fb605-76b4-448c-87f7-ef1add5024f3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/megaptera.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/megaptera.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_11_06_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_11_06__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_15_02_[Default_Changelist]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_15_02__Default_Changelist_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_membre.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_membre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_supAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_supAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/fondtest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modele/pdoMegaptera.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/pdoMegaptera.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/Css.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/jquery-ui.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ajouterObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterObservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ajouterObservation_v1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_consultation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_consultation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_entete.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_entete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_erreurs.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_erreurs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_filtre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_filtre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_listeMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeMembre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_menuMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuMembre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_mesObservations.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_pied.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_pied.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_rechercheMesObservations.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_reussite.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_reussite.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
-    <execution />
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/include_path/PHPMailer-6.2.0/composer.json</pharConfigPath>
+    <execution>
+      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="60082931-92a1-4a42-98de-cf09ee7ba84f" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,6 +121,52 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
+    <include_path>
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/dealerdirect/phpcodesniffer-composer-installer" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phpcompatibility/php-compatibility" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/composer" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/yoast/phpunit-polyfills" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/include_path/PHPMailer-6.2.0/vendor/sebastian/recursion-context" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1nNbib6Tzq4dpP926v2uxuBKXBH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -32,11 +176,21 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\megaptera\include_path" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -57,6 +211,14 @@
       <workItem from="1611827933062" duration="99000" />
       <workItem from="1611828061492" duration="4341000" />
       <workItem from="1612172502291" duration="425000" />
+      <workItem from="1612262273412" duration="5552000" />
+      <workItem from="1612357060317" duration="9847000" />
+      <workItem from="1612516694525" duration="3187000" />
+      <workItem from="1612725033971" duration="15905000" />
+      <workItem from="1613383971279" duration="1187000" />
+      <workItem from="1613561014338" duration="21177000" />
+      <workItem from="1613665547451" duration="586000" />
+      <workItem from="1613753038699" duration="2235000" />
     </task>
     <task id="LOCAL-00001" summary="configuration de la validation et suppresion d'une observation">
       <created>1611573905816</created>
@@ -98,6 +260,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="configuration de la validation et suppresion d'une observation" />
     <MESSAGE value="modification d'un membre" />
     <option name="LAST_COMMIT_MESSAGE" value="modification d'un membre" />
@@ -115,11 +278,10 @@
           <line>8</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/script.js</url>
-          <line>11</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/controleur/c_membre.php</url>
+          <line>261</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
