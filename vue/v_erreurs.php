@@ -1,9 +1,10 @@
+<div class="container" id="erreurs">
+    <div class="row">
+        <ul class="col-md-8 col-12">
+            <?php foreach($_SESSION['erreurs'] as $erreur): ?>
+                <li><?= $erreur ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
 
-<div class="erreurs">
-    <?php $errs = (empty($_SESSION['erreurs'])) ? [] : $_SESSION['erreurs']; ?>
-    <ul>
-        <?php foreach($errs as $erreur): ?>
-            <li><?= $erreur ?></li>
-        <?php endforeach; ?>
-    </ul>
 </div>

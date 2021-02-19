@@ -607,8 +607,7 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  text-align: center;
 }
 
 .no-gutters {
@@ -1119,6 +1118,7 @@ pre code {
     flex: 0 0 16.666667%;
     max-width: 16.666667%;
   }
+
   .col-md-auto {
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
@@ -1154,6 +1154,10 @@ pre code {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
+    
+  }
+  .col-md-6{
+    text-align: center;
   }
   .col-md-7 {
     -ms-flex: 0 0 58.333333%;
@@ -1184,6 +1188,7 @@ pre code {
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
+    text-align: center;
   }
   .order-md-first {
     -ms-flex-order: -1;

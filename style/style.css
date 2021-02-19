@@ -1,22 +1,53 @@
-
-
 	html, body{
 		padding: 0;
 		margin: 0;
-		background-image: url("../img/fondtest.jpg");
-		background-position: top;
-		background-size: cover;
-		background-repeat: no-repeat;
-		/*background-color: aqua;*/
+        background-image: url("../img/background_sm.jpg");
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
 	}
-	body{
-		font: 13px 'trebuchet MS', Arial, Helvetica;
+
+	select, option, input, textarea
+	{
+		opacity: 0.7;
+	}
+	#erreurs
+	{
+		border: 1px solid  #0025BB;
+		width: 50%;
+		margin: 0 auto;
+		border-radius: 10px;
+	}
+	#erreurs ul
+	{
+		margin: 0 auto;
+		color: red;
+		font-style: oblique;
+	}
+	#reussite
+	{
+		border: 1px solid  #32CD32;
+		width: 50%;
+		margin: 0 auto;
+		border-radius: 10px;
+		background-color: #32CD32;
+	}
+	#reussite p
+	{
+		margin: 10px;
 		color: white;
+	}
+
+	body{
+
+		font: 13px 'trebuchet MS', Arial, Helvetica;
 	}
 	legend{
 		color: #212529;
 		text-shadow: 1px 1px 10px white, 0 0 10em white, 0 0 0.5em white;
 	}
+	
 	h1{
 		text-align: center;
 		color: black;
@@ -27,7 +58,6 @@
 		color: black;
 		text-shadow: 0 1px 0 #fff;	
 	}
-	
 	a {
 		color: #2A679F;
 		
@@ -39,17 +69,15 @@
 		padding: 0;
 		list-style: none;
 	}
-	
 	.erreur
 	{
 		color: red;
 	}
 	
 	#menu {
+		text-align: center;
 		width: 100%;
-	
 		margin: 0 auto;
-		
 		border: 1px solid  #0025BB;
 		background-color:  #0025BB;
 		background-image: -moz-linear-gradient(#444, #111); 
@@ -75,14 +103,10 @@
 	#menu:after {
 		clear: both;
 	}
-	
-	#menu {
-		zoom:1;
-	}
+
 	
 	#menu li {
 		float: left;
-		border-right: 1px solid #222;
 		-moz-box-shadow: 1px 0 0 #0025BB;
 		-webkit-box-shadow: 1px 0 0 #0025BB;
 		box-shadow: 1px 0 0 #0025BB;
@@ -90,7 +114,7 @@
 	}
 	
 	#menu a {
-		color: #999;
+		color: white;
 		text-transform: uppercase;
 		font: bold 12px Arial, Helvetica;
 		text-decoration: none;
@@ -98,11 +122,11 @@
 	}
 	
 	#menu li:hover > a {
-		color: #fafafa;
+		color: rgb(175, 175, 175);
 	}
 	
 	*html #menu li a:hover { /* IE6 only */
-		color: #fafafa;
+		color: black;
 	}
 	
 	#menu ul {
@@ -172,7 +196,6 @@
 	}
 	
 	#menu ul a:hover {
-		background-color: #0186ba;
 		background-image: -moz-linear-gradient(#04acec,  #0186ba);	
 		background-image: -webkit-gradient(linear, left top, left bottom, from(#04acec), to(#0186ba));
 		background-image: -webkit-linear-gradient(#04acec, #0186ba);
@@ -180,85 +203,108 @@
 		background-image: -ms-linear-gradient(#04acec, #0186ba);
 		background-image: linear-gradient(#04acec, #0186ba);
 	}
-
-	#page {
-		
-		  margin : auto ;
-		  padding : 0.1em;
-		
-		  margin :0px auto;
-		
-		
+	.dropdown-menu
+	{
+		color: black;
+		background-color: #0186ba;
+	}
+	.dropdown-item:hover{
+		background-color: #0025BB;
+	}
+	#page
+	{
+		width: 80%;
+		margin : auto ;
+		padding : 0.1em;
+		margin :0px auto;
 	}
 	
 	#form_observation .row
 	{
-			margin-top: 20px;
+		margin-top: 20px;
+	}
+	#form_mesObservations a
+	{
+		opacity: 0.8;
+		border-radius: 180px;
+	}
+	#resultat
+	{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	#form_connexion
+	{
+		width: 50%;
+		margin: 0 auto;
+	}
+	#form_mdp_oublie
+	{
+		width: 50%;
+		margin: 0 auto;
 	}
 
-
-fieldset {
+fieldset
+{
 	padding-top:10px;
 	padding-bottom:10px;
-	border:0px solid rgba(0, 0, 0, 0);
+	border:1px solid #666;
 	border-radius:8px;
 	box-shadow:0 0 10px #666;
 	margin-top: 20px;
-
 }
+
 fieldset select
 {
-	opacity: 75%;
 	margin-bottom: 15px;
 }
-	fieldset input{
-		opacity: 75%;
-	}
-	fieldset textarea{
-		opacity: 75%;
-	}
+
 fieldset label
 {
 	font-weight: bold;
 }
+
 textarea
 {
 	resize: none;
 }
-
-.card
-{
-	padding: 0;
-	border: 1px solid  #0025BB;
-	margin-top: 25px;
-	margin-bottom: 25px;
-	color: black;
-}
-.card > *
-{
-	background-color: beige;
-}
-.card .card-text
-{
-	height: 75px;
-	width: 50%;
-}
-.card img
-{
-	margin-top: 5px;
-	border: 1px solid black;
-	border-radius: 15p;
-}
 #connexion{
-background-color:#4682B4;
-padding:30px;
-width:450px;
-margin: 0 auto;
-color: black;
-text-align: left;
+	background-color:#4682B4;
+	padding:30px;
+	width:450px;
+	margin: 0 auto;
+	color: black;
+	text-align: left;
 }
 
+#consultation
+{
+	border: 1px solid  #0025BB;
+	border-radius: 15px;
+	margin: 0 auto;
+	width: 80%;
+	box-shadow:0 0 10px #666;
+}
+.info_consultation
+{
+	padding-top: 10px;
+	border-top: 1px solid  #0025BB;
+}
 
+#consultation #to_heure
+{
+	font-size: 50px;
+}
+#section_carousel
+{
+	width: 50%;
+	margin: 0 auto;
+	height: auto;
+}
+#section_carousel button
+{
+	margin: 10px;
+}
 label {
   width: 110px;
   display: inline-block;
@@ -266,30 +312,25 @@ label {
   padding-left: 10px;
 }
 
+#login, #mdp
+{
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
 
-input[type=submit] {
-  width: 100px;
-  padding: 6px;
-  margin-top : 30px;
+input[type=submit]
+{
+	width: 100px;
+	padding: 6px;
+	margin-top : 30px;
 }
-input[type=reset] {
-  width: 100px;
-  padding: 6px;
-  margin-top : 30px;
+
+.fa-clipboard, .fa-list
+{
+	font-size: 20px;
 }
-input[type=text] {
-  width: 249px;
-}
-input[type=tel] {
-  width: 249px;
-}
-input[type=mdp] {
-  width: 249px;
-}
-input[type=email] {
-  width: 249px;
-}
-/*css footer*/
+
+/*!*css footer*!*/
 
 
 .contain{
@@ -298,6 +339,7 @@ input[type=email] {
  font-size: 13.5px;
  color: black;
 }
+
 
  .container {
 	padding-right: 15px;
@@ -314,14 +356,24 @@ input[type=email] {
 	}
 	
 	@media screen and (max-width: 767px) {
+        html, body
+        {
+            background-image: url("../img/background_xm.jpg");
+            background-position: top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
 		body {
 			width: 700px;
+
 		  }
 	}
 	
 	@media screen and (max-width: 479px) {
 		body {
-			width: 225px;
+			width: 300px;
+			font-size: 20px;
 		  }
 		#entete
 		{
@@ -332,4 +384,50 @@ input[type=email] {
 		{
 			width:100%;
 		}
+		#form_connexion
+		{
+			width: 100%;
+			margin: 0 auto;
+		}
+		#form_mdp_oublie
+		{
+			width: 100%;
+		}
+	}
+	/* CARTE OBBSERVATIONS */
+	.card
+	{
+		padding: 0;
+		border: 1px solid  #0025BB;
+		border-radius: 5px;
+		margin-top: 25px;
+		margin-bottom: 25px;
+		color: black;
+		opacity: 0.7;
+	}
+	.card > *
+	{
+		background-color: beige;
+	}
+	.card .card-text
+	{
+		height: 75px;
+		width: 50%;
+	}
+	.card img
+	{
+		margin-top: 5px;
+		border-bottom: 1px solid #0025BB;
+		border-radius: 15px;
+		max-width: 100%;
+		height: auto;
+	}
+	.VA
+	{
+		color: forestgreen;
+	}
+
+	#plus_filtre i
+	{
+		font-size: 15px;
 	}

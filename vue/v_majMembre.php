@@ -36,7 +36,7 @@
 			</p>
 			<p>
 				<label for = "number">Téléphone<em>*</em></label>
-				<input name="tel" type="tel"value ='<?php echo $tel ?>' size = "10" maxlength = "10" placeholder="06xxxxxxxx" pattern="06[0-9]{8}"><br>
+				<input name="tel" type="tel"value ='<?php echo $tel ?>' size = "10" maxlength = "10" placeholder="06xxxxxxxx" pattern="[0-9]{10}"><br>
 	        </p>
 	
 			</div>

@@ -14,7 +14,7 @@
 						<th>SUPP
 				</tr>
 		<?php
-			foreach( $lesObservations as $uneObservation) 
+			foreach($lesObservations as $uneObservation)
 			{
 			    $nomPhoto = $uneObservation['nomPhoto'];
 		        $code = $uneObservation['codeObservation'];
@@ -89,6 +89,8 @@
 					onclick="return confirm('Voulez-vous vraiment supprimer cette observation ?');"> 
 					<img src="images/supprimer.gif" TITLE="Supprimer"> </center></a></td>
 					</div>
+
+
 				</tr>				
 		<?php			
 			}

@@ -1,20 +1,31 @@
- <?php
- $uc=$_SESSION['poste'];
- 
- ?>
- <fieldset form="form_observation" class="container form-group" id="observationEspece">
-        <legend>Liste des observations a validér</legend>
-		<div class="row form-group" >
-  
-		<table  align = "center"  border = "2" cellpadding="15">
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Observation</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($lesObservations as $key => $uneObservation): ?>
+    <tr>
+        <th scope="row"><?= $key ?>/th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+		<table align="center" border="2" cellpadding="15">
 				<tr>
-						<th >PHOTO </th>
+						<th>PHOTO</th>
 						<th>OBSERVATION</th>
-					    
 						<th>VALIDER</th>
 				</tr>
 		<?php
-			foreach( $lesObservations as $uneObservation) 
+			foreach($lesObservations as $uneObservation)
 			{
 			    $nomPhoto = $uneObservation['nomPhoto'];
 		        $code = $uneObservation['codeObservation'];
@@ -72,9 +83,25 @@
 						Heure Debut =<?php echo $heureDebut ?> &nbsp&nbsp&nbsp&nbsp  Heure Fin =<?php echo $heureFin ?><br> 
 					  
 			       </td>
-		
-			 <td><center><a href="index.php?uc=<?php echo $uc ?>&action=validerUneObservation&code=<?php echo $code ?>"> 
-			<img src="images/modifier.gif" TITLE="Valider"> </a></center></td>
+		    <?php
+                if($uneObservation['lieuObservation'] == 'AUT')
+                {
+            ?>
+                    <td><center><a href="index.php?uc=<?php echo $uc ?>&action=confirmerValiderUneObservation&code=<?php echo $code ?>">
+                                <img src="images/modifier.gif" TITLE="Modifier"> </a></center></td>
+            <?php
+                }
+                else
+                {?>
+                    <td><center><a href="index.php?uc=<?php echo $uc ?>&action=confirmerValiderUneObservation&code=<?php echo $code ?>">
+                                <img src="images/modifier.gif" TITLE="Modifier"> </a></center></td>
+
+                    <td><center><a href="index.php?uc=<?php echo $uc ?>&action=confirmerValiderUneObservation&code=<?php echo $code ?>">
+                                <img src="images/modifier.gif" TITLE="Valider"> </a></center></td>
+                    <?php
+                }
+            ?>
+
 				</tr>		
 					</div>
 				</tr>				
