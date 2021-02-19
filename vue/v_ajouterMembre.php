@@ -38,12 +38,12 @@ $uc = $_SESSION['poste'];
 				<input type = "mdp"  name = "mdp" value ='' size = "30" maxlength = "45" required >
 			</P>
 			 <P>
-				<label for="email">Email <em>*</em></label>
+				<label for="email">E-mail <em>*</em></label>
 				<input name ="mail" type="email" value ='' size = "30" maxlength = "45"  placeholder="xxxxxxxx@xxxx.com" required="" pattern="[a-zA-Z0-9.-]+@[a-zA-Z.-_]+.[a-zA-Z.]{2,15}">
 			 </P>
 			 <P>
 				<label for = "number">Téléphone</label>
-				<input name="tel" type="tel" value ='' size = "10" maxlength = "10" placeholder="06xxxxxxxx" pattern="06[0-9]{8}">
+				<input name="tel" type="tel" value ='' size = "10" maxlength = "10" placeholder="0xxxxxxxxx" pattern="[0-9]{10}">
 			 </p>
 			
 		</div>

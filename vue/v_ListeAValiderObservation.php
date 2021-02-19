@@ -79,7 +79,7 @@
 						Date Enregistrement = <br>
 						Lieu : <?php echo $lieu ?> &nbsp&nbsp&nbsp&nbsp<?php echo $autreLieu ?><br>
 						Latitude =<?php echo $latitude ?> &nbsp&nbsp&nbsp&nbsp<?php echo $degLat ?>&nbsp&nbsp&nbsp&nbspLongitude =<?php echo $longitude ?> &nbsp&nbsp&nbsp&nbsp<?php echo $degLong ?>&nbsp&nbsp&nbsp&nbsp<br>
-					    Date Observation =<?php echo $dateObservation[2] ?>-<?php echo $dateObservation[1] ?>-<?php echo $dateObservation[0] ?><br>
+					    Date Observation = <?php echo $dateObservation[2] ?>-<?php echo $dateObservation[1] ?>-<?php echo $dateObservation[0] ?><br>
 						Heure Debut =<?php echo $heureDebut ?> &nbsp&nbsp&nbsp&nbsp  Heure Fin =<?php echo $heureFin ?><br> 
 					  
 			       </td>

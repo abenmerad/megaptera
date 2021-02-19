@@ -108,7 +108,15 @@ switch($action)
 
     case 'validerObservation':
     {
-        $lesObservations = $pdo-> getObservationNonValide();
+
+        $lesLignes = $pdo-> getObservationNonValide();
+        foreach($lesLignes as $uneLigne)
+        {
+            if($uneLigne['lieuObservation'] != 'AUT')
+            {
+                $lesObservations[] =  $uneLigne;
+            }
+        }
         require("vue/v_listeAValiderObservation.php");
         break;
     }

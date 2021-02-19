@@ -31,8 +31,8 @@
 				<span id="msg"></span> 
             </p>
             <P>
-				<label for="email">Email <em>*</em></label>
-				<input name ="mail" type="mail" value ='<?php echo $mail ?>' size = "30" maxlength = "45"  placeholder="xxxxxxxx@xxxx.com" required="" pattern="[a-zA-Z]*@[a-zA-Z]*.[a-zA-Z]*"><br>
+				<label for="email">E-mail <em>*</em></label>
+				<input name ="mail" type="mail" value ='<?php echo $mail ?>' size = "30" maxlength = "45"  placeholder="xxxxxxxx@xxxx.com" required="" pattern="[a-zA-Z0-9.-]+@[a-zA-Z.-_]+.[a-zA-Z.]{2,15}"><br>
 			</p>
 			<p>
 				<label for = "number">Téléphone<em>*</em></label>

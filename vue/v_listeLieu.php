@@ -43,7 +43,7 @@
 
 </div>
 <ul>
-  <a  href="index.php?uc=menuSuper&action=ajouterLieu "><h5><u>ajouter un lieu</u> </h5></a>
+  <a  href="index.php?uc=menuSuper&action=ajouterLieu "><h5><u>Ajouter un lieu</u> </h5></a>
 </ul>
 
 </fieldset>	  

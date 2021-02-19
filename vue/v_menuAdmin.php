@@ -9,8 +9,6 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Observations</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=validerObservation">Valider</a>
-                    <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=modifierObservation">Modifier</a>
-                    <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=supprimerObservation">Supprimer</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

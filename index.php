@@ -70,6 +70,10 @@ switch($uc)
 			include("controleur/c_membre.php");
 		    break;
 		}
+    case 'gestion':
+        {
+            include("controleur/c_gestion.php");
+        }
 }
 include("vue/v_pied.php");
 
