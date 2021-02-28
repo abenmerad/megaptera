@@ -25,7 +25,7 @@
                             </a>
                         </div>
                         <div class="p-2">
-                            <a href="" data-toggle="modal" data-target="#supprimerGrp" title="Supprimer le groupe" class="btn">
+                            <a href="" data-toggle="modal" data-target="#supprimerGrp<?= $key ?>" title="Supprimer le groupe" class="btn">
                                 <i class="fas fa-times-circle ER"></i>
                             </a>
                             <div class="modal fade" id="supprimerGrp<?= $key ?>" tabindex="-1" role="dialog" aria-labelledby="#supprimerGrpTitre<?= $key ?>" aria-hidden="true">
