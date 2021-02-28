@@ -1,21 +1,17 @@
-<form id="formulaire" method="post"  action="index.php?uc=menuSuper&action=confirmerAjouterDominante">
-       <fieldset form="form_observation" class="container form-group" id="observationEspece">
-        <legend>Ajouter une dominante</legend>
-		<div class="row form-group" >
-  
-		
-				<label for = "libelle">Libelle  * </label>
-				<INPUT type="text" name='libelle' size = "50" maxlength = "100" placeholder = "Saisir le texte" required>
-			
-		
-		</div>
-		<div class="d-flex flex-md-row flex-sm-row flex-column justify-content-md-center justify-content-sm-center" id="Button">
-      		<input type = "submit" value = "Valider" name = "valider">
-			<input type = "reset" value = "Annuler" name = "annuler"> 
-	    </div>
-			
-			
-		</fieldset>
-		
-</FORM>
-		
+<form id="formulaire" method="post" action='index.php?uc=<?= $_SESSION['poste'] ?>&action=confirmerAjouterDominante'>
+    <fieldset class="container">
+        <legend>Ajouter couleur dominante</legend>
+        <div class="row form-group text-center">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="libDominante">Libelle de la couleur dominante</span>
+                </div>
+                <input type="text" class="form-control" name="libelle" aria-label="libDominante" aria-describedby="libDominante" pattern="[A-Za-zéèêà]{3,}" required>
+            </div>
+        </div>
+        <div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
+            <input class="btn btn-primary" type="submit" value="Valider">
+        </div>
+    </fieldset>
+</form>
+

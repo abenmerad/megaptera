@@ -1,40 +1,32 @@
-<FORM id="formulaire" method="post" action='index.php?uc=menuSuper&action=confirmerAjouterLieu'>
-<fieldset form="form_observation" class="container form-group" id="observationEspece">
-        <legend>Ajouter un lieu</legend>
-		<div class="row form-group" >
-  
-
-			<p>
-				<label for="code">Code   *:</label>
-				<INPUT type="text" id="code" name="code" size = "4" maxlength = "5" value='' required/><br>
-			</p>
-			<p>
-				<label for="lieu">Lieu  *:</label>
-				<INPUT type="text" id="lieu" name="lieu" size = "50" maxlength = "100" value=''required /><br>							
-			</p>
-			<p>
-				<label for="latitude">Latitude :</label>
-					<select name="latitude" >
-						<option value= 'N' selected>N</option>
-						<option value='S'>S</option>
-					</select><br>
-            </p>  
-			<P>
-				<label for="longitude">Longitude :</label>
-					<select id="longitude" name="longitude">
-						<option value='E' selected>E</option>
-						<option value='O'>O</option>
-					</select>
-			</p>
-			<p>
-			</div>
-		<div class="d-flex flex-md-row flex-sm-row flex-column justify-content-md-center justify-content-sm-center" id="Button">
-      		<input type = "submit" value = "Valider" name = "valider">
-			<input type = "reset" value = "Annuler" name = "annuler"> 
-	    </div>
-			
-		
-	</FIELDSET>
-	
-</FORM>
+<form id="formulaire" method="post" action='index.php?uc=menuSuper&action=confirmerAjouterLieu'>
+    <fieldset class="container">
+        <legend>Ajouter lieu</legend>
+        <div class="row form-group text-center">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="libLieu">Libelle du lieu</span>
+                </div>
+                <input type="text" class="form-control" name="lieu" placeholder="Exemple : Comores" aria-label="libLieu" aria-describedby="libLieu" pattern="[A-Za-z]{3,13}" maxlength="13" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Coordonnées géographique</span>
+                </div>
+                <select class="form-select" name="latitude">
+                    <option value="">Latitude</option>
+                    <option value="N">Nord</option>
+                    <option value="S">Sud</option>
+                </select>
+                <select class="form-select" name="longitude">
+                    <option value="">Longitude</option>
+                    <option value="O">Ouest</option>
+                    <option value="E">Est</option>
+                </select>
+            </div>
+        </div>
+        <div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
+            <input class="btn btn-primary" type="submit" value="Valider">
+        </div>
+    </fieldset>
+</form>
 		

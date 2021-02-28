@@ -1,49 +1,62 @@
-
-<fieldset form="form_observation" class="container form-group" id="observationEspece">
-        <legend>Liste pour modification des lieux</legend>
-		<div class="row form-group" >
-  		
-
-		<table  align = "center" border = "2" cellpadding="15">
-
-				<tr>
-						<th>  CODE  </th>
-						<th>  LIEU  </th>
-						<th>ORIENTATION LATITUDE</th>
-						<th>ORIENTATION LONGITUDE</th> 
-						<th>MODIFIER</th>
-					
-				</tr>
-						
-
-	
-		<?php
-
-			foreach( $lesLignes as $unLieu) 
-			{
-				$code = $unLieu['code'];
-				$lieu = $unLieu['lieu'];
-				$latitute=$unLieu['orientationLat'];
-				$longitude = $unLieu['orientationLong'];
-				?>	
-				<tr>
-						<td><?php echo $code ?></td>
-						<td><?php echo $lieu ?></td>
-						<td><center><?php echo $latitute ?></center></td>
-						<td><center><?php echo $longitude ?></center></td> 
-						<td><center><a href="index.php?uc=menuSuper&code=<?php echo $code ?>&action=modifierLieu"> 
-			<img src="images/modifier.gif" TITLE="Modifier"> </a></center></td>
-				</tr>
-					
-		<?php			
-			}
-		?>
-		</table>
-			
-
+<div class="table-responsive-sm">
+    <table class="table table-striped table-dark text-center">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Code</th>
+            <th scope="col">Lieu</th>
+            <th scope="col">Coordonnées géographique</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($lesLieux as $key => $unLieu): ?>
+            <?php if($unLieu['code'] != 'AUT'): ?>
+                <tr>
+                    <th scope="row"><?= $key ?></th>
+                    <td><?= $unLieu['code'] ?></td>
+                    <td><?= $unLieu['lieu'] ?></td>
+                    <td><?= ($unLieu['orientationLat'] == 'N') ? "Nord" : "Sud" ?>/<?= ($unLieu['orientationLong'] == "O") ? "Ouest" : "Est" ?></td>
+                    <td>
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="p-2">
+                                <a href="index.php?uc=<?=$_SESSION['poste']?>&action=modifierLieu&code=<?= $unLieu['code'] ?>" title="Modifier le lieu" class="btn">
+                                    <i class="fas fa-edit MD"></i>
+                                </a>
+                            </div>
+                            <div class="p-2">
+                                <a href="" data-toggle="modal" data-target="#supprimerDom<?= $key ?>" title="Supprimer le groupe" class="btn">
+                                    <i class="fas fa-times-circle ER"></i>
+                                </a>
+                                <div class="modal fade" id="supprimerDom<?= $key ?>" tabindex="-1" role="dialog" aria-labelledby="#supprimerDomTitre<?= $key ?>" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="supprimerDomTitre<?= $key ?>" style="color: red;"><i class="fas fa-exclamation-circle"></i> Attention</h5>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p style="color: red;">Cette action est irreversible. Êtes-vous sûr de vouloir supprimer ce lieu ?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                                <a href="index.php?uc=<?= $_SESSION['poste'] ?>&action=supprimerLieu&code=<?= $unLieu['code'] ?>">
+                                                    <button type="button" class="btn btn-primary">Supprimer</button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+    <div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
+        <a href="index.php?uc=<?= $_SESSION['poste'] ?>&action=ajouterLieu">
+            <button class="btn btn-dark">Ajouter lieu</button>
+        </a>
+    </div>
 </div>
-<ul>
-  <a  href="index.php?uc=menuSuper&action=ajouterLieu "><h5><u>Ajouter un lieu</u> </h5></a>
-</ul>
-
-</fieldset>	  

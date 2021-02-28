@@ -1,49 +1,36 @@
-<?php
- $uc = $_SESSION['poste'];
- ?>
-<form id="formulaire" method="post"  action="index.php?uc=<?php echo $uc ?>&action=confirmerModifierMembre&id=<?php echo $id ?>">
-   <fieldset form="form_observation" class="container form-group" id="observationEspece">
+<form method="post" class="container" id="form_modifMembre" action="index.php?uc=<?= $_SESSION['poste'] ?>&action=confirmerModifierMembre&id=<?= $unMembre['id'] ?>">
+   <fieldset form="form_modifMembre" class="row">
         <legend>Modification d'un membre</legend>
-		<div class="row form-group"> 
-			<P> 
-				<label for = "identifiant">Identifiant</label>
-				<input type = "text"  name = "id" value ='<?php echo $id ?>' size = "30" maxlength = "45"  readonly="true">
-            </p>
-			<P>
-				<label for = "poste">Poste</label>
-				<input type = "text"  name = "poste" value ='<?php echo $poste ?>' size = "30" maxlength = "45"  readonly="true">
-            </p>
-			<p>
-				<label for = "name">Nom </label>
-				<input type = "text"  name = "nom" value ='<?php echo $nom ?>' size = "30" maxlength = "45" readonly="true">
-             </p>
-			 <P>
-				<label for = "prenom">Prenom <em>*</em></label>
-				<input type = "text"  name = "prenom" value ='<?php echo $prenom ?>' size = "30" maxlength = "45" required>
-			</p>
-			<P>
-				<label for = "login">Login <em>*</em></label>
-				<input type = "text"  name = "login" value ='<?php echo $login ?>' size = "30" maxlength = "45" required>
-			</p>
-			<P>
-				<label for = "mdp">Mot de passe <em>*</em></label>
-				<input type = "mdp"  name = "mdp" value ='<?php echo $mdp ?>' size = "30" maxlength = "45" required>
-				<span id="msg"></span> 
-            </p>
-            <P>
-				<label for="email">E-mail <em>*</em></label>
-				<input name ="mail" type="mail" value ='<?php echo $mail ?>' size = "30" maxlength = "45"  placeholder="xxxxxxxx@xxxx.com" required="" pattern="[a-zA-Z0-9.-]+@[a-zA-Z.-_]+.[a-zA-Z.]{2,15}"><br>
-			</p>
-			<p>
-				<label for = "number">Téléphone<em>*</em></label>
-				<input name="tel" type="tel"value ='<?php echo $tel ?>' size = "10" maxlength = "10" placeholder="06xxxxxxxx" pattern="[0-9]{10}"><br>
-	        </p>
-	
-			</div>
-	    	<div class="d-flex flex-md-row flex-sm-row flex-column justify-content-md-center justify-content-sm-center" id="Button">
-      		<input type = "submit" value = "Valider" name = "valider">
-			<input type = "reset" value = "Annuler" name = "annuler"> 
-	      </div>
-		</fieldset>
-	
+        <div class="form-group col col-md-6 mb-3">
+                <label for="nom">Nom : </label>
+                <input type="text" name="nom" id="nom" class="form-control" placeholder="<?= $unMembre['nom'] ?>">
+        </div>
+       <div class="form-group col col-md-6 mb-3">
+           <label for="prenom">Prénom : </label>
+           <input type="text" name="prenom" id="prenom" class="form-control" placeholder="<?= $unMembre['prenom'] ?>">
+       </div>
+       <div class="form-group col col-md-6 mb-3">
+           <label for="login">Login : </label>
+           <input type="text" name="login" id="login" class="form-control" placeholder="<?= $unMembre['login'] ?>">
+       </div>
+       <div class="form-group col col-md-6 mb-3">
+           <label for="tel">Téléphone : </label>
+           <input type="text" name="tel" id="tel" class="form-control" placeholder="<?= $unMembre['tel'] ?>" pattern="[0-9]{10}">
+       </div>
+       <div class="form-group col col-md-6 mb-3">
+           <label for="mail">Courriel : </label>
+           <input type="text" name="mail" id="mail" class="form-control" placeholder="<?= $unMembre['mail'] ?>" pattern="[a-zA-Z_-.]*@[a-zA-Z]*.[a-zA-Z]*">
+       </div>
+       <div class="form-group col col-md-6 mb-3">
+           <label for="poste">Poste</label>
+           <select class="form-control" name="poste" id="poste">
+               <?php foreach($lesPostes as $unPoste): ?>
+                    <option value="<?= $unPoste['poste'] ?>"><?= $unPoste['poste'] ?></option>
+               <?php endforeach; ?>
+           </select>
+       </div>
+       <div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
+           <input class="btn btn-primary" type="submit" value="Valider">
+       </div>
+   </fieldset>
 </form>

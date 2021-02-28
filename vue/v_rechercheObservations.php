@@ -1,6 +1,6 @@
-<form enctype="multipart/form-data" method="post" id="form_mesObservations" action="index.php?uc=<?= $_SESSION['poste']?>&action=lesObservations">
+<form enctype="multipart/form-data" method="post" id="form_mesObservations" action="index.php?uc=observation&action=lesObservations">
     <fieldset form="form_mesObservations" class="container">
-        <legend>Rechercher vos observations</legend>
+        <legend>Rechercher des observations</legend>
         <div class="row form-group">
             <div class="col-md-4 col-sm-12">
                 <label for="anneeObs">Année</label>

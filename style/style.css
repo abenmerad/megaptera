@@ -18,12 +18,14 @@
 		width: 50%;
 		margin: 0 auto;
 		border-radius: 10px;
+		margin-bottom: 10px;
 	}
 	#erreurs ul
 	{
 		margin: 0 auto;
 		color: red;
 		font-style: oblique;
+		list-style:none;
 	}
 	#reussite
 	{
@@ -330,6 +332,12 @@ input[type=submit]
 	font-size: 20px;
 }
 
+#obsAValider a
+{
+	font-size: 20px;
+	text-decoration: none;
+	color: white;
+}
 /*!*css footer*!*/
 
 
@@ -349,51 +357,58 @@ input[type=submit]
   }
   
   @media screen and (max-width: 991px) {
-	body {
+	body
+	{
 		width: 900px;
 		margin: 0 auto;
+	}
+	}
+	
+@media screen and (max-width: 767px) {
+	html, body
+	{
+		background-image: url("../img/background_xm.jpg");
+		background-position: top;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	body
+	{
+		width: 700px;
+	}
+
+	#page
+	{
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	body {
+		width: 300px;
+		font-size: 20px;
 	  }
+	#entete
+	{
+		width:100%;
 	}
-	
-	@media screen and (max-width: 767px) {
-        html, body
-        {
-            background-image: url("../img/background_xm.jpg");
-            background-position: top;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-		body {
-			width: 700px;
 
-		  }
+	#entete .col-sm-12
+	{
+		width:100%;
 	}
-	
-	@media screen and (max-width: 479px) {
-		body {
-			width: 300px;
-			font-size: 20px;
-		  }
-		#entete
-		{
-			width:100%;
-		}
-
-		#entete .col-sm-12
-		{
-			width:100%;
-		}
-		#form_connexion
-		{
-			width: 100%;
-			margin: 0 auto;
-		}
-		#form_mdp_oublie
-		{
-			width: 100%;
-		}
+	#form_connexion
+	{
+		width: 100%;
+		margin: 0 auto;
 	}
+	#form_mdp_oublie
+	{
+		width: 100%;
+	}
+}
 	/* CARTE OBBSERVATIONS */
 	.card
 	{
@@ -425,6 +440,14 @@ input[type=submit]
 	.VA
 	{
 		color: forestgreen;
+	}
+	.MD
+	{
+		color: cornflowerblue;
+	}
+	.ER
+	{
+		color: red;
 	}
 
 	#plus_filtre i

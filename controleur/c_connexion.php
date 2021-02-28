@@ -17,42 +17,46 @@ switch($action)
 	}
     case 'valider' :
 	{
-        $login = htmlspecialchars($_REQUEST['login']);
-		$mdp = htmlspecialchars($_REQUEST['mdp']);
+        $login  = htmlspecialchars($_REQUEST['login']);
+		$mdp    = htmlspecialchars($_REQUEST['mdp']);
+        $membre = $pdo->getInfosMembre($login, $mdp);
 
-        $membre = $pdo->getInfosMembre($login,$mdp);
         if(!is_array($membre))
         {
 			$_SESSION['erreurs'][] = "Identifiant et/ou mot de passe incorrect. Ressayez.";
             header("Location: index.php?uc=connexion");
         }
-        else 
+        else if(is_array($membre) && empty($membre['derniereConnexion']))
+        {
+            include("vue/v_premiereConnexion.php");
+        }
+        else
         {
             $_SESSION['reussite'] = "Connexion Réussie. Heureux de vous revoir ". $membre['prenom'];
             switch($membre['poste'])
             {
-                case 'membre':
+                case 'Membre':
                 {
-                    $_SESSION['poste']='menuMembre';
-                    $_SESSION['id']= $membre['id'];
+                    $_SESSION['poste']  = 'menuMembre';
+                    $_SESSION['id']     = $membre['id'];
                     break;
                 }
                 case 'Admin':
                 {
-                    $_SESSION['poste']='menuAdmin';
-                    $_SESSION['id'] = $membre['id'];
+                    $_SESSION['poste']  = 'menuAdmin';
+                    $_SESSION['id']     = $membre['id'];
                     break;
                 }
                 case 'superAdmin':
                 {
-                    $_SESSION['poste']='menuSuper';
-                    $_SESSION['id']= $membre['id'];
+                    $_SESSION['poste']  = 'menuSuper';
+                    $_SESSION['id']     = $membre['id'];
                     break;
                 }
                 default:
                 {
-                    $_SESSION['erreurs'][] = "Vous n'êtes pas autorisé";
-                    $_SESSION['reussite'] = "";
+                    $_SESSION['erreurs'][]  = "Vous n'êtes pas autorisé";
+                    $_SESSION['reussite']   = "";
                     break;
                 }
             }

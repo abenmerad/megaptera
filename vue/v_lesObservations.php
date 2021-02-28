@@ -25,7 +25,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                    <a title="Seules les observations validées seront exportées." href="index.php?uc=<?=$_SESSION['poste'] ?>&action=export&annee=<?=$donnees['anneeObs']?>&groupe=<?=$donnees['groupeObs']?>&lieu=<?=$donnees['lieuObs']?>&couleur=<?=$donnees['couleurObs']?>&caudale=<?=$donnees['caudaleObs']?>&papillon=<?=$donnees['papillonObs']?>&min=<?=$donnees['minIndividus']?>&max=<?=$donnees['maxIndividus']?>">
+                    <a title="Seules les observations validées seront exportées." href="index.php?uc=observation&action=export&annee=<?=$donnees['anneeObs']?>&groupe=<?=$donnees['groupeObs']?>&lieu=<?=$donnees['lieuObs']?>&couleur=<?=$donnees['couleurObs']?>&caudale=<?=$donnees['caudaleObs']?>&papillon=<?=$donnees['papillonObs']?>&min=<?=$donnees['minIndividus']?>&max=<?=$donnees['maxIndividus']?>">
                         <button id="export" class="btn btn-primary" >Continuer</button>
                     </a>
                 </div>
@@ -59,7 +59,7 @@
                 <li class="list-group-item"><b>Coordonnées :</b> <?= $uneObservation['latitude'] . ', ' . $uneObservation['longitude']?></li>
             </ul>
             <div class="card-body text-center">
-                <a href="index.php?uc=<?=$_SESSION['poste']?>&action=consultation&id=<?= $uneObservation['codeObservation'] ?>" class="btn btn-primary">Consulter</a>
+                <a href="index.php?uc=observation&action=consultation&id=<?= $uneObservation['codeObservation'] ?>" class="btn btn-primary">Consulter</a>
             </div>
         </div>
     <?php endforeach; ?>

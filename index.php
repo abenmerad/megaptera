@@ -57,22 +57,32 @@ switch($uc)
 		}
 	case 'menuSuper':
 		{
-			include("controleur/c_supAdmin.php");
+		    if($_SESSION['poste'] == $uc)
+			    include("controleur/c_menuSuper.php");
+		    else
+                include("controleur/c_" . $_SESSION['poste'] . ".php");
 			break;
 		}
 	case 'menuAdmin':
 		{
-			include("controleur/c_admin.php");
+            if($_SESSION['poste'] == $uc)
+                include("controleur/c_menuAdmin.php");
+            else
+                include("controleur/c_" . $_SESSION['poste'] . ".php");
 			break;
 		}
 	case 'menuMembre':
-		{ 
-			include("controleur/c_membre.php");
+		{
+            if($_SESSION['poste'] == $uc)
+                include("controleur/c_menuMembre.php");
+            else
+                include("controleur/c_" . $_SESSION['poste'] . ".php");
 		    break;
 		}
-    case 'gestion':
+    case 'observation':
         {
-            include("controleur/c_gestion.php");
+            include("controleur/c_observation.php");
+            break;
         }
 }
 include("vue/v_pied.php");

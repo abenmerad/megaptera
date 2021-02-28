@@ -1,5 +1,5 @@
-<form enctype="multipart/form-data" method="post" id="form_observation" action="index.php?uc=<?= $_SESSION['poste']?>&action=confirmer">
-    <fieldset id="form1" form="form_observation" class="container">
+<form enctype="multipart/form-data" method="post" id="form_observation" action="index.php?uc=observation&action=confirmer">
+    <fieldset form="form_observation" class="container">
         <legend>Observation</legend>
         <div class="form-group" id="ajoutImg">
             <div class="row col-md-6 col-sm-12">
@@ -25,27 +25,27 @@
             </div>
         </div>
         <div class="row justify-content-around form-group" id="selectOrientation">
-            <div class="row col col-md-6 col-sm-12 text-left text-sm-center">
-                <div class="col col-md-6 col-6">
+            <div class="row col col-md-6 col-sm-6">
+                <div class="col col-md-6 col-sm-6">
                     <label class="textB" for="latOrientation">Nord
                         <input type="radio" name="latOrientation" id="lat_dirN" value="N" <?=(isset($_SESSION['data']['latOrientation']) && $_SESSION['data']['latOrientation'] == 'N') ? 'checked' : '' ?> <?=(isset($_SESSION['data']['latOrientation']) && $_SESSION['data']['latOrientation'] == 'N') ? '' : 'disabled' ?>>
                     </label>
                 </div>
-                <div class="col col-md-6 col-6">
+                <div class="col col-md-6 col-sm-6">
                     <label class="textB" for="latOrientation">Sud
                         <input type="radio" name="latOrientation" id="lat_dirS" value="S" <?=(isset($_SESSION['data']['latOrientation']) && $_SESSION['data']['latOrientation'] == 'S') ? 'checked' : '' ?> <?=(isset($_SESSION['data']['latOrientation']) && $_SESSION['data']['latOrientation'] == 'S') ? '' : 'disabled' ?>>
                     </label>
                 </div>
             </div>
-            <div class="row col col-md-6 col-sm-12 text-left text-sm-center">
-                <div class="col col-md-6 col-6">
+            <div class="row col col-md-6 col-sm-12">
+                <div class="col col-md-6 col-sm-6">
                     <label class="textB" for="longOrientation">Est
                         <input type="radio" name="longOrientation" id="long_dirE" value="E" <?=(isset($_SESSION['data']['longOrientation']) && $_SESSION['data']['longOrientation'] == 'E') ? 'checked' : '' ?> <?=(isset($_SESSION['data']['longOrientation']) && $_SESSION['data']['longOrientation'] == 'E') ? '' : 'disabled' ?>>
                     </label>
                 </div>
-                <div class="col col-md-6 col-6">
+                <div class="col col-md-6 col-sm-6">
                     <label class="textB" for="longOrientation">Ouest
-                        <input type="radio" name="longOrientation" id="long_dirO" value="O" <?=(isset($_SESSION['data']['longOrientation']) && $_SESSION['data']['longOrientation'] == 'O') ? 'checked' : '' ?> <?=(isset($_SESSION['data']['longOrientation']) && $_SESSION['data']['longOrientation'] == 'O') ? '' : 'disabled' ?>>
+                        <input type="radio"  name="longOrientation" id="long_dirO" value="O" <?=(isset($_SESSION['data']['longOrientation']) && $_SESSION['data']['longOrientation'] == 'O') ? 'checked' : '' ?> <?=(isset($_SESSION['data']['longOrientation']) && $_SESSION['data']['longOrientation'] == 'O') ? '' : 'disabled' ?>>
                     </label>
                 </div>
             </div>
@@ -69,33 +69,33 @@
                 </div>
             </div>
             <div id="coordonneesLong" class="row">
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6 mb-3">
                     <label>Deg Long.
                         <input name="DegresLong" type="number" value="<?=(isset($_SESSION['data']['DegresLong'])) ? $_SESSION['data']['DegresLong'] : "0" ?>" min ="0" max = "99">
                     </label>
                 </div>
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6 mb-3">
                     <label>Min Long.
                         <input name="MinutesLong" type="number" value="<?=(isset($_SESSION['data']['MinutesLong'])) ? $_SESSION['data']['MinutesLong'] : "0" ?>" min ="0" max = "99">
                     </label>
                 </div>
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6 mb-3">
                     <label>Sec Long.
                         <input name="SecondesLong" type="number" value="<?=(isset($_SESSION['data']['SecondesLong'])) ? $_SESSION['data']['SecondesLong'] : "0" ?>" min ="0" max = "999">
                     </label>
                 </div>
             </div>
         </div>
-        <div class="row form-group" id="selectTime">
-            <div class="col-md-4 col-sm-12 text-center">
-                <label for="HeureDebut">heure de debut d'observation</label>
+        <div class="row form-group text-md-center" id="selectTime">
+            <div class="col-md-4 col-sm-12 mb-3">
+                <label for="HeureDebut">Heure de debut</label>
                 <input type="time" id="heureDebut" name="HeureDebut" value="<?=(isset($_SESSION['data']['HeureDebut'])) ? $_SESSION['data']['HeureDebut'] : "" ?>">
             </div>
-            <div class="col-md-4 col-sm-12 text-center">
-                <label for="HeureFin" >heure de fin d'observation</label>
+            <div class="col-md-4 col-sm-12 mb-3">
+                <label for="HeureFin" >Heure de fin</label>
                 <input type="time" id="heureFin" name="HeureFin" value="<?=(isset($_SESSION['data']['HeureFin'])) ? $_SESSION['data']['HeureFin'] : "" ?>">
             </div>
-            <div class="col-md-4 col-sm-12 text-center">
+            <div class="col-md-4 col-sm-12 mb-3">
                 <label for="DateObservation">Date Observation</label>
                 <input type="date" id="dateObservation" name="DateObservation" value="<?=(isset($_SESSION['data']['DateObservation'])) ? $_SESSION['data']['DateObservation'] : "" ?>">
             </div>
@@ -149,7 +149,7 @@
                     <SELECT class="form-control form-control-sm"  name="NombreIndividu" id ="lstNbrIndividu">
                         <option value="">Veuillez selectionner le nombre d'individus</option>
                         <?php for($i = 1; $i <= 15; $i++): ?>
-                        <option value="<?=$i?>" <?=(isset($_SESSION['data']['NombreIndividu']) && intval($_SESSION['data']['NombreIndividu']) == $i) ? "selected=\"selected\"" : ""?>><?=$i?></option>
+                        <option value="<?= $i ?>" <?=(isset($_SESSION['data']['NombreIndividu']) && intval($_SESSION['data']['NombreIndividu']) == $i) ? "selected=\"selected\"" : ""?>><?=$i?></option>
                         <?php endfor; ?>
                     </SELECT>
                 </div>
@@ -166,7 +166,6 @@
                 <textarea name="Comportement" class="form-control form-control-sm" id="comportement" placeholder="500 caractères maximum"><?=(isset($_SESSION['data']['Comportement'])) ? $_SESSION['data']['Comportement'] : ""?></textarea>
             </div>
         </div>
-      
 		<div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
 			<input class="btn btn-primary" type="submit" value="Valider">
 	    </div>

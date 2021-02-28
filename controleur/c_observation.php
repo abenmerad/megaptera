@@ -2,28 +2,28 @@
 if(!isset($_REQUEST['action']))
     $action = 'rechercheObservations';
 else
-	$action = $_REQUEST['action'];
+    $action = $_REQUEST['action'];
 
 switch($action)
 {
-	case 'ajouter':
-	{
-			if(isset($_GET['codeLieu']))
-			{
-				$unLieu = $pdo -> getUnLieu($_GET['codeLieu']);
-				die($unLieu['orientationLat'] . $unLieu['orientationLong']);
-			}
-			if(isset($_GET['codeGrp']))
-			{
-				$unGroupe = $pdo -> getUnGroupe($_GET['codeGrp']);
-				die($unGroupe['operateur'] . $unGroupe['valeur']);
-			}
-			$lesLieux       = $pdo -> getLesLieux();
-			$lesDominantes  = $pdo -> getLesDominantes();
-			$lesGroupes     = $pdo -> getLesGroupes();
-			include("vue/v_ajouterObservation.php");
-			break;
-	}
+    case 'ajouter':
+    {
+        if(isset($_GET['codeLieu']))
+        {
+            $unLieu = $pdo -> getUnLieu($_GET['codeLieu']);
+            die($unLieu['orientationLat'] . $unLieu['orientationLong']);
+        }
+        if(isset($_GET['codeGrp']))
+        {
+            $unGroupe = $pdo -> getUnGroupe($_GET['codeGrp']);
+            die($unGroupe['operateur'] . $unGroupe['valeur']);
+        }
+        $lesLieux       = $pdo -> getLesLieux();
+        $lesDominantes  = $pdo -> getLesDominantes();
+        $lesGroupes     = $pdo -> getLesGroupes();
+        include("vue/v_ajouterObservation.php");
+        break;
+    }
     case 'rechercheObservations':
     {
         $lesEtatsObservations   = $pdo -> getLesEtatsObservation();
@@ -59,7 +59,7 @@ switch($action)
             $minIndividus = 0; // On met la valeur au min
         else if($minIndividus == null && $maxIndividus == null)
             $minIndividus = 0;
-            $maxIndividus = 25;
+        $maxIndividus = 25;
 
         $lesObservations  = $pdo -> getLesObservationsParFiltre($_SESSION['id'], $annee, $groupe, $lieu, $couleur, $caudale, $papillon, $minIndividus, $maxIndividus);
 
@@ -108,7 +108,7 @@ switch($action)
         $func->creationCSV($lesObservations, $keys);
         break;
     }
-	case 'confirmer':
+    case 'confirmer':
     {
         $comportementObservation = htmlspecialchars($_POST['Comportement']);
         $commentaireObservation  = htmlspecialchars($_POST['Description']);
@@ -245,45 +245,6 @@ switch($action)
         }
         break;
     }
-    case 'filtre':
-	{  
-	    $lesLieux               = $pdo -> getLesLieux();
-		$lesDominantes          = $pdo -> getLesDominantes();
-		$lesGroupes             = $pdo -> getLesGroupes();
-		$lesAnnees              = $pdo -> getLesAnnees();
-		$lieuxASelectionner     = '';
-		$dominanteASelectionner = '';
-		$AnneeASelectionner     = '';
-		$groupesASelectionner   = '';
-		require("vue/v_filtre.php");
-		break;
-	}
-    case 'rechercher':
-	{
-	    $lesLieux               = $pdo -> getLesLieux();
-		$lesDominantes          = $pdo -> getLesDominantes();
-		$lesGroupes             = $pdo -> getLesGroupes();
-		$lesAnnees              = $pdo -> getLesAnnees();
-
-		$lieu                   = $_POST['Lieu'];
-		$lieu                   = $_POST['Lieu'];
-		$lieuxASelectionner     = $lieu;
-
-		$annee                  = $_POST['Annee'];
-		$anneeASelectionner     = $annee;
-
-		$dominante              = $_POST['Dominante'];
-		$dominanteASelectionner = $dominante;
-
-		$typeGroupe             = $_POST['Groupe'];
-		$groupeASelectionner    = $typeGroupe;
-		include("vue/v_filtre.php");
-
-		$lesObservations        = $pdo -> getRechercheObservation($lieu,$annee,(int)$dominante, $typeGroupe);
-
-		include("vue/v_RechercheObservation.php");
-		break;
-	}
     default:
     {
         header('Location:index.php');

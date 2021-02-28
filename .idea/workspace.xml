@@ -2,101 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="modification d'un membre">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.phar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/AUT/AUT20211/AUT20211_0.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/COM2005 (2) - Copie.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/COM2005 (3) - Copie.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/GRC/GRC20216/GRC20216_0.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/MAY/MAY20212/MAY20212_0.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/MAY/MAY20212/MAY20212_1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/MAY/MAY20212/MAY20212_2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20213/MOH20213_0.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20213/MOH20213_1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20213/MOH20213_2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20213/MOH20213_3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20214/MOH20214_0.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20214/MOH20214_1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20214/MOH20214_2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20214/MOH20214_3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/REU/REU20211/REU20211_0.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/REU/REU20211/REU20211_1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/REU/REU20211/REU20211_2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/REU/REU20211/REU20211_3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20212/SM20212_0.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20212/SM20212_1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20212/SM20212_2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_0.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_10.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_11.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_12.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_13.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_14.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_15.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_16.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_17.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_18.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_19.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_7.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_8.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/SM/SM20213/SM20213_9.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/background_sm.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/background_xm.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/autoload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/php-parse" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/php-parse.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/phpcbf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/phpcbf.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/phpcs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/phpcs.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/phpunit" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include_path/PHPMailer/vendor/bin/phpunit.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modele/Token.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/v_lesObservations.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/v_mdpOublie.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/v_profil.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/v_rechercheObservations.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/v_redefinirMdp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/519fb605-76b4-448c-87f7-ef1add5024f3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/519fb605-76b4-448c-87f7-ef1add5024f3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controleur/c_menuMembre.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/AUT/AUT20212/AUT20212_0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/AUT/AUT20212/AUT20212_1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/GRC/GRC20217/GRC20217_0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/v_premiereConnexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/megaptera.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/megaptera.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_11_06_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_11_06__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_15_02_[Default_Changelist]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_15_02__Default_Changelist_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_01_2021_11_10__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_01_2021_11_10__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_15_02__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_15_02__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleur/c_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_menuAdmin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controleur/c_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleur/c_membre.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_membre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleur/c_supAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_supAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/fondtest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_gestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_observation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_membre.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_supAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_menuSuper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/AUT/AUT20211/AUT20211_0.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modele/pdoMegaptera.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/pdoMegaptera.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/Css.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/jquery-ui.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ajouterDominante.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterDominante.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ajouterGroupe.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterGroupe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ajouterLieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterLieu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ajouterMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterMembre.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_ajouterObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterObservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_ajouterObservation_v1.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_consultation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_consultation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_entete.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_entete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_erreurs.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_erreurs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_filtre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_filtre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_lesObservations.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_lesObservations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_listeDominante.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeDominante.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_listeGroupe.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeGroupe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_listeLieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeLieu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_listeMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeMembre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_majDominante.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majDominante.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_majGroupe.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majGroupe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_majLieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majLieu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_majMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majMembre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_majObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majObservation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_menuMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuMembre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_mesObservations.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_pied.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_pied.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_rechercheMesObservations.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_menuSuper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuSuper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_rechercheObservations.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_rechercheObservations.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_reussite.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_reussite.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -219,6 +163,9 @@
       <workItem from="1613561014338" duration="21177000" />
       <workItem from="1613665547451" duration="586000" />
       <workItem from="1613753038699" duration="2235000" />
+      <workItem from="1613990978553" duration="9592000" />
+      <workItem from="1614160432179" duration="1924000" />
+      <workItem from="1614335044989" duration="55786000" />
     </task>
     <task id="LOCAL-00001" summary="configuration de la validation et suppresion d'une observation">
       <created>1611573905816</created>
@@ -274,14 +221,14 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controleur/c_membre.php</url>
-          <line>8</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/controleur/c_menuMembre.php</url>
+          <line>22</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controleur/c_membre.php</url>
-          <line>261</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/controleur/c_menuSuper.php</url>
+          <line>144</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

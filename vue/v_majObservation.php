@@ -76,8 +76,8 @@
                 </div>
             </div>
         </div>
+        <div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
+            <input class="btn btn-primary" type="submit" value="Valider">
+        </div>
     </fieldset>
-    <div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
-        <input class="btn btn-primary" type="submit" value="Valider">
-    </div>
 </form>

@@ -9,7 +9,8 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Observations</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=validerObservation">Observation à valider</a>
-                    <a class="dropdown-item" href="index.php?uc=<?=$_SESSION['poste']?>&action=filtre">Rechercher</a>
+                    <a class="dropdown-item" href="index.php?uc=observation&action=rechercheObservations">Rechercher</a>
+                    <a class="dropdown-item" href="index.php?uc=observation&action=ajouter">Ajouter une observation</a>
                 </div>
             </li>
             <li class="nav-item active"><a class="nav-link" href="index.php?uc=<?=$_SESSION['poste']?>&action=listeMembre">Membre</a></li>
