@@ -41,6 +41,7 @@
                         <label for="couleurObs">Couleur dominante</label>
                         <select name="couleurObs" id="select_couleur" class="form-control form-control-sm">
                             <option value="">Indifférent</option>
+
                             <?php foreach($lesDominantes as $uneDominante): ?>
                                 <option value="<?= $uneDominante['id'] ?>"><?= $uneDominante['libelle'] ?></option>
                             <?php endforeach; ?>

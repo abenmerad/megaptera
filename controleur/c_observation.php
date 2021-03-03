@@ -75,13 +75,6 @@ switch($action)
         }
         break;
     }
-    case 'consultation':
-    {
-        $monObservation = $pdo -> getUneObservation($_REQUEST['id']);
-        $img_obs        = explode(";", $monObservation['nomPhoto']);
-        include("vue/v_consultation.php");
-        break;
-    }
     case 'export':
     {
         $annee              = $_REQUEST['annee'];
@@ -137,30 +130,27 @@ switch($action)
             $latOrientation  = $_POST['latOrientation'];
             $longOrientation = $_POST['longOrientation'];
         }
-        foreach($_FILES['nomImg']['error'] as $k => $error)
+        switch($_FILES['nomImg']['error'])
         {
-            switch ($error)
+            case 0:
             {
-                case 0:
-                {
-                    $img_upload[] = ['name' => $_FILES['nomImg']['name'][$k], 'tmp_name' => $_FILES['nomImg']['tmp_name'][$k], 'type' => $_FILES['nomImg']['type'][$k]];
-                    break;
-                }
-                case 1:
-                {
-                    $_SESSION['erreurs'][] = $_FILES['nomImg']['name'][$k] . " : L'image est trop lourde pour être téléchargée.";
-                    break;
-                }
-                case 4:
-                {
-                    $_SESSION['erreurs'][] = "Aucune image n'a été ajouté.";
-                    break;
-                }
-                default:
-                {
-                    $_SESSION['erreurs'][] = $_FILES['nomImg']['name'][$k] . " : Une erreur est survenue lors du téléchargement. Ressayez.";
-                    break;
-                }
+                $img_upload = $_FILES['nomImg'];
+                break;
+            }
+            case 1:
+            {
+                $_SESSION['erreurs'][] = $_FILES['nomImg']['name'] . " : L'image est trop lourde pour être téléchargée.";
+                break;
+            }
+            case 4:
+            {
+                $_SESSION['erreurs'][] = "Aucune image n'a été ajouté.";
+                break;
+            }
+            default:
+            {
+                $_SESSION['erreurs'][] = "Une erreur est survenue lors du téléchargement. Ressayez.";
+                break;
             }
         }
         if (!empty($lieuObservation))
@@ -204,7 +194,7 @@ switch($action)
             $lesDominantes      = $pdo->getLesDominantes();
             $lesGroupes         = $pdo->getLesGroupes();
             $_SESSION['data']   = $_REQUEST;
-            header("Location: index.php?uc=" . $_SESSION['poste'] . "&action=ajouter");
+            header("Location: index.php?uc=observation&action=ajouter");
         }
         else
         {
@@ -226,27 +216,31 @@ switch($action)
             $latitude           = $latOrientation  . " " . $_POST['DegresLong'] . "°" . $_POST['MinutesLong'] . "'" . $_POST['SecondesLong'] . '"';
             $longitude          = $longOrientation . " " . $_POST['DegresLat']  . "°" . $_POST['MinutesLat']  . "'" . $_POST['SecondesLat']  . '"';
             $auteur             = $_SESSION['id'];
-            $chemin             = 'images/' . $lieuObservation . '/' . $codeObservation;
-            echo $chemin;
-            if(mkdir($chemin, 0700))
+            $chemin             = 'images/' . $lieuObservation . '/';
+            $nomPhoto           = $codeObservation . '.' . explode("/", $img_upload['type'])[1];
+            $repertoire         = $chemin . $nomPhoto;
+
+            if(move_uploaded_file($img_upload['tmp_name'], $repertoire))
             {
-                foreach($img_upload as $k => $img)
-                {
-                    $nomPhoto = $codeObservation . '_' . $k . '.' . explode("/", $img['type'])[1];
-                    if($k != 0)
-                        $repertoire .= ";" . $nomPhoto;
-                    else
-                        $repertoire .= $nomPhoto;
-                    move_uploaded_file($img['tmp_name'], $chemin . '/' . $nomPhoto);
-                }
-                $ajout = $pdo -> ajouterObservation($codeObservation, $repertoire, $lieuObservation, $lieuInfo, $heureDebut, $heureFin, $dateObservation, addslashes($latitude), addslashes($longitude), $auteur, (int)$couleurDominante, $aPapillon, (int)$nbIndividu, (int)$typeCaudale, $typeGroupe, $commentaireObservation, $comportementObservation);
+                $pdo -> ajouterObservation($codeObservation, $repertoire
+                    , $lieuObservation, $lieuInfo, $heureDebut, $heureFin, $dateObservation, addslashes($latitude), addslashes($longitude), $auteur, (int)$couleurDominante, $aPapillon, (int)$nbIndividu, (int)$typeCaudale, $typeGroupe, $commentaireObservation, $comportementObservation);
                 header("Location: index.php?uc=" . $_SESSION['poste'] . "&action=rechercheMesObservations");
+            }
+            else
+            {
+                $_SESSION['erreurs'] = "Une erreur est survenue lors du téléchargement de la photo.";
+                header("Location: index.php?uc=observation&action=ajouter");
             }
         }
         break;
     }
+    case 'matching':
+    {
+        include('vue/v_matching.php');
+        break;
+    }
     default:
     {
-        header('Location:index.php');
+        header("Location:index.php?uc=observation&action=rechercheObservations");
     }
 }

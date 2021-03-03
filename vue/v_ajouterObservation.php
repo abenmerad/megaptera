@@ -4,7 +4,7 @@
         <div class="form-group" id="ajoutImg">
             <div class="row col-md-6 col-sm-12">
                 <label  for="nomImg[]">Transfère le fichier (Format accepté : JPG/JPEG, PNG)</label>
-                <input type="file" class="form-control-file" name="nomImg[]" accept="image/jpeg, image/png" multiple>
+                <input type="file" class="form-control-file" name="nomImg" accept="image/jpeg, image/png">
             </div>
         </div>
         <div class="row form-group">
@@ -124,7 +124,7 @@
                 </div>
 
                 <div>
-                    <label for = "Caudale">Type de Caudale</label>
+                    <label for="Caudale">Type de Caudale</label>
                     <SELECT class="form-control form-control-sm"  name="Caudale" id="selectCaudale">
                         <option value="">Veuillez selectionner le Type de Caudale</option>
                         <?php for ($i=1; $i < 6 ; $i++) { ?>
@@ -135,12 +135,12 @@
             </div>
             <div class="col-md-6 col-sm-12">
                 <div>
-                    <label for = "Groupe">Type de Groupe</label>
+                    <label for="Groupe">Type de Groupe</label>
                     <SELECT class="form-control form-control-sm"  name="Groupe" id ="lstGrp">
                         <option value="">Veuillez selectionner le groupe</option>
-                        <?php foreach($lesGroupes as $unGroupe){ ?>
-                            <option value="<?php echo $unGroupe['code'];?>" <?=(isset($_SESSION['data']['Groupe']) && $_SESSION['data']['Groupe'] == $unGroupe['code']) ? "selected=\"selected\"" : ""?>><?php echo $unGroupe['libelle'];?></option>
-                        <?php } ?>
+                        <?php foreach($lesGroupes as $unGroupe): ?>
+                            <option value="<?= $unGroupe['code'] ?>" <?=(isset($_SESSION['data']['Groupe']) && $_SESSION['data']['Groupe'] == $unGroupe['code']) ? "selected=\"selected\"" : ""?>><?php echo $unGroupe['libelle'];?></option>
+                        <?php endforeach; ?>
                     </SELECT>
                 </div>
 
@@ -148,7 +148,7 @@
                     <label for="NombreIndividu">Nombre d'individus</label>
                     <SELECT class="form-control form-control-sm"  name="NombreIndividu" id ="lstNbrIndividu">
                         <option value="">Veuillez selectionner le nombre d'individus</option>
-                        <?php for($i = 1; $i <= 15; $i++): ?>
+                        <?php for($i = 1; $i <= 25; $i++): ?>
                         <option value="<?= $i ?>" <?=(isset($_SESSION['data']['NombreIndividu']) && intval($_SESSION['data']['NombreIndividu']) == $i) ? "selected=\"selected\"" : ""?>><?=$i?></option>
                         <?php endfor; ?>
                     </SELECT>

@@ -47,7 +47,7 @@
                             <b>Nom de l'observation : </b> <?= $uneObservation['codeObservation'] ?>
                         </li>
                         <li class="list-group-item list-group-item-primary">
-                            <b>Auteur : </b><?= $uneObservation['codeObservation'] ?>
+                            <b>Auteur : </b><?= $uneObservation['nom'] . ' ' . $uneObservation['prenom'] ?>
                         </li>
                         <li class="list-group-item list-group-item-primary">
                             <b>Date de création : </b> <?= $uneObservation['dateMAJ'] ?>

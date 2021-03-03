@@ -33,19 +33,12 @@
         </div>
     </div>
 </div>
+
 <div class="row justify-content-around" id="clip-board">
-    <?php foreach($lesObservations as $uneObservation): ?>
+    <?php foreach($lesObservations as $key => $uneObservation): ?>
         <div class="card bg-info mb-3 col-6 col-sm-3 col-md-2" style="width: 18rem;">
             <div class="card-img">
-                <div id="carousel_card" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <?php foreach(explode(";", $uneObservation['nomPhoto']) as $k => $img): ?>
-                            <div class="carousel-item <?= ($k == 0) ? "active" : ""?>">
-                                <img class="card-img-top d-block w-100" src="images/<?= $uneObservation['lieuObservation'] . '/' . $uneObservation['codeObservation'] . '/' . $img ?>">
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
+                <img src="<?= $uneObservation['nomPhoto'] ?>" alt="">
             </div>
             <div class="card-body">
                 <h5 class="card-title"><?= $uneObservation['codeObservation'] ?></h5>
@@ -59,7 +52,84 @@
                 <li class="list-group-item"><b>Coordonnées :</b> <?= $uneObservation['latitude'] . ', ' . $uneObservation['longitude']?></li>
             </ul>
             <div class="card-body text-center">
-                <a href="index.php?uc=observation&action=consultation&id=<?= $uneObservation['codeObservation'] ?>" class="btn btn-primary">Consulter</a>
+                <button data-toggle="modal" data-target="#consultation_modal<?= $key ?>" class="btn btn-primary">
+                    Consulter
+                </button>
+            </div>
+        </div>
+        <div class="modal fade" id="consultation_modal<?= $key ?>" tabindex="-1" role="dialog" aria-labelledby="consultation_modal_title<?= $key ?>" aria-hidden="true">
+            <div class="modal-dialog modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="consultation_modal_title<?= $key ?>"><?= $uneObservation['codeObservation'] ?></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <article class="row text-center" id="consultation">
+                            <section class="col col-md-12" id="section_carousel">
+                                <figure class="figure">
+                                    <img src="<?= $uneObservation['nomPhoto'] ?>" class="figure-img img-fluid rounded">
+                                    <figcaption class="figure-caption"><?= htmlspecialchars($uneObservation['commentaire']) ?></figcaption>
+                                </figure>
+                            </section>
+                            <section class="col-md-12 info_consultation">
+                                <h4>Groupe</h4>
+                                <p><?= $uneObservation['libGroupe'] ?></p>
+                            </section>
+                            <section class="col-md-12 info_consultation">
+                                <h4>Couleur dominante</h4>
+                                <p><?= $uneObservation['libDominante'] ?></p>
+                            </section>
+                            <section class="col-md-12 info_consultation">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h4>Heure début observation</h4>
+                                        <p><?= $uneObservation['heureDebutObservation'] ?>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <i id="to_heure" class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h4>Heure fin observation</h4>
+                                        <p><?= $uneObservation['heureFinObservation'] ?></p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="col-md-12 info_consultation">
+                                <h4>Date d'observation</h4>
+                                <p><?= date('d/m/Y', strtotime($uneObservation['dateObservation'])) ?></p>
+                            </section>
+                            <section class="col-md-12 info_consultation">
+                                <h4>Coordonnées GPS</h4>
+                                <p><?= $uneObservation['latitude'] . ' ' . $uneObservation['longitude'] ?></p>
+                            </section>
+                            <section class="col-md-12 info_consultation">
+                                <h4>Nombre d'individus recensés</h4>
+                                <p><?= $uneObservation['nbIndividus'] ?></p>
+                            </section>
+                            <section class="col-md-12 info_consultation">
+                                <h4>Présence d'un papillon</h4>
+                                <p><?= $uneObservation['papillon'] ?></p>
+                            </section>
+                            <section class="col-md-12 info_consultation">
+                                <h4>Type de caudale</h4>
+                                <p><?= $uneObservation['typeCaudale'] ?></p>
+                            </section>
+                            <section class="col-md-12 info_consultation">
+                                <h4>Comportement</h4>
+                                <p><?= htmlspecialchars($uneObservation['comportement']) ?></p>
+                            </section>
+                        </article>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                        <?php if($_SESSION['poste'] == "menuSuper" || $_SESSION['poste'] == "menuAdmin"): ?>
+                            <a href="index.php?uc=observation&action=matching" class="btn btn-primary">Matching</a>
+                        <?php endif; ?>
+                    </div>
+                </div>
             </div>
         </div>
     <?php endforeach; ?>

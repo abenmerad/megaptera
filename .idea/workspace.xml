@@ -1,9 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="- Refonte complète du design de l'espace super-admin &#10;- Amélioration de la &quot;responsivité&quot; du site&#10;- Optimisation du code PHP&#10;- Amélioration de la gestion des erreurs utilisateurs&#10;- Amélioration de la sécurité du site (ajout de requête parametrée face aux injections SQL et face à l'ajout non voulu de code HTML dans les formulaires)">
+    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="- Modification BDD">
+      <change afterPath="$PROJECT_DIR$/images/MAY/MAY20211.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MOH/MOH20211.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/v_matching.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_listeGroupe.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeGroupe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_menuMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_menuMembre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_menuSuper.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_menuSuper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_observation.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_observation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/AUT/AUT20212/AUT20212_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/AUT/AUT20212/AUT20212_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/COM/COM20202.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/COM/COM20211/COM20211_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/COM/COM20211/COM20211_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/COM/COM20211/COM20211_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/COM/COM20211/COM20211_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20211/GRC20211_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20211/GRC20211_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20211/GRC20211_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20211/GRC20211_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20212/GRC20212_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20212/GRC20212_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20212/GRC20212_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20212/GRC20212_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20212/GRC20212_4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20212/GRC20212_5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20212/GRC20212_6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20212/GRC20212_7.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20212/GRC20212_8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20213/GRC20213_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20213/GRC20213_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20213/GRC20213_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20213/GRC20213_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20214/GRC20214_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20214/GRC20214_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20214/GRC20214_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20214/GRC20214_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20215/GRC20215_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20215/GRC20215_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20215/GRC20215_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20215/GRC20215_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20216/GRC20216_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/GRC/GRC20217/GRC20217_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MAY/MAY20211/MAY20211_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MAY/MAY20211/MAY20211_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MAY/MAY20211/MAY20211_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MAY/MAY20211/MAY20211_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MAY/MAY20212/MAY20212_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MAY/MAY20212/MAY20212_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MAY/MAY20212/MAY20212_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20211/MOH20211_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20211/MOH20211_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20211/MOH20211_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20212/MOH20212_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20212/MOH20212_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20212/MOH20212_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20213/MOH20213_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20213/MOH20213_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20213/MOH20213_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20213/MOH20213_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20214/MOH20214_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20214/MOH20214_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20214/MOH20214_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20214/MOH20214_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/REU/REU20211/REU20211_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/REU/REU20211/REU20211_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/REU/REU20211/REU20211_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/REU/REU20211/REU20211_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20211/SM20211_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20211/SM20211_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20211/SM20211_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20212/SM20212_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20212/SM20212_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20212/SM20212_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_10.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_11.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_12.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_13.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_14.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_15.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_16.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_17.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_18.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_19.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_7.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SM/SM20213/SM20213_9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modele/pdoMegaptera.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/pdoMegaptera.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/matching.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/matching.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ajouterObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterObservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_consultation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_erreurs.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_erreurs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_lesObservations.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_lesObservations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_menuSuper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuSuper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_rechercheObservations.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_rechercheObservations.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +229,9 @@
       <workItem from="1613753038699" duration="2235000" />
       <workItem from="1613990978553" duration="9592000" />
       <workItem from="1614160432179" duration="1924000" />
-      <workItem from="1614335044989" duration="56629000" />
+      <workItem from="1614335044989" duration="57223000" />
+      <workItem from="1614685730776" duration="8037000" />
+      <workItem from="1614766392411" duration="4820000" />
     </task>
     <task id="LOCAL-00001" summary="configuration de la validation et suppresion d'une observation">
       <created>1611573905816</created>
@@ -157,7 +261,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614548439478</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- Correction bug suppression groupe">
+      <created>1614549434097</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1614549434097</updated>
+    </task>
+    <task id="LOCAL-00006" summary="- Modification BDD">
+      <created>1614549551778</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1614549551778</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +298,9 @@
     <MESSAGE value="configuration de la validation et suppresion d'une observation" />
     <MESSAGE value="modification d'un membre" />
     <MESSAGE value="- Refonte complète du design de l'espace super-admin &#10;- Amélioration de la &quot;responsivité&quot; du site&#10;- Optimisation du code PHP&#10;- Amélioration de la gestion des erreurs utilisateurs&#10;- Amélioration de la sécurité du site (ajout de requête parametrée face aux injections SQL et face à l'ajout non voulu de code HTML dans les formulaires)" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Refonte complète du design de l'espace super-admin &#10;- Amélioration de la &quot;responsivité&quot; du site&#10;- Optimisation du code PHP&#10;- Amélioration de la gestion des erreurs utilisateurs&#10;- Amélioration de la sécurité du site (ajout de requête parametrée face aux injections SQL et face à l'ajout non voulu de code HTML dans les formulaires)" />
+    <MESSAGE value="- Correction bug suppression groupe" />
+    <MESSAGE value="- Modification BDD" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Modification BDD" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -191,13 +311,8 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controleur/c_menuMembre.php</url>
-          <line>22</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/controleur/c_menuSuper.php</url>
-          <line>144</line>
+          <line>141</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

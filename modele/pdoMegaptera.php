@@ -301,7 +301,7 @@ class PdoMegaptera
 	}
 	
 	public function getObservationNonValide()
-	{   $req = "SELECT codeObservation, lieuObservation, autreLieu, nomPhoto, heureDebutObservation, heureFinObservation, dateObservation, latitude, longitude, nbIndividus, papillon, typeCaudale, commentaire, comportement, typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu,orientationLat,orientationLong, nom, dateMAJ
+	{   $req = "SELECT membre.nom, membre.prenom, codeObservation, lieuObservation, autreLieu, nomPhoto, heureDebutObservation, heureFinObservation, dateObservation, latitude, longitude, nbIndividus, papillon, typeCaudale, commentaire, comportement, typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu,orientationLat,orientationLong, nom, dateMAJ
 	            FROM observation 
                 INNER JOIN typegroupe 
                 ON typegroupe.code = typeGroupeObserve 
@@ -434,8 +434,8 @@ class PdoMegaptera
 	}
 	public function dernierCodeObs($code)
 	{
-		$req ="SELECT max(codeObservation) as Max 
-               FROM `observation` 
+		$req ="SELECT  max(codeObservation) as Max 
+               FROM observation
                WHERE codeObservation LIKE '$code%'";
 		$res = PdoMegaptera::$monPdo->query($req);
         return $res->fetch();
@@ -730,12 +730,13 @@ class PdoMegaptera
     }
     public function modifierObservation($code, $lieu, $latitude, $longitude, $nouvCode, $nouvNomPhoto)
     {
-        $req = "UPDATE observation
-                SET lieuObservation = '$lieu', latitude = '$latitude', longitude = '$longitude', codeObservation = '$nouvCode', nomPhoto = '$nouvNomPhoto'
-                WHERE codeObservation = '$code'";
-        var_dump($req);
-
-        $res = PdoMegaptera::$monPdo->query($req);
-
+        $req = "UPDATE  observation
+                SET     lieuObservation =   '$lieu', 
+                        latitude =          '$latitude', 
+                        longitude =         '$longitude', 
+                        codeObservation =   '$nouvCode', 
+                        nomPhoto =          '$nouvNomPhoto'
+                WHERE   codeObservation =   '$code'";
+        PdoMegaptera::$monPdo->query($req);
     }
 }

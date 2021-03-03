@@ -8,26 +8,23 @@ switch($action)
 {
 
 	case 'validerObservation':
-	{  
+	{
 	    $lesObservations = $pdo-> getObservationNonValide();
 		require("vue/v_listeAValiderObservation.php");
 		break;
 	}
-	case 'validerUneObservation':
-	{
-	    $codeObsevation = $_REQUEST['codeObservation'];
-	    $uneObservation = $pdo-> getUneObservationNonValide($code);
-		require("vue/v_validerObservation.php");
-		break;
-	}
+
 	case 'confirmerValiderUneObservation':
 	{
-	    $codeObservation = $_REQUEST['code'];
-	    
-	    $pdo-> validerUneObservation($codeObservation);
-		
-	    $lesObservations = $pdo-> getObservationNonValide();
-		require("vue/v_listeAValiderObservation.php");
+        try {
+            $pdo-> validerUneObservation($_REQUEST['code']);
+            $_SESSION['reussite'] = "Observation validée avec succès.";
+        }
+        catch(Exception $e)
+        {
+            $_SESSION['erreurs'][] = "Une erreur est survenue lors de la validation de l'observation.";
+        }
+        header("Location:index.php?uc=" . $_SESSION['poste'] . "&action=validerObservation");
 		break;
 	}
 	case 'supprimerObservation':
@@ -73,17 +70,16 @@ switch($action)
 
 	case 'confirmerModifierObservation':
 	{
-
         $code               = $_REQUEST['code'];
         $lieu               = $_REQUEST['Lieu'];
         $latOrientation     = $_POST['latOrientation'];
         $longOrientation    = $_POST['longOrientation'];
         $uneObservation     = $pdo -> getUneObservation($code);
+        $rechercheCode      = $lieu . date("Y", strtotime($uneObservation['dateObservation']));
+        $nbCaracteres       = strlen($rechercheCode);
+        $info_img           = pathinfo($uneObservation['nomPhoto']);
+        $num                = $pdo -> dernierCodeObs($rechercheCode);
 
-        $rechercheCode = $lieu.substr($uneObservation['dateObservation'],0,4);
-
-        $nbCaracteres = strlen($rechercheCode);
-        $num = $pdo -> dernierCodeObs($rechercheCode);
         if (!is_null($num['Max']))
         {
             settype($num['Max'], "string");
@@ -96,24 +92,26 @@ switch($action)
             $numero = 1 ;
         }
 
-        $nouveauCode = $rechercheCode . $numero;
-        $ext = substr($uneObservation['nomPhoto'], 9);
-        $nouveauNomPhoto = $nouveauCode.$ext;
-        echo $nouveauCode;
-        $extention = pathinfo("images/".substr($code,0,3).'/'.$code.".".$ext)['extension'];
-        $repertoire_img = "images/".substr($code,0,3).'/'.$code.".".$extention;
-        chmod($repertoire_img, 777);
-        rename("images/".substr($code,0,3).'/'.$code.".".$extention, "images/".$lieu.'/'.$nouvCode.$ext);
+        $nouveauCode        = $rechercheCode . $numero;
+        $nouveauNomPhoto    = $nouveauCode . '.' . $info_img['extension'];
+        $from               = $info_img['dirname'] . '/' . $info_img['basename'];
+        $to                 =  'images/' . $lieu . '/' . $nouveauNomPhoto;
 
-        $longitude =  $longOrientation . " " . $_POST['DegresLong'] . "°" . $_POST['MinutesLong'] . "'" . $_POST['SecondesLong'] . '"';
-        $latitude = $latOrientation . " " . $_POST['DegresLat'] . "°" . $_POST['MinutesLat'] . "'" . $_POST['SecondesLat'] . '"';
-        $pdo -> modifierObservation($code,$lieu, addslashes($latitude), addslashes($longitude), $nouvCode, $nouvNomPhoto);
-        var_dump("/images/".substr($code,0,3).'/'.$code.".".$extention."|||". "/images/".$lieu.'/'.$nouvCode.$ext);
-        $lesObservations = $pdo-> getObservationNonValide();
-        include("vue/v_majObservation.php");
+        chmod($from, 777);
+        if(rename($from, $to))
+        {
+            $longitude =  $longOrientation . " " . $_POST['DegresLong'] . "°" . $_POST['MinutesLong'] . "'" . $_POST['SecondesLong'] . '"';
+            $latitude = $latOrientation . " " . $_POST['DegresLat'] . "°" . $_POST['MinutesLat'] . "'" . $_POST['SecondesLat'] . '"';
+            $pdo -> modifierObservation($code, $lieu, addslashes($latitude), addslashes($longitude), $nouveauCode, $to);
+            $_SESSION['reussite'] = "Observation modifiée avec succès.";
+        }
+        else
+        {
+            $_SESSION['erreurs'][] = "Une erreur est survenue lors de la modification de l'observation. Veuillez ressayez.";
+        }
+        header("Location: index.php?uc=" . $_SESSION['poste'] . "&action=validerObservation");
         break;
 	}
-	
 	// gestion des lieux
 	case 'listeLieu':
 	{
@@ -121,7 +119,6 @@ switch($action)
 		include("vue/v_listeLieu.php");
        	break;
 	}
-	
 	case 'ajouterLieu':
 	{
 		include("vue/v_ajouterLieu.php");
