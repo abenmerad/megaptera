@@ -537,14 +537,16 @@ class PdoMegaptera
 	}
 	public function getUneObservation($id)
 	{
-		$req = "SELECT codeObservation, nomPhoto, typegroupe.libelle as Groupe,dominante.libelle as Dominante,lieu.lieu as Lieu, lieu.code as CodeLieu, heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement 
-                FROM observation 
-                INNER JOIN typegroupe 
-                ON typegroupe.code = typeGroupeObserve 
-                INNER JOIN dominante 
-                ON id = dominante 
-                INNER JOIN lieu 
-                ON lieu.code = lieuObservation";
+        $req = "SELECT          dateMAJ, dateDeValidite, membre.nom as nomMembre, membre.prenom as prenomMembre, etatObservation, lieuObservation, codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude, longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong 
+                FROM            observation 
+                INNER JOIN      typegroupe 
+                ON              typegroupe.code              = typeGroupeObserve 
+                INNER JOIN      dominante 
+                ON              id                           = dominante 
+                INNER JOIN      lieu 
+                ON              lieu.code                    = lieuObservation
+                INNER JOIN      membre
+                ON              membre.id                    = auteurObservation";
 		$res = PdoMegaptera::$monPdo->query($req);
         return $res->fetch();
 	}

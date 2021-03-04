@@ -51,7 +51,7 @@ switch($action)
         if($minIndividus != null && $maxIndividus != null && $minIndividus > $maxIndividus)
         {
             $_SESSION['erreurs'][] = "Le nombre d'individus minimum ne peut pas être supérieur au nombre d'individus maximum.";
-            header("Location:index.php?uc=menuMembre&action=rechercheMesObservations");
+            header("Location:index.php?uc=observation&action=rechercheObservations");
         }
         else if($minIndividus != null && $maxIndividus == null)
             $maxIndividus = 25; // On met la valeur au max
@@ -71,7 +71,7 @@ switch($action)
         else
         {
             $_SESSION['erreurs'][] = "Aucun resultat trouvé pour cette recherche.";
-            header("Location:index.php?uc=menuMembre&action=rechercheMesObservations");
+            header("Location:index.php?uc=observation&action=rechercheObservations");
         }
         break;
     }
@@ -234,11 +234,7 @@ switch($action)
         }
         break;
     }
-    case 'matching':
-    {
-        include('vue/v_matching.php');
-        break;
-    }
+
     default:
     {
         header("Location:index.php?uc=observation&action=rechercheObservations");

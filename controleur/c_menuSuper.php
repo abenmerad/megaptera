@@ -509,6 +509,56 @@ switch($action)
         header("Location: index.php?uc=" . $_SESSION['poste'] . "&action=listeGroupe");
         break;
 	}
+    case 'rechercheMatching':
+    {
+        include('vue/v_rechercheMatching.php');
+        break;
+    }
+
+    case 'matching':
+    {
+        $id                     = $_REQUEST['id'];
+        $observationPrimaire    = $pdo -> getUneObservation($id);
+        $couleur                = $_POST['couleurObs'];
+        $caudale                = $_POST['caudaleObs'];
+        $papillon               = $_POST['papillonObs'];
+        $minIndividus           = $_POST['minIndividus'];
+        $maxIndividus           = $_POST['maxIndividus'];
+        $annee                  = $_POST['anneeObs'];
+        $groupe                 = $_POST['groupeObs'];
+        $lieu                   = $_POST['lieuObs'];
+        $donnees                = $_REQUEST;
+        $lesEtatsObservations   = $pdo -> getLesEtatsObservation();
+        $lesGroupes             = $pdo -> getLesGroupes();
+        $lesLieux               = $pdo -> getLesLieux();
+
+        if($minIndividus != null && $maxIndividus != null && $minIndividus > $maxIndividus)
+        {
+            $_SESSION['erreurs'][] = "Le nombre d'individus minimum ne peut pas être supérieur au nombre d'individus maximum.";
+            header("Location:index.php?uc=" . $_SESSION['poste'] . "&action=rechercheMatching&id=" . $id);
+        }
+        else if($minIndividus != null && $maxIndividus == null)
+            $maxIndividus = 25; // On met la valeur au max
+        else if($minIndividus == null && $maxIndividus != null)
+            $minIndividus = 0; // On met la valeur au min
+        else if($minIndividus == null && $maxIndividus == null)
+            $minIndividus = 0;
+        $maxIndividus = 25;
+
+        $lesObservations  = $pdo -> getLesObservationsParFiltre($_SESSION['id'], $annee, $groupe, $lieu, $couleur, $caudale, $papillon, $minIndividus, $maxIndividus);
+
+        if(count($lesObservations) != 0)
+        {
+            include("vue/v_rechercheObservations.php");
+            include("vue/v_matching.php");
+        }
+        else
+        {
+            $_SESSION['erreurs'][] = "Aucun resultat trouvé pour cette recherche.";
+            header("Location:index.php?uc=" . $_SESSION['poste'] . "&action=rechercheMatching&id=" . $id);
+        }
+        break;
+    }
     default:
     {
         header('Location:index.php?uc=observation&action=rechercheObservations');

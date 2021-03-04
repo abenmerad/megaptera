@@ -126,7 +126,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
                         <?php if($_SESSION['poste'] == "menuSuper" || $_SESSION['poste'] == "menuAdmin"): ?>
-                            <a href="index.php?uc=observation&action=matching" class="btn btn-primary">Matching</a>
+                            <a href="index.php?uc=<?= $_SESSION['poste'] ?>&action=rechercheMatching&id=<?= $uneObservation['codeObservation'] ?>" class="btn btn-primary">Matching</a>
                         <?php endif; ?>
                     </div>
                 </div>

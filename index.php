@@ -57,7 +57,10 @@ switch($uc)
 		}
 	case 'menuSuper':
 		{
-		    include("controleur/c_menuSuper.php");
+            if($_SESSION['poste'] == $uc)
+		        include("controleur/c_menuSuper.php");
+            else
+                include("controleur/c_" . $_SESSION['poste'] . ".php");
 			break;
 		}
 	case 'menuAdmin':

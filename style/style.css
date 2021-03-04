@@ -417,7 +417,7 @@ input[type=submit]
 		margin-top: 25px;
 		margin-bottom: 25px;
 		color: black;
-		opacity: 0.7;
+		opacity: 0.9;
 	}
 	.card > *
 	{
@@ -452,4 +452,5 @@ input[type=submit]
 	#plus_filtre i
 	{
 		font-size: 15px;
+		color: black;
 	}
