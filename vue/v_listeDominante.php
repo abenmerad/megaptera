@@ -18,7 +18,7 @@
                 <td>
                     <div class="d-flex flex-row justify-content-center">
                         <div class="p-2">
-                            <a href="index.php?uc=<?=$_SESSION['poste']?>&action=modifierDominante&id=<?= $uneDominante['id'] ?>" title="Modifier la couleur dominante" class="btn">
+                            <a href="index.php?uc=gestion&action=modifierDominante&id=<?= $uneDominante['id'] ?>" title="Modifier la couleur dominante" class="btn">
                                 <i class="fas fa-edit MD"></i>
                             </a>
                         </div>
@@ -37,7 +37,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                            <a href="index.php?uc=<?= $_SESSION['poste'] ?>&action=supprimerDominante&idDominante=<?= $uneDominante['id'] ?>">
+                                            <a href="index.php?uc=gestion&action=supprimerDominante&idDominante=<?= $uneDominante['id'] ?>">
                                                 <button type="button" class="btn btn-primary">Supprimer</button>
                                             </a>
                                         </div>

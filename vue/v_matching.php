@@ -5,7 +5,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <figure class="figure">
-                            <img src="<?= $observationPrimaire['nomPhoto'] ?>" style="border: 5px solid black;" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                            <img src="<?= $observationPrimaire['nomPhoto'] ?>" style="border: 5px solid black;" class="figure-img img-fluid rounded">
                             <div class="carousel-caption d-none d-md-block" style="color: black;">
                                 <h5><?= $observationPrimaire['codeObservation'] ?></h5>
                             </div>

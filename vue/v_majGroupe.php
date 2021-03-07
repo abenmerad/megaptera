@@ -1,4 +1,4 @@
-<form method="post" class="container" action="index.php?uc=menuSuper&action=confirmerModifierGroupe&code=<?= $code ?>">
+<form method="post" class="container" action="index.php?uc=gestion&action=confirmerModifierGroupe&code=<?= $code ?>">
    <fieldset class="row">
        <legend>Modification d'un groupe</legend>
        <div class="form-group col-md-6 col-sm-12 mb-3 text-md-center offset-md-3">

@@ -1,4 +1,4 @@
-<form id="formulaire" method="post" action='index.php?uc=<?= $_SESSION['poste'] ?>&action=confirmerModifierLieu&code=<?= $code ?>'>
+<form id="formulaire" method="post" action='index.php?uc=gestion&action=confirmerModifierLieu&code=<?= $code ?>'>
 	<fieldset class="container">
         <legend>Modifier lieu</legend>
         <div class="row form-group text-center">

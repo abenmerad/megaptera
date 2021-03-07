@@ -20,8 +20,13 @@
          <div class="container" id="entete">
              <div class="row">
                 <div class="col-md-3 col-sm-3">
-                    <a href="index.php"><img src = "img/img-logo.png" alt = "bienvenue"></a>
+                    <a href="index.php"><img src = "img/img-logo.png"></a>
                 </div>
              </div>
          </div>
      <div id="page">
+         <?php if(isset($_SESSION['poste'])): ?>
+            <div class="d-flex justify-content-end" style="font-size=5px;">
+                Vous êtes connecté en tant que : <b><?=$_SESSION['poste'] ?></b>
+            </div>
+         <?php endif; ?>

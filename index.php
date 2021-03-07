@@ -37,7 +37,7 @@ else
     $uc  = $_REQUEST['uc'];
 
 if(isset($_SESSION['poste']))
-    require("vue/v_" . $_SESSION['poste'] . ".php");
+    require("vue/v_menu" . $_SESSION['poste'] . ".php");
 
 if(isset($_SESSION['erreurs']) && !empty($_SESSION['erreurs']))
     include("vue/v_erreurs.php");
@@ -55,33 +55,33 @@ switch($uc)
 		    include("controleur/c_connexion.php");
 		    break;
 		}
-	case 'menuSuper':
-		{
-            if($_SESSION['poste'] == $uc)
-		        include("controleur/c_menuSuper.php");
+    case 'gestion':
+        {
+            if(isset($_SESSION['poste']) && $_SESSION['poste'] != "Membre")
+            {
+                include ("controleur/c_gestion.php");
+            }
+            else if(isset($_SESSION['poste']) && $_SESSION['poste'] == "Membre")
+            {
+                $_SESSION['erreurs'][] = "Vous avez été redirigé, car vous n'êtes pas autorisé à consulter cette page";
+                header("Location:index.php?uc=observation&action=rechercheObservations");
+            }
             else
-                include("controleur/c_" . $_SESSION['poste'] . ".php");
-			break;
-		}
-	case 'menuAdmin':
-		{
-            if($_SESSION['poste'] == $uc)
-                include("controleur/c_menuAdmin.php");
-            else
-                include("controleur/c_" . $_SESSION['poste'] . ".php");
-			break;
-		}
-	case 'menuMembre':
-		{
-            if($_SESSION['poste'] == $uc)
-                include("controleur/c_menuMembre.php");
-            else
-                include("controleur/c_" . $_SESSION['poste'] . ".php");
-		    break;
-		}
+            {
+                header("Location:index.php?uc=connexion");
+            }
+            break;
+        }
     case 'observation':
         {
-            include("controleur/c_observation.php");
+            if(isset($_SESSION['poste']))
+            {
+                include("controleur/c_observation.php");
+            }
+            else
+            {
+                header("Location:index.php?uc=connexion");
+            }
             break;
         }
 }

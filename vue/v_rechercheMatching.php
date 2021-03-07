@@ -1,5 +1,5 @@
-<form enctype="multipart/form-data" method="post" id="form_mesObservations" action="index.php?uc=<?= $_SESSION['poste'] ?>&action=matching&id=<?= $_GET['id'] ?>">
-    <fieldset form="form_mesObservations" class="container">
+<form enctype="multipart/form-data" method="post" id="form_ObservationsMatching" action="index.php?uc=observation&action=matching&id=<?= $_GET['id'] ?>">
+    <fieldset form="form_ObservationsMatching" class="container">
         <legend>
             Rechercher matching
             <a href="" data-toggle="modal" data-target="#exampleModalCenter">

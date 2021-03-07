@@ -1,4 +1,4 @@
-<form method="post" action='index.php?uc=<?= $_SESSION['poste'] ?>&action=confirmerModifierDominante&id=<?= $uneDominante['id'] ?>'>
+<form method="post" action='index.php?uc=gestion&action=confirmerModifierDominante&id=<?= $uneDominante['id'] ?>'>
     <fieldset class="container">
         <legend>Modifier dominante</legend>
         <div class="row form-group text-center">

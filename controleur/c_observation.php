@@ -222,9 +222,8 @@ switch($action)
 
             if(move_uploaded_file($img_upload['tmp_name'], $repertoire))
             {
-                $pdo -> ajouterObservation($codeObservation, $repertoire
-                    , $lieuObservation, $lieuInfo, $heureDebut, $heureFin, $dateObservation, addslashes($latitude), addslashes($longitude), $auteur, (int)$couleurDominante, $aPapillon, (int)$nbIndividu, (int)$typeCaudale, $typeGroupe, $commentaireObservation, $comportementObservation);
-                header("Location: index.php?uc=" . $_SESSION['poste'] . "&action=rechercheMesObservations");
+                $pdo -> ajouterObservation($codeObservation, $repertoire, $lieuObservation, $lieuInfo, $heureDebut, $heureFin, $dateObservation, addslashes($latitude), addslashes($longitude), $auteur, (int)$couleurDominante, $aPapillon, (int)$nbIndividu, (int)$typeCaudale, $typeGroupe, $commentaireObservation, $comportementObservation);
+                header("Location: index.php?uc=observation&action=rechercheMesObservations");
             }
             else
             {
@@ -234,7 +233,71 @@ switch($action)
         }
         break;
     }
+    case 'rechercheMatching':
+    {
+        if($_SESSION['poste'] != "Membre")
+        {
+            include('vue/v_rechercheMatching.php');
+        }
+        else
+        {
+            $_SESSION['erreurs'][] = "Vous avez été redirigé, car vous n'êtes pas autorisé à consulter cette page";
+            header("Location:index.php?uc=observation&action=rechercheObservations");
+        }
+        break;
+    }
+    case 'matching':
+    {
+        if($_SESSION['poste'] != "Membre")
+        {
+            $id                     = $_REQUEST['id'];
+            $observationPrimaire    = $pdo -> getUneObservation($id);
+            $couleur                = $_POST['couleurObs'];
+            $caudale                = $_POST['caudaleObs'];
+            $papillon               = $_POST['papillonObs'];
+            $minIndividus           = $_POST['minIndividus'];
+            $maxIndividus           = $_POST['maxIndividus'];
+            $annee                  = $_POST['anneeObs'];
+            $groupe                 = $_POST['groupeObs'];
+            $lieu                   = $_POST['lieuObs'];
+            $donnees                = $_REQUEST;
+            $lesEtatsObservations   = $pdo -> getLesEtatsObservation();
+            $lesGroupes             = $pdo -> getLesGroupes();
+            $lesLieux               = $pdo -> getLesLieux();
 
+            if($minIndividus != null && $maxIndividus != null && $minIndividus > $maxIndividus)
+            {
+                $_SESSION['erreurs'][] = "Le nombre d'individus minimum ne peut pas être supérieur au nombre d'individus maximum.";
+                header("Location:index.php?uc=observation&action=rechercheMatching&id=" . $id);
+            }
+            else if($minIndividus != null && $maxIndividus == null)
+                $maxIndividus = 25; // On met la valeur au max
+            else if($minIndividus == null && $maxIndividus != null)
+                $minIndividus = 0; // On met la valeur au min
+            else if($minIndividus == null && $maxIndividus == null)
+                $minIndividus = 0;
+            $maxIndividus = 25;
+
+            $lesObservations  = $pdo -> getLesObservationsParFiltre($_SESSION['id'], $annee, $groupe, $lieu, $couleur, $caudale, $papillon, $minIndividus, $maxIndividus);
+
+            if(count($lesObservations) != 0)
+            {
+                include("vue/v_rechercheObservations.php");
+                include("vue/v_matching.php");
+            }
+            else
+            {
+                $_SESSION['erreurs'][] = "Aucun resultat trouvé pour cette recherche.";
+                header("Location:index.php?uc=observation&action=rechercheMatching&id=" . $id);
+            }
+        }
+        else
+        {
+            $_SESSION['erreurs'][] = "Vous avez été redirigé, car vous n'êtes pas autorisé à consulter cette page";
+            header("Location:index.php?uc=observation&action=rechercheObservations");
+        }
+        break;
+    }
     default:
     {
         header("Location:index.php?uc=observation&action=rechercheObservations");

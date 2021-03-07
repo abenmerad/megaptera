@@ -51,7 +51,10 @@
                 <li class="list-group-item"><b>Lieu :</b> <?= $uneObservation['libLieu'] ?></li>
                 <li class="list-group-item"><b>Coordonnées :</b> <?= $uneObservation['latitude'] . ', ' . $uneObservation['longitude']?></li>
             </ul>
-            <div class="card-body text-center">
+            <div class="flex card-body text-center justify-content-around">
+                <?php if($_SESSION['poste'] != "Membre"): ?>
+                    <a href="index.php?uc=observation&action=rechercheMatching&id=<?= $uneObservation['codeObservation'] ?>" class="btn btn-outline-secondary">Matching</a>
+                <?php endif; ?>
                 <button data-toggle="modal" data-target="#consultation_modal<?= $key ?>" class="btn btn-primary">
                     Consulter
                 </button>
@@ -125,9 +128,6 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                        <?php if($_SESSION['poste'] == "menuSuper" || $_SESSION['poste'] == "menuAdmin"): ?>
-                            <a href="index.php?uc=<?= $_SESSION['poste'] ?>&action=rechercheMatching&id=<?= $uneObservation['codeObservation'] ?>" class="btn btn-primary">Matching</a>
-                        <?php endif; ?>
                     </div>
                 </div>
             </div>

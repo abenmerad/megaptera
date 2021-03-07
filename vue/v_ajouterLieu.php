@@ -1,4 +1,4 @@
-<form id="formulaire" method="post" action='index.php?uc=menuSuper&action=confirmerAjouterLieu'>
+<form id="formulaire" method="post" action='index.php?uc=gestion&action=confirmerAjouterLieu'>
     <fieldset class="container">
         <legend>Ajouter lieu</legend>
         <div class="row form-group text-center">

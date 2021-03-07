@@ -15,8 +15,8 @@
                     Observations
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="index.php?uc=observation&action=ajouter">Ajouter une observation</a>
-                    <a class="dropdown-item" href="index.php?uc=observation&action=rechercheObservations">Rechercher les observations</a>
+                    <a class="dropdown-item" href="index.php?uc=observation&action=ajouter">Ajouter</a>
+                    <a class="dropdown-item" href="index.php?uc=observation&action=rechercheObservations">Rechercher</a>
                 </div>
             </li>
             <li class="nav-item">

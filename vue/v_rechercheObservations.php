@@ -1,5 +1,5 @@
-<form enctype="multipart/form-data" method="post" id="form_mesObservations" action="index.php?uc=observation&action=lesObservations">
-    <fieldset form="form_mesObservations" class="container">
+<form enctype="multipart/form-data" method="post" id="form_rechercheObservations" action="index.php?uc=observation&action=lesObservations">
+    <fieldset form="form_rechercheObservations" class="container">
         <legend>Rechercher des observations</legend>
         <div class="row form-group">
             <div class="col-md-4 col-sm-12">
@@ -32,7 +32,7 @@
         </div>
         <div class="row form-group">
                 <div class="text-center">
-                    <a href="#filtre" data-toggle="collapse" id="plus_filtre" class="btn btn-info">
+                    <a href="#filtre" data-toggle="collapse" id="plus_filtre" class="btn btn-light" style="border-radius: 30px;">
                         <i class="fas fa-plus-circle"></i>
                     </a>
                 </div>

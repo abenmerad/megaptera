@@ -1,4 +1,4 @@
-<form enctype="multipart/form-data" method="post" id="form_observation" action="index.php?uc=<?= $_SESSION['poste']?>&action=confirmerModifierObservation&code=<?= $code ?>">
+<form enctype="multipart/form-data" method="post" id="form_observation" action="index.php?uc=gestion&action=confirmerModifierObservation&code=<?= $code ?>">
     <fieldset id="form1" form="form_observation" class="container">
         <legend>Mise à jour de l'observation</legend>
         <div class="row form-group">

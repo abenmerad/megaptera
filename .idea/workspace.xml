@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="- Ajout matching pour les observations">
+    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="- Ajout mineurs">
+      <change afterPath="$PROJECT_DIR$/controleur/c_gestion.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/20211.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/REU/REU20211.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/REU/REU20212.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_menuAdmin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_menuMembre.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_menuSuper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleur/c_observation.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_observation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MAY/MAY20211.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/images/MAY/MAY20211.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/MOH/MOH20211.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/megaptera_sql2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/megaptera_sql2.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modele/pdoMegaptera.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/pdoMegaptera.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/ajouterPhoto.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/ajouterPhotoM.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/filtre.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ListeAValiderObservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ListeSuppDominante.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ListeSuppGroupe.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ListeSuppLieu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ListeSuppMembre.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ListeSuppObservation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_RechercheObservation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ajouterLieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterLieu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_ajouterMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterMembre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_confirmation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_deconnexion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_entete.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_entete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_filtre.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_gestionAdmin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_lesObservations.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_lesObservations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_listeDominante.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeDominante.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_listeGroupe.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeGroupe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_listeLieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeLieu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_listeMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeMembre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_majDominante.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majDominante.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_majGroupe.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majGroupe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_majLieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majLieu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_majMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majMembre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_majObservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_majObservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_matching.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_matching.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_menuAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_menuMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuMembre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_menuSuper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuSuperAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_rechercheMatching.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_rechercheMatching.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_rechercheObservations.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_rechercheObservations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_reussite.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_reussite.php" afterDir="false" />
     </list>
     <list id="7d750ca8-5ab4-40ca-9365-091e608e5772" name="Changes by masha" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +192,9 @@
       <workItem from="1614766392411" duration="6395000" />
       <workItem from="1614794520671" duration="2562000" />
       <workItem from="1614857432811" duration="1588000" />
-      <workItem from="1614883486552" duration="9610000" />
+      <workItem from="1614883486552" duration="25307000" />
+      <workItem from="1615029055429" duration="7627000" />
+      <workItem from="1615121436175" duration="1440000" />
     </task>
     <task id="LOCAL-00001" summary="configuration de la validation et suppresion d'une observation">
       <created>1611573905816</created>
@@ -202,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614900931088</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="- Ajout mineurs">
+      <created>1614901892582</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1614901892582</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +286,8 @@
     <MESSAGE value="- Modification BDD" />
     <MESSAGE value="- Correction de bugs mineurs &#10;- Retour à l'ajout d'observation avec seulement une photo" />
     <MESSAGE value="- Ajout matching pour les observations" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Ajout matching pour les observations" />
+    <MESSAGE value="- Ajout mineurs" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Ajout mineurs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -240,9 +298,9 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controleur/c_menuSuper.php</url>
-          <line>141</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/controleur/c_connexion.php</url>
+          <line>90</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -20,7 +20,7 @@
                 <td>
                     <div class="d-flex flex-row justify-content-center">
                         <div class="p-2">
-                            <a href="index.php?uc=<?=$_SESSION['poste']?>&action=modifierGroupe&code=<?= $unGroupe['code'] ?>" title="Modifier le groupe" class="btn">
+                            <a href="index.php?uc=gestion&action=modifierGroupe&code=<?= $unGroupe['code'] ?>" title="Modifier le groupe" class="btn">
                                 <i class="fas fa-edit MD"></i>
                             </a>
                         </div>
@@ -39,7 +39,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                            <a href="index.php?uc=<?= $_SESSION['poste'] ?>&action=supprimerGroupe&code=<?= $unGroupe['code'] ?>">
+                                            <a href="index.php?uc=gestion>&action=supprimerGroupe&code=<?= $unGroupe['code'] ?>">
                                                 <button type="button" class="btn btn-primary">Supprimer</button>
                                             </a>
                                         </div>
@@ -54,7 +54,7 @@
         </tbody>
     </table>
     <div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
-        <a href="index.php?uc=<?= $_SESSION['poste'] ?>&action=ajouterGroupe">
+        <a href="index.php?uc=gestion>&action=ajouterGroupe">
             <button class="btn btn-dark">Ajouter groupe</button>
         </a>
     </div>

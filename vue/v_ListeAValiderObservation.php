@@ -15,28 +15,23 @@
                 <tr>
                     <th scope="row"><?= $key ?></th>
                     <td>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#image_obsModal">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#image_obsModal<?= $key ?>">
                             Image
                         </button>
-                        <div class="modal fade" id="image_obsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal fade" id="image_obsModal<?= $key ?>" tabindex="-1" role="dialog" aria-labelledby="image_obsModalTitre<?= $key ?>" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Image</h5>
+                                        <h5 class="modal-title" id="image_obsModalTitre<?= $key ?>">Image</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <div id="carousel_card" class="carousel slide w-20" data-ride="carousel">
-                                            <div class="carousel-inner">
-                                                <?php foreach(explode(";", $uneObservation['nomPhoto']) as $keys => $img): ?>
-                                                    <div class="carousel-item <?= ($key == 0) ? "active" : ""?>">
-                                                        <img class="card-img-top d-block w-100" src="images/<?= $uneObservation['lieuObservation'] . '/' . $uneObservation['codeObservation'] . '/' . $img ?>">
-                                                    </div>
-                                                <?php endforeach; ?>
-                                            </div>
-                                        </div>
+                                        <figure class="figure">
+                                            <img src="<?= $uneObservation['nomPhoto'] ?>" class="figure-img img-fluid rounded">
+                                            <figcaption class="figure-caption"><?= $uneObservation['codeObservation'] . " " . $uneObservation['nomPhoto'] ?></figcaption>
+                                        </figure>
                                     </div>
                                 </div>
                             </div>
@@ -69,18 +64,20 @@
                     </td>
                     <td>
                         <div class="d-flex justify-content-center align-items-center">
+                            <?php if($_SESSION['poste'] == "superAdmin"): ?>
+                                <div class="p-2">
+                                    <a href="index.php?uc=gestion&action=modifierObservation&code=<?= $uneObservation['codeObservation'] ?>" title="Modifier l'observation" class="btn <?= ($uneObservation['lieuObservation'] == "AUT" && $_SESSION['poste'] != "superAdmin") ? "disabled" : '' ?>">
+                                        <i class="fas fa-edit MD"></i>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
                             <div class="p-2">
-                                <a href="index.php?uc=<?=$_SESSION['poste']?>&action=modifierObservation&code=<?= $uneObservation['codeObservation'] ?>" title="Modifier l'observation" class="btn">
-                                    <i class="fas fa-edit MD"></i>
-                                </a>
-                            </div>
-                            <div class="p-2">
-                                <a href="" title="Refuser l'observation" class="btn">
+                                <a href="" title="Refuser l'observation" class="btn <?= ($uneObservation['lieuObservation'] == "AUT" && $_SESSION['poste'] != "superAdmin") ? "disabled" : '' ?>">
                                     <i class="fas fa-times-circle ER"></i>
                                 </a>
                             </div>
                             <div class="p-2">
-                                <a href="index.php?uc=<?=$_SESSION['poste']?>&action=confirmerValiderUneObservation&code=<?= $uneObservation['codeObservation'] ?>" title="Valider l'observation" class="btn <?= ($uneObservation['lieuObservation'] == "AUT" ? "disabled" : '')?>">
+                                <a href="index.php?uc=gestion&action=confirmerValiderUneObservation&code=<?= $uneObservation['codeObservation'] ?>" title="Valider l'observation" class="btn <?= ($uneObservation['lieuObservation'] == "AUT" || $_SESSION['poste'] != "superAdmin" && $uneObservation['lieuObservation'] == "AUT") ? "disabled" : '' ?>">
                                     <i class="fas fa-check-square VA"></i>
                                 </a>
                             </div>

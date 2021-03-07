@@ -12,7 +12,7 @@ switch($action)
 	    if(!isset($_SESSION['poste']))
 		    include("vue/v_connexion.php");
 	    else
-	        header("Location: index.php?uc=" . $_SESSION['poste']);
+	        header("Location: index.php?uc=observation");
 		break;
 	}
     case 'valider' :
@@ -32,42 +32,10 @@ switch($action)
         }
         else
         {
-            $_SESSION['reussite'] = "Connexion Réussie. Heureux de vous revoir ". $membre['prenom'];
-            switch($membre['poste'])
-            {
-                case 'Membre':
-                {
-                    $_SESSION['poste']  = 'menuMembre';
-                    $_SESSION['id']     = $membre['id'];
-                    break;
-                }
-                case 'Admin':
-                {
-                    $_SESSION['poste']  = 'menuAdmin';
-                    $_SESSION['id']     = $membre['id'];
-                    break;
-                }
-                case 'superAdmin':
-                {
-                    $_SESSION['poste']  = 'menuSuper';
-                    $_SESSION['id']     = $membre['id'];
-                    break;
-                }
-                default:
-                {
-                    $_SESSION['erreurs'][]  = "Vous n'êtes pas autorisé";
-                    $_SESSION['reussite']   = "";
-                    break;
-                }
-            }
-            if(!empty($_SESSION['erreurs']))
-            {
-                header("Location: index.php?uc=connexion");
-            }
-            else
-            {
-                header("Location: index.php?uc=" . $_SESSION['poste']);
-            }
+            $_SESSION['reussite']   = "Connexion Réussie. Heureux de vous revoir ". $membre['prenom'];
+            $_SESSION['poste']      = $membre['poste'];
+            $_SESSION['id']         = $membre['id'];
+            header("Location: index.php?uc=observation");
 		}
 		break;
     }

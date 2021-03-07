@@ -26,12 +26,12 @@
                 <td>
                     <div class="d-flex flex-row justify-content-center">
                         <div class="p-2">
-                            <a href="index.php?uc=<?=$_SESSION['poste']?>&action=modifierMembre&id=<?= $unMembre['id'] ?>" title="Modifier le membre" class="btn">
+                            <a href="index.php?uc=gestion&action=modifierMembre&id=<?= $unMembre['id'] ?>" title="Modifier le membre" class="btn <?= ($_SESSION['poste'] == "Admin" && $unMembre['poste'] != "Membre" ) ? "disabled" : "" ?>">
                                 <i class="fas fa-edit MD"></i>
                             </a>
                         </div>
                         <div class="p-2">
-                            <a href="" data-toggle="modal" data-target="#supprimerMembre<?= $key ?>" title="Supprimer le membre" class="btn">
+                            <a href="#" data-toggle="modal" data-target="#supprimerMembre<?= $key ?>" title="Supprimer le membre" class="btn <?= ($_SESSION['poste'] == "Admin" && $unMembre['poste'] != "Membre") ? "disabled" : "" ?>">
                                 <i class="fas fa-times-circle ER"></i>
                             </a>
                             <div class="modal fade" id="supprimerMembre<?= $key ?>" tabindex="-1" role="dialog" aria-labelledby="#supprimerMembreTitre<?= $key ?>" aria-hidden="true">
@@ -45,7 +45,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                            <a href="index.php?uc=<?= $_SESSION['poste'] ?>&action=supprimerMembre&id=<?= $unMembre['id'] ?>">
+                                            <a href="index.php?uc=gestion&action=supprimerMembre&id=<?= $unMembre['id'] ?>">
                                                 <button type="button" class="btn btn-primary">Supprimer</button>
                                             </a>
                                         </div>
@@ -60,7 +60,7 @@
         </tbody>
     </table>
     <div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
-        <a href="index.php?uc=<?= $_SESSION['poste'] ?>&action=ajouterMembre">
+        <a href="index.php?uc=gestion&action=ajouterMembre">
             <button class="btn btn-dark">Ajouter membre</button>
         </a>
     </div>

@@ -1,4 +1,4 @@
-<form method="post"  action="index.php?uc=<?php echo $uc ?>&action=confirmerAjouterMembre">
+<form method="post"  action="index.php?uc=gestion&action=confirmerAjouterMembre">
     <fieldset class="row">
         <legend>Ajout d'un membre</legend>
         <div class="form-group col col-md-6 mb-3">
@@ -24,9 +24,17 @@
         <div class="form-group col col-md-6 mb-3">
             <label for="poste">Poste</label>
             <select class="form-control" name="poste" id="poste">
-                <?php foreach($lesPostes as $unPoste): ?>
-                    <option value="<?= $unPoste['poste'] ?>"><?= $unPoste['poste'] ?></option>
-                <?php endforeach; ?>
+                <?php if($_SESSION['nom'] == "superAdmin"): ?>
+                    <?php foreach($lesPostes as $unPoste): ?>
+                        <option value="<?= $unPoste['nom'] ?>"><?= $unPoste['nom'] ?></option>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <?php foreach($lesPostes as $unPoste): ?>
+                        <?php if($unPoste['nom'] == "Membre"): ?>
+                            <option value="<?= $unPoste['nom'] ?>"><?= $unPoste['nom'] ?></option>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </select>
         </div>
         <div class="justify-content-md-center justify-content-sm-center text-center" id="Button">

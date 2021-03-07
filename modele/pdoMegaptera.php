@@ -233,8 +233,8 @@ class PdoMegaptera
 
 	public function getLesPostesMembres()
     {
-        $req = "SELECT DISTINCT poste
-                FROM membre";
+        $req = "SELECT   nom
+                FROM     poste";
         $res = PdoMegaptera::$monPdo->query($req);
         return $res->fetchAll();
     }
@@ -546,9 +546,12 @@ class PdoMegaptera
                 INNER JOIN      lieu 
                 ON              lieu.code                    = lieuObservation
                 INNER JOIN      membre
-                ON              membre.id                    = auteurObservation";
-		$res = PdoMegaptera::$monPdo->query($req);
-        return $res->fetch();
+                ON              membre.id                    = auteurObservation
+                WHERE           codeObservation              = :code";
+        $stmt = PdoMegaptera::$monPdo->prepare($req);
+        $stmt -> bindParam(':code', $id);
+        $stmt -> execute();
+        return $stmt->fetch();
 	}
     public function getLesObservationsAExporte($idMembre, $annee, $groupe, $lieu, $couleur, $caudale, $papillon, $min, $max)
     {
@@ -676,15 +679,15 @@ class PdoMegaptera
     }
 	public function getUneObservationNonValide()
     {
-        $req = "SELECT codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong 
-                FROM observation 
-                INNER JOIN typegroupe 
-                ON typegroupe.code = typeGroupeObserve 
-                INNER JOIN dominante 
-                ON id = dominante 
-                INNER JOIN lieu 
-                ON lieu.code = lieuObservation 
-                WHERE etatObservation = 'TR' ";
+        $req = "SELECT          codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude,longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong 
+                FROM            observation 
+                INNER JOIN      typegroupe 
+                ON              typegroupe.code = typeGroupeObserve 
+                INNER JOIN      dominante 
+                ON              id = dominante 
+                INNER JOIN      lieu 
+                ON              lieu.code = lieuObservation 
+                WHERE           etatObservation = 'TR' ";
         $res = PdoMegaptera::$monPdo->query($req);
         return $res->fetchAll();
     }
