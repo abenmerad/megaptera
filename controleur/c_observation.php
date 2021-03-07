@@ -261,6 +261,7 @@ switch($action)
             $groupe                 = $_POST['groupeObs'];
             $lieu                   = $_POST['lieuObs'];
             $donnees                = $_REQUEST;
+
             $lesEtatsObservations   = $pdo -> getLesEtatsObservation();
             $lesGroupes             = $pdo -> getLesGroupes();
             $lesLieux               = $pdo -> getLesLieux();
@@ -279,11 +280,11 @@ switch($action)
             $maxIndividus = 25;
 
             $lesObservations  = $pdo -> getLesObservationsParFiltre($_SESSION['id'], $annee, $groupe, $lieu, $couleur, $caudale, $papillon, $minIndividus, $maxIndividus);
-
             if(count($lesObservations) != 0)
             {
                 include("vue/v_rechercheObservations.php");
                 include("vue/v_matching.php");
+                $_SESSION['obsMatching'][] = $lesObservations;
             }
             else
             {

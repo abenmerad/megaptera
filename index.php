@@ -4,8 +4,7 @@ session_regenerate_id();
 
 require_once("modele/pdoMegaptera.php");
 include("modele/functions.php");
-
-
+include ("modele/ajax.php");
 require 'include_path/PHPMailer/src/Exception.php';
 require 'include_path/PHPMailer/src/PHPMailer.php';
 require 'include_path/PHPMailer/src/SMTP.php';
@@ -68,7 +67,7 @@ switch($uc)
             }
             else
             {
-                header("Location:index.php?uc=connexion");
+                header("Location:index.php?uc=deconnexion");
             }
             break;
         }

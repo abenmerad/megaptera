@@ -26,7 +26,6 @@ $("#infoLieu").hide();
                 var opr = response.substr(response.length - 2, response.length - 1);
                 opr = opr.substr(0,1);
                 var val = response.substr(response.length - 1);
-                console.log(val);
                 
                 //On rempli le SELECT du nbIndividu en fonction de l'opérateur et de la valeur
                 $("#lstNbrIndividu").children("option[value!='']").each(function()

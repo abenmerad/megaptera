@@ -53,11 +53,11 @@ switch($action)
     }
     case 'mdp_envoi_email':
     {
-        $from = $mail->Username;
-        $to = $_REQUEST['mail'];
+        $from   = $mail->Username;
+        $to     = $_REQUEST['mail'];
         $membre = $pdo->getUnMembreParMail($to);
         $server = $_SERVER['HTTP_ORIGIN'];
-        $route = $_SERVER['SCRIPT_NAME'];
+        $route  = $_SERVER['SCRIPT_NAME'];
         if(count($membre) != 0)
         {
             try {

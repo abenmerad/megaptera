@@ -154,19 +154,11 @@
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
         </div>
         <div class="justify-content-md-between justify-content-sm-center text-center mb-5" id="Button">
-            <button class="btn btn-danger">Ecarter <i class="fas fa-times-circle"></i></button>
-            <button class="btn btn-primary">Match <i class="fas fa-check"></i></button>
+            <button class="btn btn-danger" id="not_matching">Ecarter <i class="fas fa-times-circle"></i></button>
+            <button class="btn btn-primary" id="matching" value="<?= json_encode($lesObservations) ?>">Match <i class="fas fa-check"></i></button>
         </div>
     </div>
 </div>
