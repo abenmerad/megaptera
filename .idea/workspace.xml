@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="- Ajout mineurs&#10;- Correction de bugs liés à l'ajout d'observation&#10;- Amélioration d'un bug qui permettait d'accéder au site sans être connecté">
-      <change afterPath="$PROJECT_DIR$/js/matching.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modele/ajax.php" afterDir="false" />
+    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="- Ajout script matching">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleur/c_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_connexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controleur/c_observation.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_observation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/matching.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/matching.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/megaptera.sql" beforeDir="false" afterPath="$PROJECT_DIR$/megaptera.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modele/pdoMegaptera.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/pdoMegaptera.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_matching.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_matching.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_pied.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_pied.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_profil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/v_rechercheMatching.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_rechercheMatching.php" afterDir="false" />
     </list>
     <list id="7d750ca8-5ab4-40ca-9365-091e608e5772" name="Changes by masha" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +160,7 @@
       <workItem from="1614857432811" duration="1588000" />
       <workItem from="1614883486552" duration="25307000" />
       <workItem from="1615029055429" duration="7627000" />
-      <workItem from="1615121436175" duration="8575000" />
+      <workItem from="1615121436175" duration="20676000" />
     </task>
     <task id="LOCAL-00001" summary="configuration de la validation et suppresion d'une observation">
       <created>1611573905816</created>
@@ -232,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615123796727</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="- Ajout script matching">
+      <created>1615131202525</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1615131202525</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +268,8 @@
     <MESSAGE value="- Ajout matching pour les observations" />
     <MESSAGE value="- Ajout mineurs" />
     <MESSAGE value="- Ajout mineurs&#10;- Correction de bugs liés à l'ajout d'observation&#10;- Amélioration d'un bug qui permettait d'accéder au site sans être connecté" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Ajout mineurs&#10;- Correction de bugs liés à l'ajout d'observation&#10;- Amélioration d'un bug qui permettait d'accéder au site sans être connecté" />
+    <MESSAGE value="- Ajout script matching" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Ajout script matching" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

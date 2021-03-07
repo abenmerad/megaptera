@@ -454,3 +454,12 @@ input[type=submit]
 		font-size: 15px;
 		color: black;
 	}
+
+	figure
+	{
+		margin: 0px 0 -1rem !important;
+	}
+	figure-img
+	{
+		margin-bottom: 0rem !important;
+	}

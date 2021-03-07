@@ -1,3 +1,4 @@
+
 <form enctype="multipart/form-data" method="post" id="form_ObservationsMatching" action="index.php?uc=observation&action=matching&id=<?= $_GET['id'] ?>">
     <fieldset form="form_ObservationsMatching" class="container">
         <legend>
@@ -5,11 +6,11 @@
             <a href="" data-toggle="modal" data-target="#exampleModalCenter">
                 <i class="fas fa-info-circle"></i>
             </a>
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="titreModal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Information matching</h5>
+                            <h5 class="modal-title" id="titreModal">Information matching</h5>
                         </div>
                         <div class="modal-body">
                             Remplir les champs des filtres afin d'établir une liste d'observation à comparer avec l'observation <b> <?= $_GET['id'] ?></b>

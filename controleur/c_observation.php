@@ -279,10 +279,10 @@ switch($action)
                 $minIndividus = 0;
             $maxIndividus = 25;
 
-            $lesObservations  = $pdo -> getLesObservationsParFiltre($_SESSION['id'], $annee, $groupe, $lieu, $couleur, $caudale, $papillon, $minIndividus, $maxIndividus);
+            $lesObservations  = $pdo -> getLesObservationsMatching($id, $annee, $groupe, $lieu, $couleur, $caudale, $papillon, $minIndividus, $maxIndividus);
             if(count($lesObservations) != 0)
             {
-                include("vue/v_rechercheObservations.php");
+                include("vue/v_rechercheMatching.php");
                 include("vue/v_matching.php");
                 $_SESSION['obsMatching'][] = $lesObservations;
             }
@@ -296,6 +296,16 @@ switch($action)
         {
             $_SESSION['erreurs'][] = "Vous avez été redirigé, car vous n'êtes pas autorisé à consulter cette page";
             header("Location:index.php?uc=observation&action=rechercheObservations");
+        }
+        break;
+    }
+    case 'ajouterMatching':
+    {
+        if(isset($_REQUEST['codeMatcher']) && $_REQUEST['codeMatched'])
+        {
+            $codeMatcher = $_REQUEST['codeMatcher'];
+            $codeMatched = $_REQUEST['codeMatched'];
+            $pdo -> ajouterMatching($codeMatcher, $codeMatched);
         }
         break;
     }

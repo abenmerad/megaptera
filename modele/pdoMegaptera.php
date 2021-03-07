@@ -637,6 +637,45 @@ class PdoMegaptera
         return $res->fetchAll();
     }
 
+    public function getLesObservationsMatching($observationPrimaire, $annee, $groupe, $lieu, $couleur, $caudale, $papillon, $min, $max)
+    {
+        $req = "SELECT          dateMAJ, dateDeValidite, membre.nom as nomMembre, membre.prenom as prenomMembre, etatObservation, lieuObservation, codeObservation, nomPhoto,heureDebutObservation,heureFinObservation,dateObservation, latitude, longitude,nbIndividus,papillon,typeCaudale,commentaire,comportement,typegroupe.libelle as libGroupe,dominante.libelle as libDominante,lieu.lieu as libLieu, orientationLat,orientationLong 
+                FROM            observation 
+                INNER JOIN      typegroupe 
+                ON              typegroupe.code              = typeGroupeObserve 
+                INNER JOIN      dominante 
+                ON              id                           = dominante 
+                INNER JOIN      lieu 
+                ON              lieu.code                    = lieuObservation
+                INNER JOIN      membre
+                ON              membre.id                    = auteurObservation
+                WHERE           etatObservation = 'VA'
+                AND             nbIndividus                  >= '$min' 
+                AND             nbIndividus                  <= '$max'
+                AND             codeObservation              <> '$observationPrimaire'";
+
+        if(!empty($annee))
+            $req .= " AND dateObservation LIKE '$annee%'";
+
+        if(!empty($groupe))
+            $req .= " AND typeGroupeObserve = '$groupe'";
+
+        if(!empty($lieu))
+            $req .= " AND lieuObservation = '$lieu'";
+
+        if(!empty($couleur))
+            $req .= " AND dominante = '$couleur'";
+
+        if(!empty($caudale))
+            $req .= " AND typeCaudale = '$caudale'";
+
+        if(!empty($papillon))
+            $req .= " AND papillon = '$papillon'";
+
+
+        $res = PdoMegaptera::$monPdo->query($req);
+        return $res->fetchAll();
+    }
     public function getLesEtatsObservation()
     {
         $req = "SELECT * 
@@ -743,5 +782,19 @@ class PdoMegaptera
                         nomPhoto =          '$nouvNomPhoto'
                 WHERE   codeObservation =   '$code'";
         PdoMegaptera::$monPdo->query($req);
+    }
+
+    /***
+     * @param $codeMatcher
+     * @param $coderMatched
+     */
+    public function ajouterMatching($codeMatcher, $coderMatched)
+    {
+        $req = "INSERT INTO matching(codeObservation, codeObservation_avec, DateDetection)
+                VALUES(:codeMatcher, :codeMatched, NOW())";
+        $stmt = PdoMegaptera::$monPdo->prepare($req);
+        $stmt->bindParam(':codeMatcher', $codeMatcher);
+        $stmt->bindParam(':codeMatched', $coderMatched);
+        $stmt->execute();
     }
 }
