@@ -7,8 +7,7 @@ class PdoMegaptera
 	private static $mdp='';
 	private static $monPdo;
 	private static $monPdoMegaptera = null;
-	
-	/* La fonction __construct  */
+
 	private function __construct()
 	{
 		PdoMegaptera::$monPdo = new PDO(PdoMegaptera::$serveur.';'.PdoMegaptera::$bdd, PdoMegaptera::$user, PdoMegaptera::$mdp);
@@ -16,6 +15,7 @@ class PdoMegaptera
 		PdoMegaptera::$monPdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         PdoMegaptera::$monPdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         PdoMegaptera::$monPdo->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
+        ini_set("auto_detect_line_endings", true);
 	}
 
 	/* La fonction __destruction  */
@@ -49,13 +49,36 @@ class PdoMegaptera
 	public function connexion($id)
     {
         $req = "UPDATE  membre
-                SET     dateInscription = NOW()
+                SET     derniereConnexion = NOW()
                 WHERE   id = :id";
         $stmt = PdoMegaptera::$monPdo->prepare($req);
         $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
-	
+
+    public function setToken($id, $tk)
+    {
+        $req = "UPDATE  membre
+                SET     token = :token
+                WHERE   id = :id";
+        $stmt = PdoMegaptera::$monPdo->prepare($req);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':token', $tk);
+        $stmt->execute();
+    }
+    public function modifierMdpMembre($id, $mdp)
+    {
+        $req = "UPDATE  membre
+                SET     mdp = :mdp,
+                        derniereConnexion = (SELECT IFNULL(derniereConnexion, NOW()) 
+                                             FROM membre 
+                                             WHERE id = :id)
+                WHERE   id  = :id";
+        $stmt = PdoMegaptera::$monPdo->prepare($req);
+        $stmt->bindParam(':mdp', $mdp);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 	public function getLesMembres()
 	{
 		$req = "SELECT id, nom, prenom, login, tel, mail, poste
@@ -74,12 +97,13 @@ class PdoMegaptera
 
 	public function getUnMembre($id)
 	{
-		$req = "SELECT id, nom, prenom, login, tel, mail, poste
+		$req = "SELECT id, nom, prenom, login, tel, mail, poste, token, derniereConnexion, dateInscription
                 FROM membre 
                 WHERE id=$id ";
 		$res = PdoMegaptera::$monPdo->query($req);
         return $res->fetch();
 	}
+
 
     /****
      * @param $mail
@@ -165,8 +189,8 @@ class PdoMegaptera
 	/* La fonction inscription sert a integrer les infos entrées par l'utilisateur dans la BDD  */
 	public function inscriptionMembre($nom, $prenom, $login, $mdp, $tel, $mail, $poste)
 	{
-		$req = "INSERT INTO membre (nom, prenom, login, mdp, tel, mail, poste, dateInscription) 
-                VALUES (:nom, :prenom, :login, :mdp, :tel, :mail, :poste, NOW())";
+		$req = "INSERT INTO membre (nom, prenom, login, mdp, tel, mail, poste) 
+                VALUES (:nom, :prenom, :login, :mdp, :tel, :mail, :poste)";
         $stmt = PdoMegaptera::$monPdo->prepare($req);
         $stmt -> bindParam(':nom',    $nom);
         $stmt -> bindParam(':prenom', $prenom);

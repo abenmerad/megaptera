@@ -3,31 +3,15 @@ session_start();
 session_regenerate_id();
 
 require_once("modele/pdoMegaptera.php");
-include("modele/functions.php");
-include ("modele/ajax.php");
-require 'include_path/PHPMailer/src/Exception.php';
-require 'include_path/PHPMailer/src/PHPMailer.php';
-require 'include_path/PHPMailer/src/SMTP.php';
-require 'include_path/PHPMailer/vendor/autoload.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
-
-$mail = new PHPMailer(true);
-
-//$mail->SMTPDebug  = SMTP::DEBUG_SERVER;                       // Enable verbose debug output
-$mail->isSMTP();                                                // Send using SMTP
-$mail->Host       = 'smtp.mail.yahoo.com';                      // Set the SMTP server to send through
-$mail->SMTPAuth   = true;                                       // Enable SMTP authentication
-$mail->Username   = 'mega_ptera@yahoo.com';                     // SMTP username
-$mail->Password   = 'efxgrdgnfztjusoi';                         // SMTP password
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;                // Enable TLS encryption; `` encouraged
-$mail->Port       = 465;                                        // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-
-
-$func = FonctionsMegaptera::GetFunct();
-$pdo  = PdoMegaptera::getPdoMegaptera();
+require_once("modele/functions.php");
+require_once("modele/Token.php");
+require_once("modele/ajax.php");
+require_once("modele/Mail.php");
+require_once ('modele/GLOBALS.php');
+$func   = new FonctionsMegaptera();
+$token  = new Token();
+$pdo    = PdoMegaptera::getPdoMegaptera();
+$mailer = Mail::getMail($func -> lireFichierServeur(fopen("exemple.txt", "r")));
 
 require("vue/v_entete.php");
 if(!isset($_REQUEST['uc']))
@@ -67,7 +51,8 @@ switch($uc)
             }
             else
             {
-                header("Location:index.php?uc=deconnexion");
+                $_SESSION['erreurs'][] = "Vous devez être connecté pour accéder à cette page.";
+                header("Location:index.php?uc=connexion");
             }
             break;
         }

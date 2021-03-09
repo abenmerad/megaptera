@@ -1,7 +1,7 @@
-<form method="POST" action="index.php?uc=connexion&action=validerPremiereConnexion&id=<?= $_GET['id'] ?>&token=<?= $_GET['token'] ?>" class="container">
+<form method="POST" action="index.php?uc=connexion&action=validerModifierMdp&id=<?= $_GET['id'] ?>&token=<?= $_GET['token'] ?>" class="container">
     <fieldset class="row">
         <legend>
-            Première connexion
+            Modifier mot de passe
             <a href="" data-toggle="modal" data-target="#exampleModalCenter">
                 <i class="fas fa-info-circle"></i>
             </a>
@@ -13,11 +13,11 @@
                         </div>
                         <div class="modal-body">
                             Le mot de passe doit avoir au moins 8 caractères ou plus dont au moins :
-                                <ul>
-                                    <li>Une lettre majuscule</li>
-                                    <li>Une lettre minuscule</li>
-                                    <li>Un nombre</li>
-                                </ul>
+                            <ul>
+                                <li>Une lettre majuscule</li>
+                                <li>Une lettre minuscule</li>
+                                <li>Un nombre</li>
+                            </ul>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>

@@ -54,7 +54,7 @@
         </tbody>
     </table>
     <div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
-        <a href="index.php?uc=gestion>&action=ajouterGroupe">
+        <a href="index.php?uc=gestion&action=ajouterGroupe">
             <button class="btn btn-dark">Ajouter groupe</button>
         </a>
     </div>

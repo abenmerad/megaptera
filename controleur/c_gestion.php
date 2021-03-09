@@ -610,6 +610,25 @@ switch($action)
         header("Location: index.php?uc=gestion&action=listeGroupe");
         break;
     }
+    case 'configurerServeur':
+    {
+        if($_SESSION['poste'] == "superAdmin")
+        {
+            include ("vue/v_configurerMail.php");
+        }
+        else
+        {
+            $_SESSION['erreurs'][] = "Vous avez été redirigé, car vous n'êtes pas autorisé à consulter cette page";
+            header("Location:index.php?uc=observation&action=rechercheObservations");
+        }
+
+        break;
+    }
+    case 'validerConfigurerServeur':
+    {
+        $func -> ecrireFichierServeur($_REQUEST, "exemple.txt");
+        break;
+    }
     default:
     {
         header('Location:index.php?uc=observation&action=rechercheObservations');

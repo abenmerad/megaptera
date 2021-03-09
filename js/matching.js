@@ -13,6 +13,7 @@ $('#matching').click(function(){
 });
 $('#not_matching').click(function(){
     carouselMatching.carousel('next');
+    $('#myModal').modal('show');
 });
 
 carouselMatching.on('slide.bs.carousel', function () {
@@ -27,7 +28,7 @@ carouselMatching.on('slide.bs.carousel', function () {
                 data : { codeMatcher : matcher, codeMatched : matched}
             })
             .done(function(a, b, c){
-                console.log(a);
+                alert("Matching réussi.");
             })
             .fail(function(a, b, c){
                 console.log(c);

@@ -26,7 +26,7 @@
                 <a class="nav-link" href="index.php?uc=gestion&action=listeDominante">Dominante</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php?uc=gestion&action=listeDominante">Serveur</a>
+                <a class="nav-link" href="index.php?uc=gestion&action=configurerServeur">Serveur</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="index.php?uc=connexion&action=deconnexion">Déconnexion</a>

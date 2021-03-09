@@ -52,7 +52,7 @@
         </tbody>
     </table>
     <div class="justify-content-md-center justify-content-sm-center text-center" id="Button">
-        <a href="index.php?uc=<?= $_SESSION['poste'] ?>&action=ajouterDominante">
+        <a href="index.php?uc=gestion&action=ajouterDominante">
             <button class="btn btn-dark">Ajouter dominante</button>
         </a>
     </div>

@@ -17,9 +17,10 @@ switch($action)
 	}
     case 'valider' :
 	{
-        $login  = htmlspecialchars($_REQUEST['login']);
-		$mdp    = htmlspecialchars($_REQUEST['mdp']);
-        $membre = $pdo->getInfosMembre($login, $mdp);
+        $login      =   htmlspecialchars($_REQUEST['login']);
+		$mdp        =   htmlspecialchars($_REQUEST['mdp']);
+        $membre     =   $pdo   -> getInfosMembre($login, $mdp);
+        $monToken   =   $token -> tokenGeneration();
 
         if(!is_array($membre))
         {
@@ -28,21 +29,74 @@ switch($action)
         }
         else if(is_array($membre) && empty($membre['derniereConnexion']))
         {
-            include("vue/v_premiereConnexion.php");
+            $_SESSION['token'] = $monToken;
+            header("Location: index.php?uc=connexion&action=modifierMdp&id=" . $membre['id'] . "&token=" . $monToken);
         }
         else
         {
             $_SESSION['reussite']   = "Connexion Réussie. Heureux de vous revoir ". $membre['prenom'];
             $_SESSION['poste']      = $membre['poste'];
             $_SESSION['id']         = $membre['id'];
+            $_SESSION['token']      = $monToken;
+            $pdo -> connexion($membre['id']);
             header("Location: index.php?uc=observation");
 		}
 		break;
     }
+    case 'modifierMdp':
+    {
+        if(isset($_REQUEST['id']) && isset($_REQUEST['token']))
+        {
+            include("vue/v_modifierMdp.php");
+        }
+        else
+        {
+            $_SESSION['erreurs'][] = "Vous n'êtes pas autorisé à accéder à cette page.";
+            header("Location:index.php?uc=connexion");
+        }
+        break;
+    }
+    case 'validerModifierMdp':
+    {
+        if(isset($_REQUEST['mdp']) && isset($_REQUEST['mdp_repeat']) && isset($_REQUEST['id'])  && isset($_REQUEST['token']) && $token -> tokenVerification($_REQUEST['token']))
+        {
+            $mdp        = htmlspecialchars($_REQUEST['mdp']);
+            $mdpRepeat  = htmlspecialchars($_REQUEST['mdp_repeat']);
+            $id         = htmlspecialchars($_REQUEST['id']);
+            $tk         = htmlspecialchars($_REQUEST['token']);
+
+            if($mdp == $mdpRepeat)
+            {
+                try
+                {
+                    $pdo -> modifierMdpMembre($id, $mdp);
+                    $_SESSION['reussite'] = "Mot de passe changé avec succès.";
+                    header("Location:index.php?uc=connexion");
+                }
+                catch(Exception $e)
+                {
+                    echo $e->getMessage();
+                }
+            }
+            else
+            {
+                $_SESSION['erreurs'][] = "Les mots de passe ne correspondent pas.";
+                header("Location:index.php?uc=connexion&action=modifierMdp&id=" . $id . " &token=" . $tk);
+            }
+
+        }
+        else
+        {
+            $_SESSION['erreurs'][] = "Vous n'êtes pas autorisé à accéder à cette page.";
+            header("Location:index.php?uc=connexion");
+        }
+        break;
+    }
     case 'deconnexion':
 	{
         header("Location:index.php");
-        $pdo->__destruction();
+        $pdo -> __destruction();
+        $mailer -> __destruction();
 		session_destroy();
 		break;
 	}
@@ -53,39 +107,34 @@ switch($action)
     }
     case 'mdp_envoi_email':
     {
-        $from   = $mail->Username;
-        $to     = $_REQUEST['mail'];
-        $membre = $pdo->getUnMembreParMail($to);
-        $server = $_SERVER['HTTP_ORIGIN'];
-        $route  = $_SERVER['SCRIPT_NAME'];
-        if(count($membre) != 0)
+        if(isset($_REQUEST['mail']))
         {
-            try {
-                $mail->setFrom($from, 'Megaptera');
-                $mail->addAddress($to);     // Add a recipient
-
-                $mail->isHTML(true);
-                $mail->Subject = 'Mot de passe perdu';
-                $mail->Body    = "Bonjour,\n" . "Merci de bien vouloir suivre le lien ci-dessous afin de rédefinir votre mot de passe:\n" . "<a href=" . "$server" . "/" . "$route" . '?uc=connexion&action=redifinir_mdp' . ">Lien</a>";
-                $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-                $mail->send();
-                $_SESSION['reussite']  = "Un mail contenant votre mot de passe vous a été envoyé. Cela peut prendre quelques minutes";
-                header("Location:index.php");
-            } catch (Exception $e) {
+            $membre = $pdo->getUnMembreParMail($_REQUEST['mail']);
+            if(count($membre) != 0)
+            {
+                try {
+                    $pdo -> setToken($membre['id'], $_SESSION['token']);
+                    $texte = "Bonjour,\r Merci de bien vouloir suivre le lien ci-dessous afin de rédefinir votre mot de passe: <a href=\"" . ROOT_DIR . "?uc=connexion&action=modifierMdp&id=" . $membre['id'] . "&token=" . $_SESSION['token'] . "\">Lien</a>";
+                    $mailer -> ecrireMail($_REQUEST['mail'], "Definir nouveau mot de passe", $texte);
+                    $_SESSION['reussite']  = "Un mail contenant votre mot de passe vous a été envoyé. Cela peut prendre quelques minutes";
+                    header("Location:index.php");
+                } catch (Exception $e) {
+                    echo $e->getMessage();
+                    $_SESSION['erreurs'][]  = "Une erreur est survenue lors du traitement la requête. Veuillez ressayez.";
+                    header("Location:index.php?action=mdp_oublie");
+                }
+            }
+            else
+            {
                 header("Location:index.php?action=mdp_oublie");
-                $_SESSION['erreurs'][]  = "Une erreur est survenue lors du traitement la requête. Veuillez ressayez.";
+                $_SESSION['erreurs'][] = "Cette adresse mail ne correspond à aucun compte.";
             }
         }
         else
         {
-            header("Location:index.php?action=mdp_oublie");
-            $_SESSION['erreurs'][] = "Cette adresse mail ne correspond à aucun compte.";
+            header("Location:index.php?uc=connexion&action=mdp_oublie");
         }
-        break;
-    }
-    case 'redefinir_mdp':
-    {
+
         break;
     }
     default:
