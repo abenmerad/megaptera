@@ -5,10 +5,10 @@ Class Token
     {
         return base_convert(hash('sha256', time() . mt_rand()), 16, 36);
     }
-    public function tokenVerification($token)
+    public function tokenVerification($token, $tokenAComparer)
     {
         $ok = false;
-        if(isset($_SESSION['token']) && $_SESSION['token'] == $token)
+        if($tokenAComparer == $token)
             $ok = true;
         return $ok;
     }

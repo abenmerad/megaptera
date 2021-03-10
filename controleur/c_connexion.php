@@ -58,24 +58,47 @@ switch($action)
     }
     case 'validerModifierMdp':
     {
-        if(isset($_REQUEST['mdp']) && isset($_REQUEST['mdp_repeat']) && isset($_REQUEST['id'])  && isset($_REQUEST['token']) && $token -> tokenVerification($_REQUEST['token']))
+        if(isset($_REQUEST['mdp']) && isset($_REQUEST['mdp_repeat']) && isset($_REQUEST['id'])  && isset($_REQUEST['token']))
         {
-            $mdp        = htmlspecialchars($_REQUEST['mdp']);
-            $mdpRepeat  = htmlspecialchars($_REQUEST['mdp_repeat']);
-            $id         = htmlspecialchars($_REQUEST['id']);
-            $tk         = htmlspecialchars($_REQUEST['token']);
+            $mdp            = htmlspecialchars($_REQUEST['mdp']);
+            $mdpRepeat      = htmlspecialchars($_REQUEST['mdp_repeat']);
+            $id             = htmlspecialchars($_REQUEST['id']);
+            $tk             = htmlspecialchars($_REQUEST['token']);
+            $tokenMembre    = $pdo -> getToken($id);
 
             if($mdp == $mdpRepeat)
             {
-                try
+                if(isset($_SESSION['token']) && $token -> tokenVerification($_REQUEST['token'], $_SESSION['token']))
                 {
-                    $pdo -> modifierMdpMembre($id, $mdp);
-                    $_SESSION['reussite'] = "Mot de passe changé avec succès.";
-                    header("Location:index.php?uc=connexion");
+                    try
+                    {
+                        $pdo -> modifierMdpMembre($id, $mdp);
+                        $_SESSION['reussite'] = "Mot de passe changé avec succès.";
+                        header("Location:index.php?uc=connexion");
+                    }
+                    catch(Exception $e)
+                    {
+                        echo $e->getMessage();
+                    }
                 }
-                catch(Exception $e)
+                else if(!empty($tokenMembre) && $token -> tokenVerification($_REQUEST['token'], $tokenMembre))
                 {
-                    echo $e->getMessage();
+                    try
+                    {
+                        $pdo -> modifierMdpMembre($id, $mdp);
+                        $pdo -> setToken($id, null);
+                        $_SESSION['reussite'] = "Mot de passe changé avec succès.";
+                        header("Location:index.php?uc=connexion");
+                    }
+                    catch(Exception $e)
+                    {
+                        echo $e->getMessage();
+                    }
+                }
+                else
+                {
+                    $_SESSION['erreurs'][] = "Vous n'êtes pas autorisé à accéder à cette page.";
+                    header("Location:index.php?uc=connexion");
                 }
             }
             else
@@ -109,12 +132,13 @@ switch($action)
     {
         if(isset($_REQUEST['mail']))
         {
-            $membre = $pdo->getUnMembreParMail($_REQUEST['mail']);
+            $membre     = $pdo->getUnMembreParMail(htmlspecialchars($_REQUEST['mail']));
+            $tokenMail  = $token -> tokenGeneration();
             if(count($membre) != 0)
             {
                 try {
-                    $pdo -> setToken($membre['id'], $_SESSION['token']);
-                    $texte = "Bonjour,\r Merci de bien vouloir suivre le lien ci-dessous afin de rédefinir votre mot de passe: <a href=\"" . ROOT_DIR . "?uc=connexion&action=modifierMdp&id=" . $membre['id'] . "&token=" . $_SESSION['token'] . "\">Lien</a>";
+                    $pdo -> setToken($membre['id'], $tokenMail);
+                    $texte = "Bonjour,\r Merci de bien vouloir suivre le lien ci-dessous afin de rédefinir votre mot de passe: <a href=\"" . ROOT_DIR . "?uc=connexion&action=modifierMdp&id=" . $membre['id'] . "&token=" . $tokenMail . "\">Lien</a>";
                     $mailer -> ecrireMail($_REQUEST['mail'], "Definir nouveau mot de passe", $texte);
                     $_SESSION['reussite']  = "Un mail contenant votre mot de passe vous a été envoyé. Cela peut prendre quelques minutes";
                     header("Location:index.php");
@@ -134,7 +158,6 @@ switch($action)
         {
             header("Location:index.php?uc=connexion&action=mdp_oublie");
         }
-
         break;
     }
     default:

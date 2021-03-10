@@ -1,28 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="- Matching jquery">
-      <change afterPath="$PROJECT_DIR$/exemple.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modele/GLOBALS.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modele/Mail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/v_configurerMail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/v_modifierMdp.php" afterDir="false" />
+    <list default="true" id="b559aff1-02c6-4780-b2c8-83a02e7b12e4" name="Default Changelist" comment="- Modification BDD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controleur/c_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_connexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controleur/c_gestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleur/c_gestion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/matching.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/matching.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modele/Token.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/Token.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modele/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modele/pdoMegaptera.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/pdoMegaptera.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_ajouterMembre.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_ajouterMembre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_listeDominante.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeDominante.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_listeGroupe.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_listeGroupe.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/v_matching.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_matching.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_menuSuperAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_menuSuperAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/v_premiereConnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/vue/v_premiereConnexion.php" afterDir="false" />
     </list>
-    <list id="7d750ca8-5ab4-40ca-9365-091e608e5772" name="Changes by masha" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -299,7 +287,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/controleur/c_connexion.php</url>
-          <line>139</line>
+          <line>162</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>

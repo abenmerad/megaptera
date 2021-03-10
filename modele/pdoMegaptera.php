@@ -66,6 +66,16 @@ class PdoMegaptera
         $stmt->bindParam(':token', $tk);
         $stmt->execute();
     }
+    public function getToken($id)
+    {
+        $req = "SELECT  token
+                FROM    membre
+                WHERE   id = :id";
+        $stmt = PdoMegaptera::$monPdo->prepare($req);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt -> fetch()['token'];
+    }
     public function modifierMdpMembre($id, $mdp)
     {
         $req = "UPDATE  membre
@@ -88,7 +98,7 @@ class PdoMegaptera
 	}
 	public function getLesMembresAdmin()
 	{
-		$req = "SELECT * 
+		$req = "SELECT *
                 FROM membre 
                 WHERE poste = 'membre'";
 		$res = PdoMegaptera::$monPdo->query($req);
@@ -110,11 +120,13 @@ class PdoMegaptera
      */
 	public function getUnMembreParMail($mail)
     {
-        $req = "SELECT * 
-                FROM membre 
-                WHERE mail = '$mail'";
-        $res = PdoMegaptera::$monPdo->query($req);
-        return $res->fetchAll();
+        $req = "SELECT  id, nom, prenom, login, tel, mail, poste, token, derniereConnexion, dateInscription
+                FROM    membre 
+                WHERE   mail = :mail";
+        $stmt = PdoMegaptera::$monPdo->prepare($req);
+        $stmt -> bindParam(':mail', $mail);
+        $stmt -> execute();
+        return $stmt -> fetch();
     }
 	/* La fonction getLieu sert a récuperer les différents lieu dans la BDD*/
 	public function getLesLieux()

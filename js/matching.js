@@ -3,6 +3,7 @@ var nombreObservation = $('.carousel .carousel-item').length;
 var matcher = $('#carouselMatcher').attr('value');
 var matched = "";
 var index = 0;
+console.log(nombreObservation);
 carouselMatching.carousel({
     interval: false
 })
@@ -13,11 +14,10 @@ $('#matching').click(function(){
 });
 $('#not_matching').click(function(){
     carouselMatching.carousel('next');
-    $('#myModal').modal('show');
 });
 
 carouselMatching.on('slide.bs.carousel', function () {
-    if(index < nombreObservation)
+    if(index < nombreObservation - 1)
     {
         index++;
         matched = $('.carousel .active h5').text();
@@ -39,5 +39,6 @@ carouselMatching.on('slide.bs.carousel', function () {
     {
         index = 0;
         $('#matcher').hide(250);
+        alert("Vous avez atteint la dernière observation à matcher. ")
     }
 })

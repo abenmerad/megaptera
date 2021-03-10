@@ -430,9 +430,27 @@ switch($action)
         }
         else
         {
-            $pdo -> inscriptionMembre($nom, $prenom, $login, $mdp, $tel, $mail, $poste);
-            $_SESSION['reussite'] = "Membre ajouté avec succès.";
-            header("Location: index.php?uc=gestion&action=listeMembre");
+            try
+            {
+                $pdo    -> inscriptionMembre($nom, $prenom, $login, $mdp, $tel, $mail, $poste);
+                $mailer -> ecrireMail(  $mail,
+                                    "Creation d'un compte",
+                                    "Bonjour, <br> <br>
+                                    Voici votre identifiant ainsi que votre mot de passe afin de vous connecter au site megaptera. <br> <br>
+                                    <b>Login : </b>" . $login . " <br>
+                                    <b>Mot de passe : </b>" . $mdp . "<br><br>
+                                    Ceci est un mot de passe provisoire, lors de votre première connexion vous serez amené à le changer. <br><br>
+                                    <a href=\"" . ROOT_DIR . "?uc=connexion\">Connectez-vous</a> <br><br>
+                                    L'équipe MEGAPTERA.");
+                $_SESSION['reussite'] = "Membre ajouté avec succès.";
+                header("Location: index.php?uc=gestion&action=listeMembre");
+            }
+            catch(Exception $e)
+            {
+                $_SESSION['erreurs'] = $e -> getMessage();
+                header("Location: index.php?uc=gestion&action=listeMembre");
+            }
+
         }
         break;
     }

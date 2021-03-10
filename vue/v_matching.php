@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div id="carousselMatching" class="carousel" data-ride="carousel" style="border: 5px solid black;">
+            <div id="carousselMatching" class="carousel slide" data-ride="carousel" style="border: 5px solid black;">
                 <div class="carousel-inner">
                     <?php foreach($lesObservations as $key => $uneObservation): ?>
                         <?php if($uneObservation['codeObservation'] != $observationPrimaire['codeObservation']): ?>

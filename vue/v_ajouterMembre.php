@@ -15,7 +15,7 @@
         </div>
         <div class="form-group col col-md-6 mb-3">
             <label for="tel">Téléphone</label>
-            <input type="text" name="tel" id="tel" class="form-control" pattern="[0-9]{10}" required>
+            <input type="text" name="tel" id="tel" class="form-control" pattern="[0-9]{10}" maxlength="10" required>
         </div>
         <div class="form-group col col-md-6 mb-3">
             <label for="mail">Courriel</label>
