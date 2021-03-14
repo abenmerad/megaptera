@@ -24,29 +24,31 @@
                                 <i class="fas fa-edit MD"></i>
                             </a>
                         </div>
-                        <div class="p-2">
-                            <a href="" data-toggle="modal" data-target="#supprimerGrp<?= $key ?>" title="Supprimer le groupe" class="btn">
-                                <i class="fas fa-times-circle ER"></i>
-                            </a>
-                            <div class="modal fade" id="supprimerGrp<?= $key ?>" tabindex="-1" role="dialog" aria-labelledby="#supprimerGrpTitre<?= $key ?>" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="supprimerGrpTitre<?= $key ?>" style="color: red;"><i class="fas fa-exclamation-circle"></i> Attention</h5>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p style="color: red;">Cette action est irreversible. Êtes-vous sûr de vouloir supprimer ce groupe ?</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                            <a href="index.php?uc=gestion>&action=supprimerGroupe&code=<?= $unGroupe['code'] ?>">
-                                                <button type="button" class="btn btn-primary">Supprimer</button>
-                                            </a>
+                        <?php if(!$pdo -> getLesObservationsParGroupe($unGroupe['code'])): ?>
+                            <div class="p-2">
+                                <a href="" data-toggle="modal" data-target="#supprimerGrp<?= $key ?>" title="Supprimer le groupe" class="btn">
+                                    <i class="fas fa-times-circle ER"></i>
+                                </a>
+                                <div class="modal fade" id="supprimerGrp<?= $key ?>" tabindex="-1" role="dialog" aria-labelledby="#supprimerGrpTitre<?= $key ?>" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="supprimerGrpTitre<?= $key ?>" style="color: red;"><i class="fas fa-exclamation-circle"></i> Attention</h5>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p style="color: red;">Cette action est irreversible. Êtes-vous sûr de vouloir supprimer ce groupe ?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                                <a href="index.php?uc=gestion>&action=supprimerGroupe&code=<?= $unGroupe['code'] ?>">
+                                                    <button type="button" class="btn btn-primary">Supprimer</button>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
                     </div>
                 </td>
             </tr>

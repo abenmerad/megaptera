@@ -1,4 +1,4 @@
-<form action="index.php?uc=connexion&action=mdp_envoi_email" method="post" id="form_mdp_oublie">
+<form action="index.php?uc=connexion&action=mdp_envoi_email" method="GET" id="form_mdp_oublie">
     <fieldset form="form_mdp_oublie" class="container-fluid">
         <legend>Mot de passe oublié</legend>
         <div class="row form-group justify-content-center text-center">

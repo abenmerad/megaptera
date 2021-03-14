@@ -96,12 +96,11 @@ switch($action)
             $from               = $info_img['dirname'] . '/' . $info_img['basename'];
             $to                 =  'images/' . $lieu . '/' . $nouveauNomPhoto;
 
-//            chmod($from, 777);
             if(rename($from, $to))
             {
-                $longitude =  $longOrientation . " " . $_POST['DegresLong'] . "°" . $_POST['MinutesLong'] . "'" . $_POST['SecondesLong'] . '"';
-                $latitude = $latOrientation . " " . $_POST['DegresLat'] . "°" . $_POST['MinutesLat'] . "'" . $_POST['SecondesLat'] . '"';
-                $pdo -> modifierObservation($code, $lieu, addslashes($latitude), addslashes($longitude), $nouveauCode, $to);
+                $longitude  =  $longOrientation . " " . $_POST['DegresLong'] . "°" . $_POST['MinutesLong'] . "'" . $_POST['SecondesLong'] . '"';
+                $latitude   = $latOrientation . " " . $_POST['DegresLat'] . "°" . $_POST['MinutesLat'] . "'" . $_POST['SecondesLat'] . '"';
+                $pdo -> modifierObservation($code, $lieu, addslashes($latitude), addslashes($longitude), $nouveauCode, $nouveauNomPhoto, $_SESSION['id']);
                 $_SESSION['reussite'] = "Observation modifiée avec succès.";
             }
             else
@@ -306,6 +305,8 @@ switch($action)
         if($_SESSION['poste'] == "superAdmin")
         {
             $lesDominantes = $pdo->getLesDominantes();
+            unset($lesDominantes[array_search((string)'Pas de couleur dominante', array_column($lesDominantes, 'libelle'), true)]);
+            array_values($lesDominantes);
             include("vue/v_listeDominante.php");
         }
         else

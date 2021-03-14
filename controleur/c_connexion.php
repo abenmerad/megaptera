@@ -1,5 +1,4 @@
 <?php
-
 if(!isset($_REQUEST['action']))
      $action = 'connexion';
 else
@@ -121,8 +120,8 @@ switch($action)
         $pdo -> __destruction();
         $mailer -> __destruction();
 		session_destroy();
-		break;
-	}
+		die();
+    }
     case 'mdp_oublie':
     {
         include("vue/v_mdpOublie.php");
@@ -132,14 +131,19 @@ switch($action)
     {
         if(isset($_REQUEST['mail']))
         {
-            $membre     = $pdo->getUnMembreParMail(htmlspecialchars($_REQUEST['mail']));
+            $membre     = $pdo   -> getUnMembreParMail(htmlspecialchars($_REQUEST['mail']));
             $tokenMail  = $token -> tokenGeneration();
-            if(count($membre) != 0)
+            if(is_array($membre) && count($membre) != 0)
             {
                 try {
-                    $pdo -> setToken($membre['id'], $tokenMail);
-                    $texte = "Bonjour,\r Merci de bien vouloir suivre le lien ci-dessous afin de rédefinir votre mot de passe: <a href=\"" . ROOT_DIR . "?uc=connexion&action=modifierMdp&id=" . $membre['id'] . "&token=" . $tokenMail . "\">Lien</a>";
-                    $mailer -> ecrireMail($_REQUEST['mail'], "Definir nouveau mot de passe", $texte);
+                    $pdo    -> setToken($membre['id'], $tokenMail);
+                    $mailer -> ecrireMail($_REQUEST['mail'],
+                                         "Definir nouveau mot de passe",
+                                         "Bonjour,<br><br> 
+                                          Merci de bien vouloir suivre le lien ci-dessous afin de rédefinir votre mot de passe: <br><br> 
+                                          <b>Login : </b>" . $membre['login'] . "
+                                          <a href=\"" . ROOT_DIR . "?uc=connexion&action=modifierMdp&id=" . $membre['id'] . "&token=" . $tokenMail . "\">Lien</a><br><br> 
+                                          L'équipe MEGAPTERA");
                     $_SESSION['reussite']  = "Un mail contenant votre mot de passe vous a été envoyé. Cela peut prendre quelques minutes";
                     header("Location:index.php");
                 } catch (Exception $e) {
@@ -162,6 +166,6 @@ switch($action)
     }
     default:
     {
-        header('Location:index.php?action=connexion');
+        header('Location:index.php?uc=connexion');
     }
 }

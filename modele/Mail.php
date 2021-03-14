@@ -45,9 +45,7 @@ class Mail
         Mail::$mailer->addAddress($to);
         Mail::$mailer->isHTML(true);
         Mail::$mailer->Subject =  $sujet;
-        Mail::$mailer->Body    = $corps;
-        Mail::$mailer->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
+        Mail::$mailer->Body    =  $corps;
         Mail::$mailer->send();
     }
 

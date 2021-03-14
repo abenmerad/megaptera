@@ -30,29 +30,31 @@
                                 <i class="fas fa-edit MD"></i>
                             </a>
                         </div>
-                        <div class="p-2">
-                            <a href="#" data-toggle="modal" data-target="#supprimerMembre<?= $key ?>" title="Supprimer le membre" class="btn <?= ($_SESSION['poste'] == "Admin" && $unMembre['poste'] != "Membre") ? "disabled" : "" ?>">
-                                <i class="fas fa-times-circle ER"></i>
-                            </a>
-                            <div class="modal fade" id="supprimerMembre<?= $key ?>" tabindex="-1" role="dialog" aria-labelledby="#supprimerMembreTitre<?= $key ?>" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="supprimerMembreTitre<?= $key ?>" style="color: red;"><i class="fas fa-exclamation-circle"></i> Attention</h5>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p style="color: red;">Cette action est irreversible. Êtes-vous sûr de vouloir supprimer ce membre ?</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                            <a href="index.php?uc=gestion&action=supprimerMembre&id=<?= $unMembre['id'] ?>">
-                                                <button type="button" class="btn btn-primary">Supprimer</button>
-                                            </a>
+                        <?php if(!$pdo -> getLesObservationsParMembre($unMembre['id'])): ?>
+                            <div class="p-2">
+                                <a href="#" data-toggle="modal" data-target="#supprimerMembre<?= $key ?>" title="Supprimer le membre" class="btn <?= ($_SESSION['poste'] == "Admin" && $unMembre['poste'] != "Membre") ? "disabled" : "" ?>">
+                                    <i class="fas fa-times-circle ER"></i>
+                                </a>
+                                <div class="modal fade" id="supprimerMembre<?= $key ?>" tabindex="-1" role="dialog" aria-labelledby="#supprimerMembreTitre<?= $key ?>" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="supprimerMembreTitre<?= $key ?>" style="color: red;"><i class="fas fa-exclamation-circle"></i> Attention</h5>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p style="color: red;">Cette action est irreversible. Êtes-vous sûr de vouloir supprimer ce membre ?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                                <a href="index.php?uc=gestion&action=supprimerMembre&id=<?= $unMembre['id'] ?>">
+                                                    <button type="button" class="btn btn-primary">Supprimer</button>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
                     </div>
                 </td>
             </tr>

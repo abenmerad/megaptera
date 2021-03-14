@@ -7,13 +7,13 @@ require_once("modele/functions.php");
 require_once("modele/Token.php");
 require_once("modele/ajax.php");
 require_once("modele/Mail.php");
-require_once ('modele/GLOBALS.php');
+require_once('modele/GLOBALS.php');
 $func   = new FonctionsMegaptera();
 $token  = new Token();
 $pdo    = PdoMegaptera::getPdoMegaptera();
-$mailer = Mail::getMail($func -> lireFichierServeur(fopen("exemple.txt", "r")));
 
-require("vue/v_entete.php");
+require_once("vue/v_entete.php");
+
 if(!isset($_REQUEST['uc']))
     $uc  = 'connexion';
 else
@@ -30,6 +30,7 @@ if(isset($_SESSION['reussite']) && !empty($_SESSION['reussite']))
     include("vue/v_reussite.php");
     $_SESSION['reussite'] = "";
 
+$mailer = Mail::getMail($func -> lireFichierServeur(fopen("exemple.txt", "r")));
 
 switch($uc)
 {
@@ -68,6 +69,21 @@ switch($uc)
             }
             break;
         }
+    case 'profil':
+    {
+        if(isset($_SESSION['poste']))
+        {
+            include("controleur/c_profil.php");
+        }
+        else
+        {
+            header("Location:index.php?uc=connexion");
+        }
+        break;
+    }
+    default:
+    {
+        header('Location:' . ROOT_DIR . '?uc=connexion');
+    }
 }
 include("vue/v_pied.php");
-

@@ -222,7 +222,14 @@ switch($action)
 
             if(move_uploaded_file($img_upload['tmp_name'], $repertoire))
             {
-                $pdo -> ajouterObservation($codeObservation, $repertoire, $lieuObservation, $lieuInfo, $heureDebut, $heureFin, $dateObservation, addslashes($latitude), addslashes($longitude), $auteur, (int)$couleurDominante, $aPapillon, (int)$nbIndividu, (int)$typeCaudale, $typeGroupe, $commentaireObservation, $comportementObservation);
+                if($_SESSION['poste'] == 'superAdmin')
+                {
+                    $pdo -> ajouterObservation($codeObservation, $nomPhoto, $lieuObservation, $lieuInfo, $heureDebut, $heureFin, $dateObservation, addslashes($latitude), addslashes($longitude), $auteur, (int)$couleurDominante, $aPapillon, (int)$nbIndividu, (int)$typeCaudale, $typeGroupe, $commentaireObservation, $comportementObservation, 'VA');
+                }
+                else
+                {
+                    $pdo -> ajouterObservation($codeObservation, $nomPhoto, $lieuObservation, $lieuInfo, $heureDebut, $heureFin, $dateObservation, addslashes($latitude), addslashes($longitude), $auteur, (int)$couleurDominante, $aPapillon, (int)$nbIndividu, (int)$typeCaudale, $typeGroupe, $commentaireObservation, $comportementObservation);
+                }
                 header("Location: index.php?uc=observation&action=rechercheMesObservations");
             }
             else

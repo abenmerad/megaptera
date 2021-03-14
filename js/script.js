@@ -11,6 +11,10 @@ var maxIndividu = 20;
 
 $("#infoLieu").hide();
 
+    // $('tr[data-target]').on("click", function() {
+    //     console.log($(this).data('target'));
+    // });
+
     //Evenement de changement du SELECT de type de groupe
     $(listGrp).change(function(){
         //On récupere la valeur du groupe actuellement selectionné

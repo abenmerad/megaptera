@@ -6,7 +6,7 @@
 <!--        <i class="fas fa-list"></i>-->
 <!--    </div>-->
 <!--</div>-->
-<div class="text-center" id="resultat">Resultat de la recherche : <b><?= count($lesObservations) ?></b> observations trouvée(s)</div>
+<div class="text-center" id="resultat">Resultat de la recherche : <b><?= count($lesObservations) ?></b> observation(s) trouvée(s)</div>
 <div class="text-center">
     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exportModal">
         EXPORT CSV
@@ -38,7 +38,7 @@
     <?php foreach($lesObservations as $key => $uneObservation): ?>
         <div class="card bg-info mb-3 col-6 col-sm-3 col-md-2" style="width: 18rem;">
             <div class="card-img">
-                <img src="<?= $uneObservation['nomPhoto'] ?>" alt="">
+                <img src="<?= "images/" . $uneObservation['lieuObservation'] . "/" .$uneObservation['nomPhoto'] ?>" alt="">
             </div>
             <div class="card-body">
                 <h5 class="card-title"><?= $uneObservation['codeObservation'] ?></h5>
@@ -73,7 +73,7 @@
                         <article class="row text-center" id="consultation">
                             <section class="col col-md-12" id="section_carousel">
                                 <figure class="figure">
-                                    <img src="<?= $uneObservation['nomPhoto'] ?>" class="figure-img img-fluid rounded">
+                                    <img src="<?= "images/" . $uneObservation['lieuObservation'] . '/' .$uneObservation['nomPhoto'] ?>" class="figure-img img-fluid rounded">
                                     <figcaption class="figure-caption"><?= htmlspecialchars($uneObservation['commentaire']) ?></figcaption>
                                 </figure>
                             </section>
