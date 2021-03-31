@@ -1,1 +1,0 @@
-hote=>smtp.mail.yahoo.comutilisateur=>mega_ptera@yahoo.commdp=>efxgrdgnfztjusoiport=>465encrypt=>TLSauthSMTP=>true
